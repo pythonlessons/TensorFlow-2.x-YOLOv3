@@ -1,11 +1,10 @@
 #================================================================
-#   Copyright (C) 2020 * Ltd. All rights reserved.
 #
 #   File name   : utils.py
 #   Author      : PyLessons
 #   Created date: 2020-04-20
 #   Website     : https://pylessons.com/
-#   GitHub      :
+#   GitHub      : https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3
 #   Description : additional yolov3 functions
 #
 #================================================================
@@ -94,7 +93,7 @@ def image_preprocess(image, target_size, gt_boxes=None):
         return image_paded, gt_boxes
 
 
-def draw_bbox(image, bboxes, CLASSES=YOLO_COCO_CLASSES, show_label=True, Text_colors=(255,255,0), rectangle_colors=''):   
+def draw_bbox(image, bboxes, CLASSES=YOLO_COCO_CLASSES, show_label=True, show_confidence = True, Text_colors=(255,255,0), rectangle_colors=''):   
     NUM_CLASS = read_class_names(CLASSES)
     num_classes = len(NUM_CLASS)
     image_h, image_w, _ = image.shape
@@ -113,6 +112,8 @@ def draw_bbox(image, bboxes, CLASSES=YOLO_COCO_CLASSES, show_label=True, Text_co
         class_ind = int(bbox[5])
         bbox_color = rectangle_colors if rectangle_colors != ''else colors[class_ind]
         bbox_thick = int(0.6 * (image_h + image_w) / 1000)
+        if bbox_thick < 1: bbox_thick = 1
+        #print(image_h, image_w, bbox_thick)
         fontScale = 0.75 * bbox_thick
         (x1, y1), (x2, y2) = (coor[0], coor[1]), (coor[2], coor[3])
 
@@ -121,7 +122,8 @@ def draw_bbox(image, bboxes, CLASSES=YOLO_COCO_CLASSES, show_label=True, Text_co
 
         if show_label:
             # get text label
-            label = '{} {:.2f}'.format(NUM_CLASS[class_ind], score)
+            score_str = f' {score:.2f}' if show_confidence else '' 
+            label = f'{NUM_CLASS[class_ind]}' + score_str
 
             # get text size
             (text_width, text_height), baseline = cv2.getTextSize(label, cv2.FONT_HERSHEY_COMPLEX_SMALL,

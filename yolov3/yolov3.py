@@ -1,11 +1,10 @@
 #================================================================
-#   Copyright (C) 2020 * Ltd. All rights reserved.
 #
 #   File name   : yolov3.py
 #   Author      : PyLessons
 #   Created date: 2020-04-20
 #   Website     : https://pylessons.com/
-#   GitHub      :
+#   GitHub      : https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3
 #   Description : main yolov3 functions
 #
 #================================================================
@@ -241,7 +240,8 @@ def bbox_giou(boxes1, boxes2):
     return giou
 
 
-def compute_loss(pred, conv, label, bboxes, i=0):
+def compute_loss(pred, conv, label, bboxes, i=0, CLASSES=YOLO_COCO_CLASSES):
+    NUM_CLASS = len(read_class_names(CLASSES))
     conv_shape  = tf.shape(conv)
     batch_size  = conv_shape[0]
     output_size = conv_shape[1]
