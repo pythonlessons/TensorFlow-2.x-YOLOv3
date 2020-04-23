@@ -37,6 +37,14 @@ Track training progress in Tensorboard and go to http://localhost:6006/:
     <img width="100%" src="IMAGES/tensorboard.png" style="max-width:100%;"></a>
 </p>
 
+Test detection with `detect_mnist.py` script:
+```
+python detect_mnist.py
+```
+Results:
+<p align="center">
+    <img width="100%" src="IMAGES/mnist_test.jpg" style="max-width:100%;"></a>
+</p>
 
 
 To be continued...
