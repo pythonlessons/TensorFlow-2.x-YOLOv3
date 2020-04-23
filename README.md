@@ -20,7 +20,7 @@ python detection_demo.py
     <img width="100%" src="IMAGES/city_pred.jpg" style="max-width:100%;"></a>
 </p>
 
-## Quick test for custom dataset with mnist
+## Quick training for custom mnist dataset
 mnist folder contains mnist images, create training data:
 ```
 python mnist/make_data.py
@@ -35,4 +35,11 @@ tensorboard --logdir ./log
 Track training progress in Tensorboard and go to http://localhost:6006/:
 
 
+
+
 To be continued...
+--------------------
+- [ ] Custom data training
+- [ ] Generating anchors
+- [ ] Google collab training
+- [ ] Object tracking
