@@ -4,7 +4,7 @@
 #   Author      : PyLessons
 #   Created date: 2020-04-20
 #   Website     : https://pylessons.com/
-#   GitHub      :
+#   GitHub      : https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3
 #   Description : show random image from created dataset
 #
 #================================================================

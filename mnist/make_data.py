@@ -4,7 +4,7 @@
 #   Author      : PyLessons
 #   Created date: 2020-04-20
 #   Website     : https://pylessons.com/
-#   GitHub      :
+#   GitHub      : https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3
 #   Description : create mnist example dataset to train custom yolov3
 #
 #================================================================
@@ -87,8 +87,8 @@ for file in ["train", "test"]:
             print('Done!')
 
 for file in ['train','test']:
-    images_path = os.getcwd()+f"/minst_{file}"
-    labels_txt = os.getcwd()+f"/minst_{file}.txt"
+    images_path = os.getcwd()+f"/mnist_{file}"
+    labels_txt = os.getcwd()+f"/mnist_{file}.txt"
     
     if file == 'train': images_num = images_num_train
     if file == 'test': images_num = images_num_test
