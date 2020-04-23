@@ -43,7 +43,7 @@ python detect_mnist.py
 ```
 Results:
 <p align="center">
-    <img width="100%" src="IMAGES/mnist_test.jpg" style="max-width:100%;"></a>
+    <img width="40%" src="IMAGES/mnist_test.jpg" style="max-width:40%;"></a>
 </p>
 
 
