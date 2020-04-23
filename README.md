@@ -17,9 +17,22 @@ python detection_demo.py
 ```
 
 <p align="center">
-    <img width="100%" src="IMAGES/city_pred.jpg" style="max-width:100%;">
-    </a>
+    <img width="100%" src="IMAGES/city_pred.jpg" style="max-width:100%;"></a>
 </p>
 
-## Train custom dataset
+## Quick test for custom dataset with mnist
+mnist folder contains mnist images, create training data:
+```
+python mnist/make_data.py
+```
+`./yolov3/configs.py` file is already configured for mnist training.
+
+Now, you can train it and then evaluate your model
+```
+python train.py
+tensorboard --logdir ./log
+```
+Track training progress in Tensorboard and go to http://localhost:6006/:
+
+
 To be continued...
