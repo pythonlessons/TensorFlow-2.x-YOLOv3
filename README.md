@@ -55,3 +55,4 @@ To be continued...
 - [ ] Generating anchors
 - [ ] Google collab training
 - [ ] Object tracking
+- [ ] Mean Average Precision (mAP)
