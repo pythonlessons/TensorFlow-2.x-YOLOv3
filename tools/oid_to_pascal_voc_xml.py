@@ -1,3 +1,13 @@
+#================================================================
+#
+#   File name   : oid_to_pascal_vos_xml.py
+#   Author      : PyLessons
+#   Created date: 2020-05-05
+#   Website     : https://pylessons.com/
+#   GitHub      : https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3
+#   Description : used to convert oid labels to pascal vos xml
+#
+#================================================================
 import os
 from tqdm import tqdm
 from sys import exit
@@ -6,10 +16,10 @@ import cv2
 from textwrap import dedent
 from lxml import etree
 
-XML_DIR = ''
-Dataset_names = []
-Dataset_path = "../OIDv4_ToolKit/OID/Dataset"
-Dataset_names_path = "../model_data/Dataset_names.txt"
+foldername = os.path.basename(os.getcwd())
+if foldername == "tools": os.chdir("..")
+
+Dataset_path = "OIDv4_ToolKit/OID/Dataset"
 
 current_path = os.getcwd()
 os.chdir(Dataset_path)
@@ -116,9 +126,6 @@ for DIR in DIRS:
                             name.text = class_name
                             obj.append(name)
 
-                            if str(name.text) not in Dataset_names:
-                                Dataset_names.append(str(name.text))
-
                             pose = etree.Element("pose")
                             pose.text = "Unspecified"
                             obj.append(pose)
@@ -163,10 +170,3 @@ for DIR in DIRS:
                 os.chdir("..")   
                    
         os.chdir("..")
-'''        
-os.chdir(current_path)
-print("Dataset_names:", Dataset_names)
-with open(Dataset_names_path, "w") as file:
-    for name in Dataset_names:
-        file.write(str(name)+'\n')
-'''

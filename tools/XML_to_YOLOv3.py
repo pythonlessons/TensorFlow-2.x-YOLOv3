@@ -1,11 +1,25 @@
+#================================================================
+#
+#   File name   : XML_to_YOLOv3.py
+#   Author      : PyLessons
+#   Created date: 2020-05-05
+#   Website     : https://pylessons.com/
+#   GitHub      : https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3
+#   Description : used to convert XML labels to YOLOv3 training labels
+#
+#================================================================
 import xml.etree.ElementTree as ET
 import os
 import glob
 
-data_dir = '/OID/Dataset/'
-Dataset_names_path = "OID/Dataset/Dataset_names.txt"
-Dataset_train = "OID/Dataset/Dataset_train.txt"
-Dataset_test = "OID/Dataset/Dataset_test.txt"
+foldername = os.path.basename(os.getcwd())
+if foldername == "tools": os.chdir("..")
+
+
+data_dir = '/OIDv4_ToolKit/OID/Dataset/'
+Dataset_names_path = "OIDv4_ToolKit/OID/Dataset/Dataset_names.txt"
+Dataset_train = "OIDv4_ToolKit/OID/Dataset/Dataset_train.txt"
+Dataset_test = "OIDv4_ToolKit/OID/Dataset/Dataset_test.txt"
 is_subfolder = True
 
 Dataset_names = []
@@ -31,6 +45,7 @@ def ParseXML(img_folder, file):
 
 for i, folder in enumerate(['train','test']):
     with open([Dataset_train,Dataset_test][i], "w") as file:
+        print(os.getcwd()+data_dir+folder)
         img_path = os.path.join(os.getcwd()+data_dir+folder)
         if is_subfolder:
             for directory in os.listdir(img_path):
