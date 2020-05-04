@@ -2,7 +2,7 @@
 #
 #   File name   : train.py
 #   Author      : PyLessons
-#   Created date: 2019-07-12
+#   Created date: 2020-05-05
 #   Website     : https://pylessons.com/
 #   GitHub      : https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3
 #   Description : used to train custom object detector
