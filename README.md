@@ -52,7 +52,10 @@ To be continued...
 - [x] Detection with original weights
 - [x] Mnist detection training
 - [ ] Custom detection training
-- [ ] Generating anchors
 - [ ] Google collab training
+- [ ] Yolo v3 lite training
 - [ ] Object tracking
+- [ ] Yolo v3 on Raspberry v3
+- [ ] Yolo v3 on Android (Not sure about this)
+- [ ] Generating anchors
 - [ ] Mean Average Precision (mAP)
