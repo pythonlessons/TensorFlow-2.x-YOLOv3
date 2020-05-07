@@ -49,8 +49,8 @@ Results:
 
 To be continued...
 --------------------
-- [x] Detection with original weights
-- [x] Mnist detection training
+- [x] Detection with original weights [Tutorial link](https://pylessons.com/YOLOv3-TF2-introduction/)
+- [x] Mnist detection training [Tutorial link](https://pylessons.com/YOLOv3-TF2-mnist/)
 - [ ] Custom detection training
 - [ ] Google collab training
 - [ ] Yolo v3 lite training
