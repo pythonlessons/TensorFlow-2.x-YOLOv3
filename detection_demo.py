@@ -28,3 +28,4 @@ load_yolo_weights(yolo, Darknet_weights) # use Darknet weights
 
 detect_image(yolo, image_path, "", input_size=input_size, show=True, rectangle_colors=(255,0,0))
 #detect_video(yolo, video_path, '', input_size=input_size, show=True, rectangle_colors=(255,0,0))
+#detect_realtime(yolo, input_size=input_size, rectangle_colors=(255, 0, 0))
