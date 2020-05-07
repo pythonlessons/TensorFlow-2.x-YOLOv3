@@ -59,3 +59,4 @@ To be continued...
 - [ ] Yolo v3 on Android (Not sure about this)
 - [ ] Generating anchors
 - [ ] Mean Average Precision (mAP)
+- [ ] YOLACT: Real-time Instance Segmentation
