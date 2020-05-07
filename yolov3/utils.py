@@ -310,3 +310,51 @@ def detect_video(YoloV3, video_path, output_path, input_size=416, show=False, CL
                 break
 
     cv2.destroyAllWindows()
+    
+def detect_realtime(YoloV3, input_size=416, show=False, CLASSES=YOLO_COCO_CLASSES, score_threshold=0.3, iou_threshold=0.45, rectangle_colors=''):
+    times = []
+    vid = cv2.VideoCapture(0)
+
+    # by default VideoCapture returns float instead of int
+    width = int(vid.get(cv2.CAP_PROP_FRAME_WIDTH))
+    height = int(vid.get(cv2.CAP_PROP_FRAME_HEIGHT))
+    fps = int(vid.get(cv2.CAP_PROP_FPS))
+    
+    while True:
+        _, img = vid.read()
+        
+        try:
+            original_image = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+            original_image = cv2.cvtColor(original_image, cv2.COLOR_BGR2RGB)
+        except:
+            break
+        image_data = image_preprocess(np.copy(original_image), [
+                                      input_size, input_size])
+        image_data = tf.expand_dims(image_data, 0)
+
+        t1 = time.time()
+        pred_bbox = YoloV3.predict(image_data)
+        t2 = time.time()
+
+        pred_bbox = [tf.reshape(x, (-1, tf.shape(x)[-1])) for x in pred_bbox]
+        pred_bbox = tf.concat(pred_bbox, axis=0)
+
+        bboxes = postprocess_boxes(
+            pred_bbox, original_image, input_size, score_threshold)
+        bboxes = nms(bboxes, iou_threshold, method='nms')
+
+        times.append(t2-t1)
+        times = times[-20:]
+        print("Time: {:.2f}ms".format(sum(times)/len(times)*1000))
+     
+        image = draw_bbox(original_image, bboxes, CLASSES=CLASSES,
+                          rectangle_colors=rectangle_colors)
+        image = cv2.putText(image, "Time: {:.2f}ms".format(sum(times)/len(times)*1000), (0, 30),
+                            cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0, 0, 255), 2)
+
+        cv2.imshow('output', image)
+        if cv2.waitKey(25) & 0xFF == ord("q"):
+            cv2.destroyAllWindows()
+            break
+
+    cv2.destroyAllWindows()
