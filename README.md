@@ -60,3 +60,5 @@ To be continued...
 - [ ] Generating anchors
 - [ ] Mean Average Precision (mAP)
 - [ ] YOLACT: Real-time Instance Segmentation
+- [ ] Model pruning (Pruning is a technique in deep learning that aids in the development of smaller and more efficient neural networks. It's a model optimization technique that involves eliminating unnecessary values in the weight tensor.)
+- [ ] Yolo v4
