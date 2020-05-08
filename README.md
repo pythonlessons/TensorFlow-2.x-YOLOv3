@@ -55,6 +55,7 @@ To be continued...
 - [ ] Google collab training
 - [ ] Yolo v3 lite training
 - [ ] Object tracking
+- [ ] Converting to TensorFlow Lite
 - [ ] Yolo v3 on Raspberry v3
 - [ ] Yolo v3 on Android (Not sure about this)
 - [ ] Generating anchors
