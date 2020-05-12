@@ -2,7 +2,7 @@
 #
 #   File name   : XML_to_YOLOv3.py
 #   Author      : PyLessons
-#   Created date: 2020-05-05
+#   Created date: 2020-05-012
 #   Website     : https://pylessons.com/
 #   GitHub      : https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3
 #   Description : used to convert XML labels to YOLOv3 training labels
@@ -37,7 +37,11 @@ def ParseXML(img_folder, file):
                 Dataset_names.append(cls)
             cls_id = Dataset_names.index(cls)
             xmlbox = obj.find('bndbox')
-            OBJECT = str(int(xmlbox.find('xmin').text))+','+str(int(xmlbox.find('ymin').text))+','+str(int(xmlbox.find('xmax').text))+','+str(int(xmlbox.find('ymax').text))+','+str(cls_id)
+            OBJECT = (str(int(float(xmlbox.find('xmin').text)))+','
+                      +str(int(float(xmlbox.find('ymin').text)))+','
+                      +str(int(float(xmlbox.find('xmax').text)))+','
+                      +str(int(float(xmlbox.find('ymax').text)))+','
+                      +str(cls_id))
             img_path += ' '+OBJECT
         print(img_path)
         file.write(img_path+'\n')
