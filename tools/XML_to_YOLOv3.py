@@ -16,10 +16,10 @@ foldername = os.path.basename(os.getcwd())
 if foldername == "tools": os.chdir("..")
 
 
-data_dir = '/OIDv4_ToolKit/OID/Dataset/'
-Dataset_names_path = "OIDv4_ToolKit/OID/Dataset/Dataset_names.txt"
-Dataset_train = "OIDv4_ToolKit/OID/Dataset/Dataset_train.txt"
-Dataset_test = "OIDv4_ToolKit/OID/Dataset/Dataset_test.txt"
+data_dir = '/model_data/Dataset/'
+Dataset_names_path = "model_data/Dataset_names.txt"
+Dataset_train = "model_data/Dataset_train.txt"
+Dataset_test = "model_data/Dataset_test.txt"
 is_subfolder = True
 
 Dataset_names = []
