@@ -19,6 +19,9 @@ from yolov3.yolov3 import Create_Yolov3, YOLOv3, decode, compute_loss
 from yolov3.utils import load_yolo_weights
 from yolov3.configs import *
 
+gpus = tf.config.experimental.list_physical_devices('GPU')
+if len(gpus) > 0: tf.config.experimental.set_memory_growth(gpus[0], True)
+
 input_size = YOLO_INPUT_SIZE
 logdir = TRAIN_LOGDIR
 Darknet_weights = YOLO_DARKNET_WEIGHTS
