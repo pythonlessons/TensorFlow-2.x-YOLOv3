@@ -5,3 +5,6 @@ seaborn>=0.10.0
 tensorflow==2.1.0
 opencv-python==4.1.2.*
 tqdm==4.43.0
+pandas
+awscli
+urllib3
