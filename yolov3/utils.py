@@ -2,7 +2,7 @@
 #
 #   File name   : utils.py
 #   Author      : PyLessons
-#   Created date: 2020-04-20
+#   Created date: 2020-05-13
 #   Website     : https://pylessons.com/
 #   GitHub      : https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3
 #   Description : additional yolov3 functions
@@ -17,6 +17,7 @@ import tensorflow as tf
 from yolov3.configs import *
 
 def load_yolo_weights(model, weights_file):
+    tf.keras.backend.clear_session() # used to reset layer names
     # load Darknet original weights to Keras model
     with open(weights_file, 'rb') as wf:
         major, minor, revision, seen, _ = np.fromfile(wf, dtype=np.int32, count=5)
@@ -32,7 +33,7 @@ def load_yolo_weights(model, weights_file):
                 bn_layer_name = 'batch_normalization_%d' %j
             else:
                 bn_layer_name = 'batch_normalization'
-
+            
             conv_layer = model.get_layer(conv_layer_name)
             filters = conv_layer.filters
             k_size = conv_layer.kernel_size[0]
@@ -262,7 +263,7 @@ def detect_image(YoloV3, image_path, output_path, input_size=416, show=False, CL
             cv2.destroyAllWindows()
             return
         
-    return image        
+    return image
 
 def detect_video(YoloV3, video_path, output_path, input_size=416, show=False, CLASSES=YOLO_COCO_CLASSES, score_threshold=0.3, iou_threshold=0.45, rectangle_colors=''):
     times = []
@@ -273,7 +274,7 @@ def detect_video(YoloV3, video_path, output_path, input_size=416, show=False, CL
     height = int(vid.get(cv2.CAP_PROP_FRAME_HEIGHT))
     fps = int(vid.get(cv2.CAP_PROP_FPS))
     codec = cv2.VideoWriter_fourcc(*'XVID')
-    out = cv2.VideoWriter(output_path, codec, fps, (width, height))
+    out = cv2.VideoWriter(output_path, codec, fps, (width, height)) # output_path must be .mp4
 
     while True:
         _, img = vid.read()
@@ -312,8 +313,9 @@ def detect_video(YoloV3, video_path, output_path, input_size=416, show=False, CL
                 break
 
     cv2.destroyAllWindows()
-    
-def detect_realtime(YoloV3, input_size=416, show=False, CLASSES=YOLO_COCO_CLASSES, score_threshold=0.3, iou_threshold=0.45, rectangle_colors=''):
+
+# detect from webcam
+def detect_realtime(YoloV3, output_path, input_size=416, show=False, CLASSES=YOLO_COCO_CLASSES, score_threshold=0.3, iou_threshold=0.45, rectangle_colors=''):
     times = []
     vid = cv2.VideoCapture(0)
 
@@ -321,42 +323,43 @@ def detect_realtime(YoloV3, input_size=416, show=False, CLASSES=YOLO_COCO_CLASSE
     width = int(vid.get(cv2.CAP_PROP_FRAME_WIDTH))
     height = int(vid.get(cv2.CAP_PROP_FRAME_HEIGHT))
     fps = int(vid.get(cv2.CAP_PROP_FPS))
-    
+    codec = cv2.VideoWriter_fourcc(*'XVID')
+    out = cv2.VideoWriter(output_path, codec, fps, (width, height)) # output_path must be .mp4
+
     while True:
-        _, img = vid.read()
-        
+        _, frame = vid.read()
+
         try:
-            original_image = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-            original_image = cv2.cvtColor(original_image, cv2.COLOR_BGR2RGB)
+            original_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+            original_frame = cv2.cvtColor(original_frame, cv2.COLOR_BGR2RGB)
         except:
             break
-        image_data = image_preprocess(np.copy(original_image), [
-                                      input_size, input_size])
-        image_data = tf.expand_dims(image_data, 0)
-
+        image_frame = image_preprocess(np.copy(original_frame), [input_size, input_size])
+        image_frame = tf.expand_dims(image_frame, 0)
+        
         t1 = time.time()
-        pred_bbox = YoloV3.predict(image_data)
+        pred_bbox = YoloV3.predict(image_frame)
         t2 = time.time()
-
+        
         pred_bbox = [tf.reshape(x, (-1, tf.shape(x)[-1])) for x in pred_bbox]
         pred_bbox = tf.concat(pred_bbox, axis=0)
 
-        bboxes = postprocess_boxes(
-            pred_bbox, original_image, input_size, score_threshold)
+        bboxes = postprocess_boxes(pred_bbox, original_frame, input_size, score_threshold)
         bboxes = nms(bboxes, iou_threshold, method='nms')
-
+        
         times.append(t2-t1)
         times = times[-20:]
         print("Time: {:.2f}ms".format(sum(times)/len(times)*1000))
-     
-        image = draw_bbox(original_image, bboxes, CLASSES=CLASSES,
-                          rectangle_colors=rectangle_colors)
-        image = cv2.putText(image, "Time: {:.2f}ms".format(sum(times)/len(times)*1000), (0, 30),
-                            cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0, 0, 255), 2)
 
-        cv2.imshow('output', image)
-        if cv2.waitKey(25) & 0xFF == ord("q"):
-            cv2.destroyAllWindows()
-            break
+        frame = draw_bbox(original_frame, bboxes, CLASSES=CLASSES, rectangle_colors=rectangle_colors)
+        frame = cv2.putText(frame, "Time: {:.2f}ms".format(sum(times)/len(times)*1000), (0, 30),
+                          cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0, 0, 255), 2)
+
+        if output_path != '': out.write(frame)
+        if show:
+            cv2.imshow('output', frame)
+            if cv2.waitKey(25) & 0xFF == ord("q"):
+                cv2.destroyAllWindows()
+                break
 
     cv2.destroyAllWindows()

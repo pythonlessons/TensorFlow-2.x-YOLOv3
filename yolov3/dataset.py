@@ -2,7 +2,7 @@
 #
 #   File name   : dataset.py
 #   Author      : PyLessons
-#   Created date: 2020-04-20
+#   Created date: 2020-05-13
 #   Website     : https://pylessons.com/
 #   GitHub      : https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3
 #   Description : functions used to prepare dataset for custom training
@@ -149,11 +149,20 @@ class Dataset(object):
 
     def parse_annotation(self, annotation):
         line = annotation.split()
-        image_path = line[0]
+        image_path, index = "", 1
+        for i, one_line in enumerate(line):
+            result = one_line.replace(",","").isnumeric()
+            if not result:
+                if image_path != "": image_path += " "
+                image_path += one_line
+            else:
+                index = i
+                break
+
         if not os.path.exists(image_path):
             raise KeyError("%s does not exist ... " %image_path)
         image = cv2.imread(image_path)
-        bboxes = np.array([list(map(int, box.split(','))) for box in line[1:]])
+        bboxes = np.array([list(map(int, box.split(','))) for box in line[index:]])
 
         if self.data_aug:
             image, bboxes = self.random_horizontal_flip(np.copy(image), np.copy(bboxes))
