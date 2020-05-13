@@ -261,6 +261,8 @@ def detect_image(YoloV3, image_path, output_path, input_size=416, show=False, CL
         if cv2.waitKey(25) & 0xFF == ord("q"):
             cv2.destroyAllWindows()
             return
+        
+    return image        
 
 def detect_video(YoloV3, video_path, output_path, input_size=416, show=False, CLASSES=YOLO_COCO_CLASSES, score_threshold=0.3, iou_threshold=0.45, rectangle_colors=''):
     times = []
