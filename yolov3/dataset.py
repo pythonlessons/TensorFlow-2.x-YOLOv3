@@ -2,12 +2,13 @@
 #
 #   File name   : dataset.py
 #   Author      : PyLessons
-#   Created date: 2020-05-13
+#   Created date: 2020-05-15
 #   Website     : https://pylessons.com/
 #   GitHub      : https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3
 #   Description : functions used to prepare dataset for custom training
 #
 #================================================================
+# TODO: transfer numpy to tensorflow operations
 import os
 import cv2
 import random
@@ -19,7 +20,7 @@ from yolov3.configs import *
 
 
 class Dataset(object):
-    # implement Dataset here
+    # Dataset preprocess implementation
     def __init__(self, dataset_type):
         self.annot_path  = TRAIN_ANNOT_PATH if dataset_type == 'train' else TEST_ANNOT_PATH
         self.input_sizes = TRAIN_INPUT_SIZE if dataset_type == 'train' else TEST_INPUT_SIZE
@@ -41,11 +42,26 @@ class Dataset(object):
 
 
     def load_annotations(self, dataset_type):
+        final_annotations = []
         with open(self.annot_path, 'r') as f:
             txt = f.readlines()
             annotations = [line.strip() for line in txt if len(line.strip().split()[1:]) != 0]
         np.random.shuffle(annotations)
-        return annotations
+        
+        for annotation in annotations:
+            # fully parse annotations
+            line = annotation.split()
+            image_path, index = "", 1
+            for i, one_line in enumerate(line):
+                if not one_line.replace(",","").isnumeric():
+                    if image_path != "": image_path += " "
+                    image_path += one_line
+                else:
+                    index = i
+                    break
+            final_annotations.append([image_path, line[index:]])
+
+        return final_annotations
 
     def __iter__(self):
         return self
@@ -148,21 +164,11 @@ class Dataset(object):
         return image, bboxes
 
     def parse_annotation(self, annotation):
-        line = annotation.split()
-        image_path, index = "", 1
-        for i, one_line in enumerate(line):
-            result = one_line.replace(",","").isnumeric()
-            if not result:
-                if image_path != "": image_path += " "
-                image_path += one_line
-            else:
-                index = i
-                break
-
+        image_path = annotation[0]
         if not os.path.exists(image_path):
             raise KeyError("%s does not exist ... " %image_path)
         image = cv2.imread(image_path)
-        bboxes = np.array([list(map(int, box.split(','))) for box in line[index:]])
+        bboxes = np.array([list(map(int, box.split(','))) for box in annotation[1]])
 
         if self.data_aug:
             image, bboxes = self.random_horizontal_flip(np.copy(image), np.copy(bboxes))
