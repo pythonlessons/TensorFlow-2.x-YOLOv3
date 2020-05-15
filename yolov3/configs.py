@@ -2,7 +2,7 @@
 #
 #   File name   : configs.py
 #   Author      : PyLessons
-#   Created date: 2020-04-20
+#   Created date: 2020-05-15
 #   Website     : https://pylessons.com/
 #   GitHub      : https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3
 #   Description : yolov3 configuration file
