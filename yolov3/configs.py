@@ -24,6 +24,7 @@ YOLO_ANCHORS                = [[[10,  13], [16,   30], [33,   23]],
 TRAIN_CLASSES               = "./mnist/mnist.names"
 TRAIN_ANNOT_PATH            = "./mnist/mnist_train.txt"
 TRAIN_LOGDIR                = "./log"
+TRAIN_LOAD_IMAGES_TO_RAM    = False # faster training, but need more RAM
 TRAIN_BATCH_SIZE            = 4
 TRAIN_INPUT_SIZE            = 416
 TRAIN_DATA_AUG              = True
