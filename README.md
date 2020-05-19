@@ -46,6 +46,9 @@ Results:
     <img width="40%" src="IMAGES/mnist_test.jpg" style="max-width:40%;"></a>
 </p>
 
+## Custom Yolo v3 object detection training
+Custom training required to prepare dataset first, how to prepare dataset and train custom model you can read in following link:<br>
+https://pylessons.com/YOLOv3-TF2-custrom-train/
 
 To be continued...
 --------------------
