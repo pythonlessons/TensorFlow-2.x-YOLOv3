@@ -123,8 +123,8 @@ def draw_bbox(image, bboxes, CLASSES=YOLO_COCO_CLASSES, show_label=True, show_co
 
         if show_label:
             # get text label
-            score_str = f' {score:.2f}' if show_confidence else '' 
-            label = f'{NUM_CLASS[class_ind]}' + score_str
+            score_str = " {:.2f}".format(score) if show_confidence else "" 
+            label = "{}".format(NUM_CLASS[class_ind]) + score_str
 
             # get text size
             (text_width, text_height), baseline = cv2.getTextSize(label, cv2.FONT_HERSHEY_COMPLEX_SMALL,
