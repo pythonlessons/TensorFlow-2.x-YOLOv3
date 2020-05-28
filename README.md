@@ -50,12 +50,15 @@ Results:
 Custom training required to prepare dataset first, how to prepare dataset and train custom model you can read in following link:<br>
 https://pylessons.com/YOLOv3-TF2-custrom-train/
 
+## Google Colab Custom Yolo v3 training
+To learn more about Google Colab Free gpu training, visit my [text version tutorial](https://pylessons.com/YOLOv3-TF2-GoogleColab/)
+
 To be continued...
 --------------------
 - [x] Detection with original weights [Tutorial link](https://pylessons.com/YOLOv3-TF2-introduction/)
 - [x] Mnist detection training [Tutorial link](https://pylessons.com/YOLOv3-TF2-mnist/)
 - [x] Custom detection training [Tutorial link1](https://pylessons.com/YOLOv3-TF2-custrom-train/), [link2](https://pylessons.com/YOLOv3-TF2-custrom-images/)
-- [x] Google collab training [Tutorial link](https://pylessons.com/YOLOv3-TF2-GoogleColab/)
+- [x] Google Colab training [Tutorial link](https://pylessons.com/YOLOv3-TF2-GoogleColab/)
 - [ ] Yolo v3 lite training
 - [ ] Object tracking
 - [ ] Converting to TensorFlow Lite
