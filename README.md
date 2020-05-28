@@ -64,6 +64,7 @@ To be continued...
 - [ ] Converting to TensorFlow Lite
 - [ ] Yolo v3 on Raspberry v3
 - [ ] Yolo v3 on Android (Not sure about this)
+- [ ] Convert to TensorRT model
 - [ ] Generating anchors
 - [ ] Mean Average Precision (mAP)
 - [ ] YOLACT: Real-time Instance Segmentation
