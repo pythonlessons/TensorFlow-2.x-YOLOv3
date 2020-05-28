@@ -55,7 +55,7 @@ To be continued...
 - [x] Detection with original weights [Tutorial link](https://pylessons.com/YOLOv3-TF2-introduction/)
 - [x] Mnist detection training [Tutorial link](https://pylessons.com/YOLOv3-TF2-mnist/)
 - [x] Custom detection training [Tutorial link1](https://pylessons.com/YOLOv3-TF2-custrom-train/), [link2](https://pylessons.com/YOLOv3-TF2-custrom-images/)
-- [ ] Google collab training
+- [x] Google collab training [Tutorial link](https://pylessons.com/YOLOv3-TF2-GoogleColab/)
 - [ ] Yolo v3 lite training
 - [ ] Object tracking
 - [ ] Converting to TensorFlow Lite
