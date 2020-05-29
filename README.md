@@ -64,7 +64,7 @@ To be continued...
 - [x] Mnist detection training [Tutorial link](https://pylessons.com/YOLOv3-TF2-mnist/)
 - [x] Custom detection training [Tutorial link1](https://pylessons.com/YOLOv3-TF2-custrom-train/), [link2](https://pylessons.com/YOLOv3-TF2-custrom-images/)
 - [x] Google Colab training [Tutorial link](https://pylessons.com/YOLOv3-TF2-GoogleColab/)
-- [ ] Yolo v3 lite training
+- [ ] Yolo v3 tiny
 - [ ] Object tracking
 - [ ] Converting to TensorFlow Lite
 - [ ] Yolo v3 on Raspberry v3
