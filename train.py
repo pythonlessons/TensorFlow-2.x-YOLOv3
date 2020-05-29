@@ -2,14 +2,14 @@
 #
 #   File name   : train.py
 #   Author      : PyLessons
-#   Created date: 2020-05-15
+#   Created date: 2020-05-18
 #   Website     : https://pylessons.com/
 #   GitHub      : https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3
 #   Description : used to train custom object detector
 #
 #================================================================
 import os
-os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
+os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 import shutil
 import numpy as np
 import tensorflow as tf
@@ -30,7 +30,9 @@ def main():
     global TRAIN_FROM_CHECKPOINT
     
     gpus = tf.config.experimental.list_physical_devices('GPU')
-    if len(gpus) > 0: tf.config.experimental.set_memory_growth(gpus[0], True)
+    if len(gpus) > 0:
+        try: tf.config.experimental.set_memory_growth(gpus[0], True)
+        except RuntimeError: pass
 
     if os.path.exists(logdir): shutil.rmtree(logdir)
     writer = tf.summary.create_file_writer(logdir)
