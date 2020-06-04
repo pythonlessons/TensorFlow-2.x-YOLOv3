@@ -2,7 +2,7 @@
 #
 #   File name   : train.py
 #   Author      : PyLessons
-#   Created date: 2020-05-18
+#   Created date: 2020-06-03
 #   Website     : https://pylessons.com/
 #   GitHub      : https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3
 #   Description : used to train custom object detector
@@ -16,15 +16,13 @@ import tensorflow as tf
 #from tensorflow.keras.utils import plot_model
 from yolov3.dataset import Dataset
 from yolov3.yolov3 import Create_Yolov3, YOLOv3, decode, compute_loss
-from yolov3.utils import load_yolo_weights
+from yolov3.utils import load_yolo_weights#, load_tiny_yolo_weights
 from yolov3.configs import *
 
-input_size = YOLO_INPUT_SIZE
-logdir = TRAIN_LOGDIR
 Darknet_weights = YOLO_DARKNET_WEIGHTS
-
-save_best_only = True # saves only best model according validation loss
-save_checkpoints = False # saves all best validated checkpoints in training process (may require a lot disk space)
+if TRAIN_YOLO_TINY:
+    TRAIN_MODEL_NAME = TRAIN_MODEL_NAME+"_Tiny"
+    Darknet_weights = YOLO_DARKNET_TINY_WEIGHTS
 
 def main():
     global TRAIN_FROM_CHECKPOINT
@@ -34,8 +32,8 @@ def main():
         try: tf.config.experimental.set_memory_growth(gpus[0], True)
         except RuntimeError: pass
 
-    if os.path.exists(logdir): shutil.rmtree(logdir)
-    writer = tf.summary.create_file_writer(logdir)
+    if os.path.exists(TRAIN_LOGDIR): shutil.rmtree(TRAIN_LOGDIR)
+    writer = tf.summary.create_file_writer(TRAIN_LOGDIR)
 
     trainset = Dataset('train')
     testset = Dataset('test')
@@ -46,10 +44,11 @@ def main():
     total_steps = TRAIN_EPOCHS * steps_per_epoch
 
     if TRAIN_TRANSFER:
-        Darknet = Create_Yolov3(input_size=input_size)
+        Darknet = Create_Yolov3(input_size=YOLO_INPUT_SIZE)
         load_yolo_weights(Darknet, Darknet_weights) # use darknet weights
+        #load_tiny_yolo_weights(Darknet, Darknet_weights) # use darknet weights
 
-    yolo = Create_Yolov3(input_size=input_size, training=True, CLASSES=TRAIN_CLASSES)
+    yolo = Create_Yolov3(input_size=YOLO_INPUT_SIZE, training=True, CLASSES=TRAIN_CLASSES)
     if TRAIN_FROM_CHECKPOINT:
         try:
             yolo.load_weights(TRAIN_FROM_CHECKPOINT)
@@ -65,7 +64,7 @@ def main():
                     yolo.layers[i].set_weights(layer_weights)
                 except:
                     print("skipping", yolo.layers[i].name)
-
+    
     optimizer = tf.keras.optimizers.Adam()
 
 
@@ -75,7 +74,8 @@ def main():
             giou_loss=conf_loss=prob_loss=0
 
             # optimizing process
-            for i in range(3):
+            grid = 3 if not TRAIN_YOLO_TINY else 2
+            for i in range(grid):
                 conv, pred = pred_result[i*2], pred_result[i*2+1]
                 loss_items = compute_loss(pred, conv, *target[i], i, CLASSES=TRAIN_CLASSES)
                 giou_loss += loss_items[0]
@@ -108,14 +108,15 @@ def main():
             
         return global_steps.numpy(), optimizer.lr.numpy(), giou_loss.numpy(), conf_loss.numpy(), prob_loss.numpy(), total_loss.numpy()
 
-    validate_writer = tf.summary.create_file_writer(logdir)#"./validate_log")
+    validate_writer = tf.summary.create_file_writer(TRAIN_LOGDIR)
     def validate_step(image_data, target):
         with tf.GradientTape() as tape:
             pred_result = yolo(image_data, training=False)
             giou_loss=conf_loss=prob_loss=0
 
             # optimizing process
-            for i in range(3):
+            grid = 3 if not TRAIN_YOLO_TINY else 2
+            for i in range(grid):
                 conv, pred = pred_result[i*2], pred_result[i*2+1]
                 loss_items = compute_loss(pred, conv, *target[i], i, CLASSES=TRAIN_CLASSES)
                 giou_loss += loss_items[0]
@@ -137,7 +138,7 @@ def main():
 
         if len(testset) == 0:
             print("configure TEST options to validate model")
-            yolo.save_weights("./checkpoints/yolov3_custom")
+            yolo.save_weights(os.path.join(TRAIN_CHECKPOINTS_FOLDER, TRAIN_MODEL_NAME))
             continue
         
         count, giou_val, conf_val, prob_val, total_val = 0., 0, 0, 0, 0
@@ -159,13 +160,13 @@ def main():
         print("\n\ngiou_val_loss:{:7.2f}, conf_val_loss:{:7.2f}, prob_val_loss:{:7.2f}, total_val_loss:{:7.2f}\n\n".
               format(giou_val/count, conf_val/count, prob_val/count, total_val/count))
 
-        if save_checkpoints and not save_best_only:
-            yolo.save_weights("./checkpoints/yolov3_custom"+"_val_loss_{:7.2f}".format(total_val/count))
-        if save_best_only and best_val_loss>total_val/count:
-            yolo.save_weights("./checkpoints/yolov3_custom")
+        if TRAIN_SAVE_CHECKPOINT and not TRAIN_SAVE_BEST_ONLY:
+            yolo.save_weights(os.path.join(TRAIN_CHECKPOINTS_FOLDER, TRAIN_MODEL_NAME+"_val_loss_{:7.2f}".format(total_val/count)))
+        if TRAIN_SAVE_BEST_ONLY and best_val_loss>total_val/count:
+            yolo.save_weights(os.path.join(TRAIN_CHECKPOINTS_FOLDER, TRAIN_MODEL_NAME))
             best_val_loss = total_val/count
-        if not save_best_only and not save_checkpoints:
-            yolo.save_weights("./checkpoints/yolov3_custom")
+        if not TRAIN_SAVE_BEST_ONLY and not TRAIN_SAVE_CHECKPOINT:
+            yolo.save_weights(os.path.join(TRAIN_CHECKPOINTS_FOLDER, TRAIN_MODEL_NAME))
 
 
 if __name__ == '__main__':
