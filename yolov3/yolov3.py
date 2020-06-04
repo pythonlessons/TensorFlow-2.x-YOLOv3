@@ -2,7 +2,7 @@
 #
 #   File name   : yolov3.py
 #   Author      : PyLessons
-#   Created date: 2020-04-20
+#   Created date: 2020-06-04
 #   Website     : https://pylessons.com/
 #   GitHub      : https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3
 #   Description : main yolov3 functions
@@ -10,14 +10,13 @@
 #================================================================
 import numpy as np
 import tensorflow as tf
-from tensorflow.keras.layers import Conv2D, Input, LeakyReLU, ZeroPadding2D, BatchNormalization
+from tensorflow.keras.layers import Conv2D, Input, LeakyReLU, ZeroPadding2D, BatchNormalization, MaxPool2D
 from tensorflow.keras.regularizers import l2
 from yolov3.utils import read_class_names
 from yolov3.configs import *
 
 STRIDES         = np.array(YOLO_STRIDES)
 ANCHORS         = (np.array(YOLO_ANCHORS).T/STRIDES).T
-IOU_LOSS_THRESH = YOLO_IOU_LOSS_THRESH
 
 class BatchNormalization(BatchNormalization):
     # "Frozen state" and "inference mode" are two separate concepts.
@@ -93,6 +92,24 @@ def darknet53(input_data):
 
     return route_1, route_2, input_data
 
+def darknet19_tiny(input_data):
+    input_data = convolutional(input_data, (3, 3, 3, 16))
+    input_data = MaxPool2D(2, 2, 'same')(input_data)
+    input_data = convolutional(input_data, (3, 3, 16, 32))
+    input_data = MaxPool2D(2, 2, 'same')(input_data)
+    input_data = convolutional(input_data, (3, 3, 32, 64))
+    input_data = MaxPool2D(2, 2, 'same')(input_data)
+    input_data = convolutional(input_data, (3, 3, 64, 128))
+    input_data = MaxPool2D(2, 2, 'same')(input_data)
+    input_data = convolutional(input_data, (3, 3, 128, 256))
+    route_1 = input_data
+    input_data = MaxPool2D(2, 2, 'same')(input_data)
+    input_data = convolutional(input_data, (3, 3, 256, 512))
+    input_data = MaxPool2D(2, 1, 'same')(input_data)
+    input_data = convolutional(input_data, (3, 3, 512, 1024))
+
+    return route_1, input_data
+
 def YOLOv3(input_layer, NUM_CLASS):
     # After the input layer enters the Darknet-53 network, we get three branches
     route_1, route_2, conv = darknet53(input_layer)
@@ -139,11 +156,36 @@ def YOLOv3(input_layer, NUM_CLASS):
         
     return [conv_sbbox, conv_mbbox, conv_lbbox]
 
+def YOLOv3_tiny(input_layer, NUM_CLASS):
+    # After the input layer enters the Darknet-53 network, we get three branches
+    route_1, conv = darknet19_tiny(input_layer)
+
+    conv = convolutional(conv, (1, 1, 1024, 256))
+    conv_lobj_branch = convolutional(conv, (3, 3, 256, 512))
+    
+    # conv_lbbox is used to predict large-sized objects , Shape = [None, 26, 26, 255]
+    conv_lbbox = convolutional(conv_lobj_branch, (1, 1, 512, 3*(NUM_CLASS + 5)), activate=False, bn=False)
+
+    conv = convolutional(conv, (1, 1, 256, 128))
+    # upsample here uses the nearest neighbor interpolation method, which has the advantage that the
+    # upsampling process does not need to learn, thereby reducing the network parameter  
+    conv = upsample(conv)
+    
+    conv = tf.concat([conv, route_1], axis=-1)
+    conv_mobj_branch = convolutional(conv, (3, 3, 128, 256))
+    # conv_mbbox is used to predict medium size objects, shape = [None, 13, 13, 255]
+    conv_mbbox = convolutional(conv_mobj_branch, (1, 1, 256, 3 * (NUM_CLASS + 5)), activate=False, bn=False)
+
+    return [conv_mbbox, conv_lbbox]
+
 def Create_Yolov3(input_size=416, channels=3, training=False, CLASSES=YOLO_COCO_CLASSES):
     NUM_CLASS = len(read_class_names(CLASSES))
     input_layer  = Input([input_size, input_size, channels])
 
-    conv_tensors = YOLOv3(input_layer, NUM_CLASS)
+    if TRAIN_YOLO_TINY:
+        conv_tensors = YOLOv3_tiny(input_layer, NUM_CLASS)
+    else:
+        conv_tensors = YOLOv3(input_layer, NUM_CLASS)
 
     output_tensors = []
     for i, conv_tensor in enumerate(conv_tensors):
@@ -229,15 +271,49 @@ def bbox_giou(boxes1, boxes2):
     inter_section = tf.maximum(right_down - left_up, 0.0)
     inter_area = inter_section[..., 0] * inter_section[..., 1]
     union_area = boxes1_area + boxes2_area - inter_area
+
+    # Calculate the iou value between the two bounding boxes
     iou = inter_area / union_area
 
+    # Calculate the coordinates of the upper left corner and the lower right corner of the smallest closed convex surface
     enclose_left_up = tf.minimum(boxes1[..., :2], boxes2[..., :2])
     enclose_right_down = tf.maximum(boxes1[..., 2:], boxes2[..., 2:])
     enclose = tf.maximum(enclose_right_down - enclose_left_up, 0.0)
+
+    # Calculate the area of the smallest closed convex surface C
     enclose_area = enclose[..., 0] * enclose[..., 1]
+
+    # Calculate the GIoU value according to the GioU formula  
     giou = iou - 1.0 * (enclose_area - union_area) / enclose_area
 
     return giou
+
+# testing (should be better than giou)
+def bbox_ciou(boxes1, boxes2):
+    boxes1_coor = tf.concat([boxes1[..., :2] - boxes1[..., 2:] * 0.5,
+                        boxes1[..., :2] + boxes1[..., 2:] * 0.5], axis=-1)
+    boxes2_coor = tf.concat([boxes2[..., :2] - boxes2[..., 2:] * 0.5,
+                        boxes2[..., :2] + boxes2[..., 2:] * 0.5], axis=-1)
+
+    left = tf.maximum(boxes1_coor[..., 0], boxes2_coor[..., 0])
+    up = tf.maximum(boxes1_coor[..., 1], boxes2_coor[..., 1])
+    right = tf.maximum(boxes1_coor[..., 2], boxes2_coor[..., 2])
+    down = tf.maximum(boxes1_coor[..., 3], boxes2_coor[..., 3])
+
+    c = (right - left) * (right - left) + (up - down) * (up - down)
+    iou = bbox_iou(boxes1, boxes2)
+
+    u = (boxes1[..., 0] - boxes2[..., 0]) * (boxes1[..., 0] - boxes2[..., 0]) + (boxes1[..., 1] - boxes2[..., 1]) * (boxes1[..., 1] - boxes2[..., 1])
+    d = u / c
+
+    ar_gt = boxes2[..., 2] / boxes2[..., 3]
+    ar_pred = boxes1[..., 2] / boxes1[..., 3]
+
+    ar_loss = 4 / (np.pi * np.pi) * (tf.atan(ar_gt) - tf.atan(ar_pred)) * (tf.atan(ar_gt) - tf.atan(ar_pred))
+    alpha = ar_loss / (1 - iou + ar_loss + 0.000001)
+    ciou_term = d + alpha * ar_loss
+
+    return iou - ciou_term
 
 
 def compute_loss(pred, conv, label, bboxes, i=0, CLASSES=YOLO_COCO_CLASSES):
@@ -262,15 +338,19 @@ def compute_loss(pred, conv, label, bboxes, i=0, CLASSES=YOLO_COCO_CLASSES):
     input_size = tf.cast(input_size, tf.float32)
 
     bbox_loss_scale = 2.0 - 1.0 * label_xywh[:, :, :, :, 2:3] * label_xywh[:, :, :, :, 3:4] / (input_size ** 2)
-    giou_loss = respond_bbox * bbox_loss_scale * (1- giou)
+    giou_loss = respond_bbox * bbox_loss_scale * (1 - giou)
 
     iou = bbox_iou(pred_xywh[:, :, :, :, np.newaxis, :], bboxes[:, np.newaxis, np.newaxis, np.newaxis, :, :])
+    # Find the value of IoU with the real box The largest prediction box
     max_iou = tf.expand_dims(tf.reduce_max(iou, axis=-1), axis=-1)
 
-    respond_bgd = (1.0 - respond_bbox) * tf.cast( max_iou < IOU_LOSS_THRESH, tf.float32 )
+    # If the largest iou is less than the threshold, it is considered that the prediction box contains no objects, then the background box
+    respond_bgd = (1.0 - respond_bbox) * tf.cast( max_iou < YOLO_IOU_LOSS_THRESH, tf.float32 )
 
     conf_focal = tf.pow(respond_bbox - pred_conf, 2)
 
+    # Calculate the loss of confidence
+    # we hope that if the grid contains objects, then the network output prediction box has a confidence of 1 and 0 when there is no object.
     conf_loss = conf_focal * (
             respond_bbox * tf.nn.sigmoid_cross_entropy_with_logits(labels=respond_bbox, logits=conv_raw_conf)
             +

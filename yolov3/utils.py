@@ -2,7 +2,7 @@
 #
 #   File name   : utils.py
 #   Author      : PyLessons
-#   Created date: 2020-05-13
+#   Created date: 2020-06-04
 #   Website     : https://pylessons.com/
 #   GitHub      : https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3
 #   Description : additional yolov3 functions
@@ -19,11 +19,14 @@ from yolov3.configs import *
 def load_yolo_weights(model, weights_file):
     tf.keras.backend.clear_session() # used to reset layer names
     # load Darknet original weights to Keras model
+    range1 = 75 if not TRAIN_YOLO_TINY else 13
+    range2 = [58, 66, 74] if not TRAIN_YOLO_TINY else [9, 12] 
+    
     with open(weights_file, 'rb') as wf:
         major, minor, revision, seen, _ = np.fromfile(wf, dtype=np.int32, count=5)
 
         j = 0
-        for i in range(75):
+        for i in range(range1):
             if i > 0:
                 conv_layer_name = 'conv2d_%d' %i
             else:
@@ -39,7 +42,7 @@ def load_yolo_weights(model, weights_file):
             k_size = conv_layer.kernel_size[0]
             in_dim = conv_layer.input_shape[-1]
 
-            if i not in [58, 66, 74]:
+            if i not in range2:
                 # darknet weights: [beta, gamma, mean, variance]
                 bn_weights = np.fromfile(wf, dtype=np.float32, count=4 * filters)
                 # tf weights: [gamma, beta, mean, variance]
@@ -55,7 +58,7 @@ def load_yolo_weights(model, weights_file):
             # tf shape (height, width, in_dim, out_dim)
             conv_weights = conv_weights.reshape(conv_shape).transpose([2, 3, 1, 0])
 
-            if i not in [58, 66, 74]:
+            if i not in range2:
                 conv_layer.set_weights([conv_weights])
                 bn_layer.set_weights(bn_weights)
             else:
@@ -123,7 +126,9 @@ def draw_bbox(image, bboxes, CLASSES=YOLO_COCO_CLASSES, show_label=True, show_co
 
         if show_label:
             # get text label
+            #score_str = f' {score:.2f}' if show_confidence else ''
             score_str = " {:.2f}".format(score) if show_confidence else "" 
+            #label = f'{NUM_CLASS[class_ind]}' + score_str
             label = "{}".format(NUM_CLASS[class_ind]) + score_str
 
             # get text size
