@@ -21,15 +21,16 @@ from yolov3.configs import *
 
 input_size=YOLO_INPUT_SIZE
 
-ID = random.randint(0, 200)
-label_txt = "mnist/mnist_test.txt"
-image_info = open(label_txt).readlines()[ID].split()
+while True:
+    ID = random.randint(0, 200)
+    label_txt = "mnist/mnist_test.txt"
+    image_info = open(label_txt).readlines()[ID].split()
 
-image_path = image_info[0]
+    image_path = image_info[0]
 
-yolo = Create_Yolov3(input_size=input_size, CLASSES=TRAIN_CLASSES)
-yolo.load_weights("./checkpoints/yolov3_custom") # use keras weights
+    yolo = Create_Yolov3(input_size=input_size, CLASSES=TRAIN_CLASSES)
+    yolo.load_weights("./checkpoints/yolov3_custom_Tiny") # use keras weights
 
-detect_image(yolo, image_path, "", input_size=input_size, show=True, CLASSES=TRAIN_CLASSES, rectangle_colors=(255,0,0))
-time.sleep(10)
+    detect_image(yolo, image_path, "mnist_test.jpg", input_size=input_size, show=True, CLASSES=TRAIN_CLASSES, rectangle_colors=(255,0,0))
+    time.sleep(5)
 
