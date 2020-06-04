@@ -5,11 +5,11 @@
 #   Created date: 2020-05-18
 #   Website     : https://pylessons.com/
 #   GitHub      : https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3
-#   Description : object detection image, video and webcam example code
+#   Description : object detection image and video example
 #
 #================================================================
 import os
-os.environ['CUDA_VISIBLE_DEVICES'] = '0'
+os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
 import cv2
 import numpy as np
 import tensorflow as tf
@@ -19,13 +19,15 @@ from yolov3.configs import *
 
 input_size = YOLO_INPUT_SIZE
 Darknet_weights = YOLO_DARKNET_WEIGHTS
+if TRAIN_YOLO_TINY:
+    Darknet_weights = YOLO_DARKNET_TINY_WEIGHTS
 
-image_path   = "./IMAGES/license_plate.jpg"
-video_path   = "./IMAGES/street_drive.mp4"
+image_path   = "./IMAGES/plate_2.jpg"
+video_path   = "./IMAGES/city.mp4"
 
 yolo = Create_Yolov3(input_size=input_size, CLASSES=TRAIN_CLASSES)
-yolo.load_weights("./checkpoints/yolov3_custom") # use custom weights
+yolo.load_weights("./checkpoints/yolov3_custom") # use keras weights
 
-detect_image(yolo, image_path, "./IMAGES/license_plate_results.jpg", input_size=input_size, show=True, CLASSES=TRAIN_CLASSES, rectangle_colors=(255,0,0))
-#detect_video(yolo, video_path, "./IMAGES/street_drive_custom.mp4", input_size=input_size, show=True, CLASSES=TRAIN_CLASSES, rectangle_colors=(255,0,0))
+detect_image(yolo, image_path, "./IMAGES/plate_1_detect.jpg", input_size=input_size, show=True, CLASSES=TRAIN_CLASSES, rectangle_colors=(255,0,0))
+#detect_video(yolo, video_path, './IMAGES/detected.mp4', input_size=input_size, show=False, CLASSES=TRAIN_CLASSES, rectangle_colors=(255,0,0))
 #detect_realtime(yolo, '', input_size=input_size, show=True, CLASSES=TRAIN_CLASSES, rectangle_colors=(255, 0, 0))
