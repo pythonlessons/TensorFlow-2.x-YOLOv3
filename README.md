@@ -35,7 +35,7 @@ python mnist/make_data.py
 Now, you can train it and then evaluate your model
 ```
 python train.py
-tensorboard --logdir ./log
+tensorboard --logdir=log
 ```
 Track training progress in Tensorboard and go to http://localhost:6006/:
 <p align="center">
