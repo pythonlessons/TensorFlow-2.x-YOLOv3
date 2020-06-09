@@ -58,6 +58,13 @@ https://pylessons.com/YOLOv3-TF2-custrom-train/
 ## Google Colab Custom Yolo v3 training
 To learn more about Google Colab Free gpu training, visit my [text version tutorial](https://pylessons.com/YOLOv3-TF2-GoogleColab/)
 
+## Yolo v3 Tiny train and detection
+To get detailed instructions how to use Yolov3-Tiny, follow my text version tutorial [YOLOv3-Tiny support](https://pylessons.com/YOLOv3-TF2-Tiny/). Short instructions:
+- Get YOLOv3-Tiny weights: ```wget -P model_data https://pjreddie.com/media/files/yolov3-tiny.weights```
+- From `yolov3/configs.py` change `TRAIN_YOLO_TINY` from `False` to `True`
+- Run `detection_demo.py` script.
+
+
 To be continued...
 --------------------
 - [x] Detection with original weights [Tutorial link](https://pylessons.com/YOLOv3-TF2-introduction/)
