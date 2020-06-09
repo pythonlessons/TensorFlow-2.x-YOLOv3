@@ -263,10 +263,12 @@ def detect_image(YoloV3, image_path, output_path, input_size=416, show=False, CL
 
     if output_path != '': cv2.imwrite(output_path, image)
     if show:
+        # Show the image
         cv2.imshow("predicted image", image)
-        if cv2.waitKey(25) & 0xFF == ord("q"):
-            cv2.destroyAllWindows()
-            return
+        # Load and hold the image
+        cv2.waitKey(0)
+        # To close the window after the required kill value was provided
+        cv2.destroyAllWindows()
         
     return image
 
