@@ -2,7 +2,7 @@
 #
 #   File name   : utils.py
 #   Author      : PyLessons
-#   Created date: 2020-06-04
+#   Created date: 2020-06-23
 #   Website     : https://pylessons.com/
 #   GitHub      : https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3
 #   Description : additional yolov3 functions
@@ -97,7 +97,7 @@ def image_preprocess(image, target_size, gt_boxes=None):
         return image_paded, gt_boxes
 
 
-def draw_bbox(image, bboxes, CLASSES=YOLO_COCO_CLASSES, show_label=True, show_confidence = True, Text_colors=(255,255,0), rectangle_colors=''):   
+def draw_bbox(image, bboxes, CLASSES=YOLO_COCO_CLASSES, show_label=True, show_confidence = True, Text_colors=(255,255,0), rectangle_colors='', tracking=False):   
     NUM_CLASS = read_class_names(CLASSES)
     num_classes = len(NUM_CLASS)
     image_h, image_w, _ = image.shape
@@ -114,10 +114,9 @@ def draw_bbox(image, bboxes, CLASSES=YOLO_COCO_CLASSES, show_label=True, show_co
         coor = np.array(bbox[:4], dtype=np.int32)
         score = bbox[4]
         class_ind = int(bbox[5])
-        bbox_color = rectangle_colors if rectangle_colors != ''else colors[class_ind]
+        bbox_color = rectangle_colors if rectangle_colors != '' else colors[class_ind]
         bbox_thick = int(0.6 * (image_h + image_w) / 1000)
         if bbox_thick < 1: bbox_thick = 1
-        #print(image_h, image_w, bbox_thick)
         fontScale = 0.75 * bbox_thick
         (x1, y1), (x2, y2) = (coor[0], coor[1]), (coor[2], coor[3])
 
@@ -126,9 +125,10 @@ def draw_bbox(image, bboxes, CLASSES=YOLO_COCO_CLASSES, show_label=True, show_co
 
         if show_label:
             # get text label
-            #score_str = f' {score:.2f}' if show_confidence else ''
-            score_str = " {:.2f}".format(score) if show_confidence else "" 
-            #label = f'{NUM_CLASS[class_ind]}' + score_str
+            score_str = " {:.2f}".format(score) if show_confidence else ""
+
+            if tracking: score_str = " "+str(score)
+
             label = "{}".format(NUM_CLASS[class_ind]) + score_str
 
             # get text size
@@ -306,10 +306,14 @@ def detect_video(YoloV3, video_path, output_path, input_size=416, show=False, CL
         
         times.append(t2-t1)
         times = times[-20:]
-        print("Time: {:.2f}ms".format(sum(times)/len(times)*1000))
+        
+        ms = sum(times)/len(times)*1000
+        fps = 1000 / ms
+        
+        print("Time: {:.2f}ms, {:.1f} FPS".format(ms, fps))
 
         image = draw_bbox(original_image, bboxes, CLASSES=CLASSES, rectangle_colors=rectangle_colors)
-        image = cv2.putText(image, "Time: {:.2f}ms".format(sum(times)/len(times)*1000), (0, 30),
+        image = cv2.putText(image, "Time: {:.1f}FPS".format(fps), (0, 30),
                           cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0, 0, 255), 2)
 
         if output_path != '': out.write(image)
@@ -356,10 +360,14 @@ def detect_realtime(YoloV3, output_path, input_size=416, show=False, CLASSES=YOL
         
         times.append(t2-t1)
         times = times[-20:]
-        print("Time: {:.2f}ms".format(sum(times)/len(times)*1000))
+        
+        ms = sum(times)/len(times)*1000
+        fps = 1000 / ms
+        
+        print("Time: {:.2f}ms, {:.1f} FPS".format(ms, fps))
 
         frame = draw_bbox(original_frame, bboxes, CLASSES=CLASSES, rectangle_colors=rectangle_colors)
-        frame = cv2.putText(frame, "Time: {:.2f}ms".format(sum(times)/len(times)*1000), (0, 30),
+        image = cv2.putText(image, "Time: {:.1f}FPS".format(fps), (0, 30),
                           cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0, 0, 255), 2)
 
         if output_path != '': out.write(frame)
