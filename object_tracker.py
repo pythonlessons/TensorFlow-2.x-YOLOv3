@@ -61,7 +61,6 @@ def Object_tracking(YoloV3, video_path, output_path, input_size=416, show=False,
     NUM_CLASS = read_class_names(CLASSES)
     key_list = list(NUM_CLASS.keys()) 
     val_list = list(NUM_CLASS.values())
-    i = 0
     while True:
         _, img = vid.read()
 
@@ -139,14 +138,3 @@ def Object_tracking(YoloV3, video_path, output_path, input_size=416, show=False,
 
 
 Object_tracking(yolo, video_path, "detection.mp4", input_size=input_size, show=True, iou_threshold=0.1, rectangle_colors=(255,0,0), Track_only = ["person"])
-
-
-from moviepy.editor import *
-from pygifsicle import optimize
-gif_path = 'detection_output.gif'
-
-clip = (VideoFileClip('detection.mp4').resize(0.45))
-clip.write_gif(gif_path)
-# create a new one
-optimize(gif_path, 'opt_detection_output.gif')
-
