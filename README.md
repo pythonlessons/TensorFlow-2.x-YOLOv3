@@ -72,7 +72,7 @@ To be continued...
 - [x] Custom detection training [Tutorial link1](https://pylessons.com/YOLOv3-TF2-custrom-train/), [link2](https://pylessons.com/YOLOv3-TF2-custrom-images/)
 - [x] Google Colab training [Tutorial link](https://pylessons.com/YOLOv3-TF2-GoogleColab/)
 - [x] YOLOv3-Tiny support [Tutorial link](https://pylessons.com/YOLOv3-TF2-Tiny/)
-- [ ] Object tracking
+- [X] Object tracking
 - [ ] Converting to TensorFlow Lite
 - [ ] Yolo v3 on Raspberry v3
 - [ ] Yolo v3 on Android (Not sure about this)
