@@ -64,6 +64,9 @@ To get detailed instructions how to use Yolov3-Tiny, follow my text version tuto
 - From `yolov3/configs.py` change `TRAIN_YOLO_TINY` from `False` to `True`
 - Run `detection_demo.py` script.
 
+## Yolo v3 Object tracking
+To learn more about Object tracking with Deep SORT, visit [Following link](https://pylessons.com/YOLOv3-TF2-DeepSort/).
+
 
 To be continued...
 --------------------
@@ -72,7 +75,7 @@ To be continued...
 - [x] Custom detection training [Tutorial link1](https://pylessons.com/YOLOv3-TF2-custrom-train/), [link2](https://pylessons.com/YOLOv3-TF2-custrom-images/)
 - [x] Google Colab training [Tutorial link](https://pylessons.com/YOLOv3-TF2-GoogleColab/)
 - [x] YOLOv3-Tiny support [Tutorial link](https://pylessons.com/YOLOv3-TF2-Tiny/)
-- [X] Object tracking
+- [X] Object tracking [Tutorial link](https://pylessons.com/YOLOv3-TF2-DeepSort/)
 - [ ] Converting to TensorFlow Lite
 - [ ] Yolo v3 on Raspberry v3
 - [ ] Yolo v3 on Android (Not sure about this)
