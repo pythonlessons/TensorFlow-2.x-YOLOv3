@@ -66,7 +66,13 @@ To get detailed instructions how to use Yolov3-Tiny, follow my text version tuto
 
 ## Yolo v3 Object tracking
 To learn more about Object tracking with Deep SORT, visit [Following link](https://pylessons.com/YOLOv3-TF2-DeepSort/).
-
+Quick test:
+- Clone this repository;
+- Make sure object detection works for you;
+- Run object_tracking.py script
+<p align="center">
+    <img src="IMAGES/tracking_results.gif"></a>
+</p>
 
 To be continued...
 --------------------
