@@ -51,7 +51,8 @@ def main():
     yolo = Create_Yolov3(input_size=YOLO_INPUT_SIZE, training=True, CLASSES=TRAIN_CLASSES)
     if TRAIN_FROM_CHECKPOINT:
         try:
-            yolo.load_weights(TRAIN_FROM_CHECKPOINT)
+            checkpoint_file = TRAIN_CHECKPOINTS_FOLDER + '/' + TRAIN_MODEL_NAME + '.h5'
+            yolo.load_weights(checkpoint_file)
         except ValueError:
             print("Shapes are incompatible, transfering Darknet weights")
             TRAIN_FROM_CHECKPOINT = False
