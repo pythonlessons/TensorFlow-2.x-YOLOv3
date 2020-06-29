@@ -367,7 +367,7 @@ def detect_realtime(YoloV3, output_path, input_size=416, show=False, CLASSES=YOL
         print("Time: {:.2f}ms, {:.1f} FPS".format(ms, fps))
 
         frame = draw_bbox(original_frame, bboxes, CLASSES=CLASSES, rectangle_colors=rectangle_colors)
-        image = cv2.putText(image, "Time: {:.1f}FPS".format(fps), (0, 30),
+        image = cv2.putText(frame, "Time: {:.1f}FPS".format(fps), (0, 30),
                           cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0, 0, 255), 2)
 
         if output_path != '': out.write(frame)
