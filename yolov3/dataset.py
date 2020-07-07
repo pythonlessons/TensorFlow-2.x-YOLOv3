@@ -97,7 +97,7 @@ class Dataset(object):
                     try:
                         label_sbbox, label_mbbox, label_lbbox, sbboxes, mbboxes, lbboxes = self.preprocess_true_boxes(bboxes)
                     except IndexError:
-                        print("IndexError, something wrong with", annotation[0])
+                        print("IndexError, something wrong with", annotation[0], "remove this image, annotation file, run XML_to_YOLOv3.py and continue")
 
                     batch_image[num, :, :, :] = image
                     batch_label_sbbox[num, :, :, :, :] = label_sbbox
