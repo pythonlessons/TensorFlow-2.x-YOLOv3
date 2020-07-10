@@ -12,7 +12,7 @@
 # YOLO options
 YOLO_DARKNET_WEIGHTS        = "model_data/yolov3.weights"
 YOLO_DARKNET_TINY_WEIGHTS   = "model_data/yolov3-tiny.weights"
-YOLO_COCO_CLASSES           = "model_data/coco.names"
+YOLO_COCO_CLASSES           = "model_data/coco/coco.names"
 YOLO_STRIDES                = [8, 16, 32]
 YOLO_IOU_LOSS_THRESH        = 0.5
 YOLO_ANCHOR_PER_SCALE       = 3
