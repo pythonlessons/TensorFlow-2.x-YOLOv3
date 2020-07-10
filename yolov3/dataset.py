@@ -2,7 +2,7 @@
 #
 #   File name   : dataset.py
 #   Author      : PyLessons
-#   Created date: 2020-07-09
+#   Created date: 2020-05-18
 #   Website     : https://pylessons.com/
 #   GitHub      : https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3
 #   Description : functions used to prepare dataset for custom training
@@ -61,14 +61,16 @@ class Dataset(object):
                     break
             if not os.path.exists(image_path):
                 raise KeyError("%s does not exist ... " %image_path)
-            if TRAIN_LOAD_IMAGES_TO_RAM: image_path = cv2.imread(image_path)
-            final_annotations.append([image_path, line[index:]])
-
+            if TRAIN_LOAD_IMAGES_TO_RAM:
+                image = cv2.imread(image_path)
+            else:
+                image = ''
+            final_annotations.append([image_path, line[index:], image])
         return final_annotations
 
     def __iter__(self):
         return self
-    
+
     def Delete_bad_annotation(self, bad_annotation):
         print(f'Deleting {bad_annotation} annotation line')
         bad_image_path = bad_annotation[0]
@@ -191,9 +193,10 @@ class Dataset(object):
 
         return image, bboxes
 
-    def parse_annotation(self, annotation):
+    def parse_annotation(self, annotation, mAP = 'False'):
         if TRAIN_LOAD_IMAGES_TO_RAM:
-            image = annotation[0]
+            image_path = annotation[0]
+            image = annotation[2]
         else:
             image_path = annotation[0]
             image = cv2.imread(image_path)
@@ -205,8 +208,10 @@ class Dataset(object):
             image, bboxes = self.random_crop(np.copy(image), np.copy(bboxes))
             image, bboxes = self.random_translate(np.copy(image), np.copy(bboxes))
 
-        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-        image, bboxes = image_preprocess(np.copy(image), [self.train_input_size, self.train_input_size], np.copy(bboxes))
+        #image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+        if mAP: return image, bboxes
+        
+        image, bboxes = image_preprocess(np.copy(image), [self.input_sizes, self.input_sizes], np.copy(bboxes))
         return image, bboxes
 
     def preprocess_true_boxes(self, bboxes):
