@@ -209,7 +209,8 @@ class Dataset(object):
             image, bboxes = self.random_translate(np.copy(image), np.copy(bboxes))
 
         #image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-        if mAP: return image, bboxes
+        if mAP == True: 
+            return image, bboxes
         
         image, bboxes = image_preprocess(np.copy(image), [self.input_sizes, self.input_sizes], np.copy(bboxes))
         return image, bboxes
