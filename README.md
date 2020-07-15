@@ -82,12 +82,12 @@ To be continued...
 - [x] Google Colab training [Tutorial link](https://pylessons.com/YOLOv3-TF2-GoogleColab/)
 - [x] YOLOv3-Tiny support [Tutorial link](https://pylessons.com/YOLOv3-TF2-Tiny/)
 - [X] Object tracking [Tutorial link](https://pylessons.com/YOLOv3-TF2-DeepSort/)
+- [X] Mean Average Precision (mAP) [Tutorial link](https://pylessons.com/YOLOv3-TF2-mAP/)
 - [ ] Converting to TensorFlow Lite
 - [ ] Yolo v3 on Raspberry v3
 - [ ] Yolo v3 on Android (Not sure about this)
 - [ ] Convert to TensorRT model
 - [ ] Generating anchors
-- [ ] Mean Average Precision (mAP)
 - [ ] YOLACT: Real-time Instance Segmentation
 - [ ] Model pruning (Pruning is a technique in deep learning that aids in the development of smaller and more efficient neural networks. It's a model optimization technique that involves eliminating unnecessary values in the weight tensor.)
 - [ ] Yolo v4
