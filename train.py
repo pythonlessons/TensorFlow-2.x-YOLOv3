@@ -2,7 +2,7 @@
 #
 #   File name   : train.py
 #   Author      : PyLessons
-#   Created date: 2020-06-03
+#   Created date: 2020-07-15
 #   Website     : https://pylessons.com/
 #   GitHub      : https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3
 #   Description : used to train custom object detector
@@ -18,6 +18,7 @@ from yolov3.dataset import Dataset
 from yolov3.yolov3 import Create_Yolov3, YOLOv3, decode, compute_loss
 from yolov3.utils import load_yolo_weights#, load_tiny_yolo_weights
 from yolov3.configs import *
+from evaluate_mAP import get_mAP
 
 Darknet_weights = YOLO_DARKNET_WEIGHTS
 if TRAIN_YOLO_TINY:
@@ -167,6 +168,9 @@ def main():
             best_val_loss = total_val/count
         if not TRAIN_SAVE_BEST_ONLY and not TRAIN_SAVE_CHECKPOINT:
             yolo.save_weights(os.path.join(TRAIN_CHECKPOINTS_FOLDER, TRAIN_MODEL_NAME))
+
+        # measure mAP of trained custom model
+        get_mAP(yolo, testset, score_threshold=TEST_SCORE_THRESHOLD, iou_threshold=TEST_IOU_THRESHOLD)
 
 
 if __name__ == '__main__':
