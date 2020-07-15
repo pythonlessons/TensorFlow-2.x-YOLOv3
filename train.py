@@ -177,6 +177,5 @@ def main():
     model.load_weights(save_directory) # use keras weights
     get_mAP(model, testset, score_threshold=TEST_SCORE_THRESHOLD, iou_threshold=TEST_IOU_THRESHOLD)
 
-
 if __name__ == '__main__':
     main()
