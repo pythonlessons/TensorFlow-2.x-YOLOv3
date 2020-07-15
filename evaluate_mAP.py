@@ -76,7 +76,7 @@ def voc_ap(rec, prec):
 
 def get_mAP(model, dataset, score_threshold=0.25, iou_threshold=0.50):
     MINOVERLAP = 0.5 # default value (defined in the PASCAL VOC2012 challenge)
-    NUM_CLASS = read_class_names(YOLO_COCO_CLASSES)
+    NUM_CLASS = read_class_names(TRAIN_CLASSES)
 
     ground_truth_dir_path = 'mAP/ground-truth'
     if os.path.exists(ground_truth_dir_path): shutil.rmtree(ground_truth_dir_path)
@@ -129,14 +129,15 @@ def get_mAP(model, dataset, score_threshold=0.25, iou_threshold=0.50):
         image_name = ann_dataset[0].split('/')[-1]
         original_image, bbox_data_gt = dataset.parse_annotation(ann_dataset, True)
         
-        image = image_preprocess(np.copy(original_image), [input_size, input_size])
+        image = image_preprocess(np.copy(original_image), [TEST_INPUT_SIZE, TEST_INPUT_SIZE])
         image_data = tf.expand_dims(image, 0)
 
         pred_bbox = model.predict(image_data)
+        
         pred_bbox = [tf.reshape(x, (-1, tf.shape(x)[-1])) for x in pred_bbox]
         pred_bbox = tf.concat(pred_bbox, axis=0)
 
-        bboxes = postprocess_boxes(pred_bbox, original_image, input_size, score_threshold)
+        bboxes = postprocess_boxes(pred_bbox, original_image, TEST_INPUT_SIZE, score_threshold)
         bboxes = nms(bboxes, iou_threshold, method='nms')
 
         for bbox in bboxes:
@@ -253,15 +254,15 @@ def get_mAP(model, dataset, score_threshold=0.25, iou_threshold=0.50):
         
         return mAP*100
 
+if __name__ == '__main__':
+    input_size = YOLO_INPUT_SIZE
+    Darknet_weights = YOLO_DARKNET_WEIGHTS
+    if TRAIN_YOLO_TINY:
+        Darknet_weights = YOLO_DARKNET_TINY_WEIGHTS
 
-input_size = YOLO_INPUT_SIZE
-Darknet_weights = YOLO_DARKNET_WEIGHTS
-if TRAIN_YOLO_TINY:
-    Darknet_weights = YOLO_DARKNET_TINY_WEIGHTS
+    yolo = Create_Yolov3(input_size=input_size)
+    load_yolo_weights(yolo, Darknet_weights) # use Darknet weights
 
-yolo = Create_Yolov3(input_size=input_size)
-load_yolo_weights(yolo, Darknet_weights) # use Darknet weights
+    testset = Dataset('test')
 
-testset = Dataset('test')
-
-get_mAP(yolo, testset, score_threshold=0.05, iou_threshold=0.50)
+    get_mAP(yolo, testset, score_threshold=0.05, iou_threshold=0.50)
