@@ -1,16 +1,15 @@
-
 #================================================================
 #
 #   File name   : evaluate_mAP.py
 #   Author      : PyLessons
-#   Created date: 2020-07-10
+#   Created date: 2020-07-15
 #   Website     : https://pylessons.com/
 #   GitHub      : https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3
 #   Description : used to evaluate model mAP
 #
 #================================================================
 import os
-os.environ['CUDA_VISIBLE_DEVICES'] = '0'
+#os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 import cv2
 import numpy as np
 import tensorflow as tf
@@ -128,7 +127,6 @@ def get_mAP(model, dataset, score_threshold=0.25, iou_threshold=0.50):
         ann_dataset = dataset.annotations[index]
 
         image_name = ann_dataset[0].split('/')[-1]
-        #print(image_name)
         original_image, bbox_data_gt = dataset.parse_annotation(ann_dataset, True)
         
         image = image_preprocess(np.copy(original_image), [input_size, input_size])
@@ -138,21 +136,9 @@ def get_mAP(model, dataset, score_threshold=0.25, iou_threshold=0.50):
         pred_bbox = [tf.reshape(x, (-1, tf.shape(x)[-1])) for x in pred_bbox]
         pred_bbox = tf.concat(pred_bbox, axis=0)
 
-        # 0.01, 0.50 = 55.311
-        # 0.01, 0.4 = 57.520
-        # 0.05, 0.4 = 54.933
-        # 0.05, 0.50 = 55.311
-        # 0.1, 0.4 = 52.587
-        # 0.15, 0.4 = 50.926
-        # 0.2, 0.4 = 49.528
-        # 0.25, 0.4 = 48.357
-        # 0.22, 0.35 = 48.226
-        #score_threshold=0.05
-        #iou_threshold=0.4#5
         bboxes = postprocess_boxes(pred_bbox, original_image, input_size, score_threshold)
         bboxes = nms(bboxes, iou_threshold, method='nms')
 
-        #predict_result_path = os.path.join(predicted_dir_path, str(index) + '.txt')
         for bbox in bboxes:
             coor = np.array(bbox[:4], dtype=np.int32)
             score = bbox[4]
@@ -169,7 +155,6 @@ def get_mAP(model, dataset, score_threshold=0.25, iou_threshold=0.50):
             json.dump(json_pred[gt_classes.index(class_name)], outfile)
 
     # Calculate the AP for each class
-    #MINOVERLAP = 0.5 # default value (defined in the PASCAL VOC2012 challenge)
     sum_AP = 0.0
     ap_dictionary = {}
     # open file to store the results
