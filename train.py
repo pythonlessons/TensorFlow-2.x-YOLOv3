@@ -169,8 +169,8 @@ def main():
         if not TRAIN_SAVE_BEST_ONLY and not TRAIN_SAVE_CHECKPOINT:
             yolo.save_weights(os.path.join(TRAIN_CHECKPOINTS_FOLDER, TRAIN_MODEL_NAME))
 
-        # measure mAP of trained custom model
-        get_mAP(yolo, testset, score_threshold=TEST_SCORE_THRESHOLD, iou_threshold=TEST_IOU_THRESHOLD)
+        # measure mAP of trained custom model (working on this)
+        #get_mAP(yolo, testset, score_threshold=TEST_SCORE_THRESHOLD, iou_threshold=TEST_IOU_THRESHOLD)
 
 
 if __name__ == '__main__':
