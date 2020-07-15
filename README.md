@@ -74,7 +74,7 @@ Quick test:
     <img src="IMAGES/tracking_results.gif"></a>
 </p>
 
-To be continued...
+What is done:
 --------------------
 - [x] Detection with original weights [Tutorial link](https://pylessons.com/YOLOv3-TF2-introduction/)
 - [x] Mnist detection training [Tutorial link](https://pylessons.com/YOLOv3-TF2-mnist/)
@@ -83,6 +83,9 @@ To be continued...
 - [x] YOLOv3-Tiny support [Tutorial link](https://pylessons.com/YOLOv3-TF2-Tiny/)
 - [X] Object tracking [Tutorial link](https://pylessons.com/YOLOv3-TF2-DeepSort/)
 - [X] Mean Average Precision (mAP) [Tutorial link](https://pylessons.com/YOLOv3-TF2-mAP/)
+
+To be continued...
+--------------------
 - [ ] Converting to TensorFlow Lite
 - [ ] Yolo v3 on Raspberry v3
 - [ ] Yolo v3 on Android (Not sure about this)
