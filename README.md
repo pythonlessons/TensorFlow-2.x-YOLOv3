@@ -1,6 +1,6 @@
 # TensorFlow-2.x-YOLOv3 tutorial
 
-YOLOv3 implementation in TensorFlow 2.x, with support for training, transfer training.
+YOLOv3 implementation in TensorFlow 2.x, with support for training, transfer training, object tracking.
 
 ## Installation
 First, clone or download this GitHub repository.
