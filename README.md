@@ -88,7 +88,7 @@ What is done:
 To be continued...
 --------------------
 - [ ] Converting to TensorFlow Lite
-- [ ] Yolo v3 on Android (Not sure about this)
+- [ ] Yolo v3 on Android (Leaving it for future, will need to convert everythin to java... not ready for this)
 - [ ] Convert to TensorRT model
 - [ ] Generating anchors
 - [ ] YOLACT: Real-time Instance Segmentation
