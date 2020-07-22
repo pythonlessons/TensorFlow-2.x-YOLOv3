@@ -83,11 +83,11 @@ What is done:
 - [x] YOLOv3-Tiny support [Tutorial link](https://pylessons.com/YOLOv3-TF2-Tiny/)
 - [X] Object tracking [Tutorial link](https://pylessons.com/YOLOv3-TF2-DeepSort/)
 - [X] Mean Average Precision (mAP) [Tutorial link](https://pylessons.com/YOLOv3-TF2-mAP/)
+- [X] Yolo v3 on Raspberry Pi [Tutorial link](https://pylessons.com/YOLOv3-TF2-RaspberryPi/)
 
 To be continued...
 --------------------
 - [ ] Converting to TensorFlow Lite
-- [ ] Yolo v3 on Raspberry v3
 - [ ] Yolo v3 on Android (Not sure about this)
 - [ ] Convert to TensorRT model
 - [ ] Generating anchors
