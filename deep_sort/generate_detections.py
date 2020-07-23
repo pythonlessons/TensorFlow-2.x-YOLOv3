@@ -79,8 +79,13 @@ class ImageEncoder(object):
             graph_def = tf.GraphDef()
             graph_def.ParseFromString(file_handle.read())
         tf.import_graph_def(graph_def)
-        self.input_var = tf.get_default_graph().get_tensor_by_name(input_name)
-        self.output_var = tf.get_default_graph().get_tensor_by_name(output_name)
+        try:
+            self.input_var = tf.get_default_graph().get_tensor_by_name(input_name)
+            self.output_var = tf.get_default_graph().get_tensor_by_name(output_name)
+        except KeyError:
+            layers = [i.name for i in tf.get_default_graph().get_operations()]
+            self.input_var = tf.get_default_graph().get_tensor_by_name(layers[0]+':0')
+            self.output_var = tf.get_default_graph().get_tensor_by_name(layers[-1]+':0')            
 
         assert len(self.output_var.get_shape()) == 2
         assert len(self.input_var.get_shape()) == 4
