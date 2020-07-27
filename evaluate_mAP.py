@@ -256,7 +256,7 @@ def get_mAP(model, dataset, score_threshold=0.25, iou_threshold=0.50):
 
 if __name__ == '__main__':
     input_size = YOLO_INPUT_SIZE
-    if MAP_CUSTOM:
+    if YOLO_CUSTOM_WEIGHTS != False:
         weights = YOLO_CUSTOM_WEIGHTS
         yolo = Create_Yolov3(input_size=input_size, CLASSES=TRAIN_CLASSES)
         yolo.load_weights(weights)        
