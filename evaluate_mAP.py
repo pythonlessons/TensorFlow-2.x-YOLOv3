@@ -256,12 +256,17 @@ def get_mAP(model, dataset, score_threshold=0.25, iou_threshold=0.50):
 
 if __name__ == '__main__':
     input_size = YOLO_INPUT_SIZE
-    Darknet_weights = YOLO_DARKNET_WEIGHTS
-    if TRAIN_YOLO_TINY:
-        Darknet_weights = YOLO_DARKNET_TINY_WEIGHTS
+    if MAP_CUSTOM:
+        weights = YOLO_CUSTOM_WEIGHTS
+        yolo = Create_Yolov3(input_size=input_size, CLASSES=TRAIN_CLASSES)
+        yolo.load_weights(weights)        
+    else:
+        Darknet_weights = YOLO_DARKNET_WEIGHTS
+        if TRAIN_YOLO_TINY:
+            Darknet_weights = YOLO_DARKNET_TINY_WEIGHTS
 
-    yolo = Create_Yolov3(input_size=input_size)
-    load_yolo_weights(yolo, Darknet_weights) # use Darknet weights
+        yolo = Create_Yolov3(input_size=input_size)
+        load_yolo_weights(yolo, Darknet_weights) # use Darknet weights
 
     testset = Dataset('test')
 
