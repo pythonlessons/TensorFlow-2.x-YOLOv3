@@ -88,9 +88,11 @@ What is done:
 To be continued...
 --------------------
 - [ ] Converting to TensorFlow Lite
-- [ ] Yolo v3 on Android (Leaving it for future, will need to convert everythin to java... not ready for this)
+- [ ] YOLO on Android (Leaving it for future, will need to convert everythin to java... not ready for this)
 - [ ] Convert to TensorRT model
 - [ ] Generating anchors
 - [ ] YOLACT: Real-time Instance Segmentation
 - [ ] Model pruning (Pruning is a technique in deep learning that aids in the development of smaller and more efficient neural networks. It's a model optimization technique that involves eliminating unnecessary values in the weight tensor.)
-- [ ] Yolo v4
+- [ ] YOLOv4 and YOLOv4-tiny detection
+- [ ] YOLOv4 and YOLOv4-tiny detection training
+- [ ] Add multiprocessing after detection (drawing bbox)
