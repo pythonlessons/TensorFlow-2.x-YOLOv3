@@ -11,7 +11,7 @@
 
 # YOLO options
 YOLO_DARKNET_WEIGHTS        = "model_data/yolov3.weights"
-YOLO_CUSTOM_WEIGHTS			    = False # "checkpoints/yolov3_custom" # used in evaluate_mAP.py, if not using leave False
+YOLO_CUSTOM_WEIGHTS         = False # "checkpoints/yolov3_custom" # used in evaluate_mAP.py, if not using leave False
 YOLO_DARKNET_TINY_WEIGHTS   = "model_data/yolov3-tiny.weights"
 YOLO_COCO_CLASSES           = "model_data/coco/coco.names"
 YOLO_STRIDES                = [8, 16, 32]
