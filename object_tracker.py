@@ -2,7 +2,7 @@
 #
 #   File name   : object_tracker.py
 #   Author      : PyLessons
-#   Created date: 2020-06-23
+#   Created date: 2020-07-27
 #   Website     : https://pylessons.com/
 #   GitHub      : https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3
 #   Description : code to track detected object from video or webcam
@@ -14,6 +14,7 @@ import cv2
 import numpy as np
 import tensorflow as tf
 from yolov3.yolov3 import Create_Yolov3
+from yolov3.yolov4 import Create_Yolo
 from yolov3.utils import load_yolo_weights, image_preprocess, postprocess_boxes, nms, draw_bbox, read_class_names#, detect_image, detect_video, detect_realtime
 import time
 from yolov3.configs import *
@@ -23,16 +24,15 @@ from deep_sort.detection import Detection
 from deep_sort.tracker import Tracker
 from deep_sort import generate_detections as gdet
 
-input_size = YOLO_INPUT_SIZE
-Darknet_weights = YOLO_DARKNET_WEIGHTS
-if TRAIN_YOLO_TINY:
-    Darknet_weights = YOLO_DARKNET_TINY_WEIGHTS
+if YOLO_TYPE == "yolov4":
+    Darknet_weights = YOLO_V4_TINY_WEIGHTS if TRAIN_YOLO_TINY else YOLO_V4_WEIGHTS
+if YOLO_TYPE == "yolov3":
+    Darknet_weights = YOLO_V3_TINY_WEIGHTS if TRAIN_YOLO_TINY else YOLO_V3_WEIGHTS
 
 video_path   = "./IMAGES/test.mp4"
 
-yolo = Create_Yolov3(input_size=input_size)
+yolo = Create_Yolo(input_size=YOLO_INPUT_SIZE)
 load_yolo_weights(yolo, Darknet_weights) # use Darknet weights
-
 def Object_tracking(YoloV3, video_path, output_path, input_size=416, show=False, CLASSES=YOLO_COCO_CLASSES, score_threshold=0.3, iou_threshold=0.45, rectangle_colors='', Track_only = []):
     # Definition of the parameters
     max_cosine_distance = 0.7
