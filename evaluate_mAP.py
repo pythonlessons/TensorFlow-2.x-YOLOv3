@@ -2,23 +2,25 @@
 #
 #   File name   : evaluate_mAP.py
 #   Author      : PyLessons
-#   Created date: 2020-07-15
+#   Created date: 2020-07-31
 #   Website     : https://pylessons.com/
 #   GitHub      : https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3
-#   Description : used to evaluate model mAP
+#   Description : used to evaluate model mAP and FPS
 #
 #================================================================
 import os
-#os.environ['CUDA_VISIBLE_DEVICES'] = '0'
+os.environ['CUDA_VISIBLE_DEVICES'] = '1'
 import cv2
 import numpy as np
 import tensorflow as tf
 from yolov3.dataset import Dataset
-from yolov3.yolov3 import Create_Yolov3
+#from yolov3.yolov3 import Create_Yolov3
+from yolov3.yolov4 import Create_Yolo
 from yolov3.utils import load_yolo_weights, detect_image, image_preprocess, postprocess_boxes, nms, read_class_names
 from yolov3.configs import *
 import shutil
 import json
+import time
 
 gpus = tf.config.experimental.list_physical_devices('GPU')
 if len(gpus) > 0:
@@ -74,7 +76,7 @@ def voc_ap(rec, prec):
     return ap, mrec, mpre
 
 
-def get_mAP(model, dataset, score_threshold=0.25, iou_threshold=0.50):
+def get_mAP(model, dataset, score_threshold=0.25, iou_threshold=0.50, TEST_INPUT_SIZE=TEST_INPUT_SIZE):
     MINOVERLAP = 0.5 # default value (defined in the PASCAL VOC2012 challenge)
     NUM_CLASS = read_class_names(TRAIN_CLASSES)
 
@@ -122,6 +124,7 @@ def get_mAP(model, dataset, score_threshold=0.25, iou_threshold=0.50):
     gt_classes = sorted(gt_classes)
     n_classes = len(gt_classes)
 
+    times = []
     json_pred = [[] for i in range(n_classes)]
     for index in range(dataset.num_samples):
         ann_dataset = dataset.annotations[index]
@@ -132,7 +135,10 @@ def get_mAP(model, dataset, score_threshold=0.25, iou_threshold=0.50):
         image = image_preprocess(np.copy(original_image), [TEST_INPUT_SIZE, TEST_INPUT_SIZE])
         image_data = tf.expand_dims(image, 0)
 
+        t1 = time.time()
         pred_bbox = model.predict(image_data)
+        t2 = time.time()
+        times.append(t2-t1)
         
         pred_bbox = [tf.reshape(x, (-1, tf.shape(x)[-1])) for x in pred_bbox]
         pred_bbox = tf.concat(pred_bbox, axis=0)
@@ -149,6 +155,9 @@ def get_mAP(model, dataset, score_threshold=0.25, iou_threshold=0.50):
             xmin, ymin, xmax, ymax = list(map(str, coor))
             bbox = xmin + " " + ymin + " " + xmax + " " +ymax
             json_pred[gt_classes.index(class_name)].append({"confidence": str(score), "file_id": str(index), "bbox": str(bbox)})
+
+    ms = sum(times)/len(times)*1000
+    fps = 1000 / ms
 
     for class_name in gt_classes:
         json_pred[gt_classes.index(class_name)].sort(key=lambda x:float(x['confidence']), reverse=True)
@@ -248,26 +257,26 @@ def get_mAP(model, dataset, score_threshold=0.25, iou_threshold=0.50):
 
         results_file.write("\n# mAP of all classes\n")
         mAP = sum_AP / n_classes
-        text = "mAP = {0:.3f}%".format(mAP*100)
+
+        text = "mAP = {:.3f}%, {:.2f} FPS".format(mAP*100, fps)
         results_file.write(text + "\n")
         print(text)
         
         return mAP*100
 
 if __name__ == '__main__':
-    input_size = YOLO_INPUT_SIZE
     if YOLO_CUSTOM_WEIGHTS != False:
         weights = YOLO_CUSTOM_WEIGHTS
-        yolo = Create_Yolov3(input_size=input_size, CLASSES=TRAIN_CLASSES)
+        yolo = Create_Yolo(input_size=YOLO_INPUT_SIZE, CLASSES=TRAIN_CLASSES)
         yolo.load_weights(weights)        
     else:
-        Darknet_weights = YOLO_DARKNET_WEIGHTS
-        if TRAIN_YOLO_TINY:
-            Darknet_weights = YOLO_DARKNET_TINY_WEIGHTS
+        if YOLO_TYPE == "yolov4":
+            Darknet_weights = YOLO_V4_TINY_WEIGHTS if TRAIN_YOLO_TINY else YOLO_V4_WEIGHTS
+        if YOLO_TYPE == "yolov3":
+            Darknet_weights = YOLO_V3_TINY_WEIGHTS if TRAIN_YOLO_TINY else YOLO_V3_WEIGHTS
 
-        yolo = Create_Yolov3(input_size=input_size)
+        yolo = Create_Yolo(input_size=YOLO_INPUT_SIZE)
         load_yolo_weights(yolo, Darknet_weights) # use Darknet weights
 
-    testset = Dataset('test')
-
-    get_mAP(yolo, testset, score_threshold=0.05, iou_threshold=0.50)
+    testset = Dataset('test', TEST_INPUT_SIZE=YOLO_INPUT_SIZE)
+    get_mAP(yolo, testset, score_threshold=0.05, iou_threshold=0.50, TEST_INPUT_SIZE=YOLO_INPUT_SIZE)
