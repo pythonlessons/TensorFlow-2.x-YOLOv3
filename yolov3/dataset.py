@@ -2,7 +2,7 @@
 #
 #   File name   : dataset.py
 #   Author      : PyLessons
-#   Created date: 2020-07-15
+#   Created date: 2020-07-31
 #   Website     : https://pylessons.com/
 #   GitHub      : https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3
 #   Description : functions used to prepare dataset for custom training
@@ -21,7 +21,7 @@ from yolov3.configs import *
 
 class Dataset(object):
     # Dataset preprocess implementation
-    def __init__(self, dataset_type):
+    def __init__(self, dataset_type, TEST_INPUT_SIZE=TEST_INPUT_SIZE):
         self.annot_path  = TRAIN_ANNOT_PATH if dataset_type == 'train' else TEST_ANNOT_PATH
         self.input_sizes = TRAIN_INPUT_SIZE if dataset_type == 'train' else TEST_INPUT_SIZE
         self.batch_size  = TRAIN_BATCH_SIZE if dataset_type == 'train' else TEST_BATCH_SIZE
