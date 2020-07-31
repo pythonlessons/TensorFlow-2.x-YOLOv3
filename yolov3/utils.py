@@ -2,10 +2,10 @@
 #
 #   File name   : utils.py
 #   Author      : PyLessons
-#   Created date: 2020-07-15
+#   Created date: 2020-07-27
 #   Website     : https://pylessons.com/
 #   GitHub      : https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3
-#   Description : additional yolov3 functions
+#   Description : additional yolov3 and yolov4 functions
 #
 #================================================================
 import cv2
@@ -18,9 +18,13 @@ from yolov3.configs import *
 
 def load_yolo_weights(model, weights_file):
     tf.keras.backend.clear_session() # used to reset layer names
-    # load Darknet original weights to Keras model
-    range1 = 75 if not TRAIN_YOLO_TINY else 13
-    range2 = [58, 66, 74] if not TRAIN_YOLO_TINY else [9, 12] 
+    # load Darknet original weights to TensorFlow model
+    if YOLO_TYPE == "yolov3":
+        range1 = 75 if not TRAIN_YOLO_TINY else 13
+        range2 = [58, 66, 74] if not TRAIN_YOLO_TINY else [9, 12]
+    if YOLO_TYPE == "yolov4":
+        range1 = 110 if not TRAIN_YOLO_TINY else 21
+        range2 = [93, 101, 109] if not TRAIN_YOLO_TINY else [17, 20]
     
     with open(weights_file, 'rb') as wf:
         major, minor, revision, seen, _ = np.fromfile(wf, dtype=np.int32, count=5)
