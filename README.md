@@ -80,6 +80,18 @@ Quick test:
     <img src="IMAGES/tracking_results.gif"></a>
 </p>
 
+## YOLOv3 vs YOLOv4 comparison on 1080TI:
+
+| Detection   | 320x320 | 416x416 | 512x512 |
+|-------------|---------|---------|---------|
+| YoloV3 FPS  | 24.38   | 19.02   | 18.57   |
+| YoloV4 FPS  | 22.15   | 21.29   | 16.50   |
+
+| Detection   | 320x320 | 416x416 | 512x512 |
+|-------------|---------|---------|---------|
+| YoloV3 mAP  | 49.85   | 55.31   | 57.48   |
+| YoloV4 mAP  | 48.58   | 56.92   | 61.71   |
+
 What is done:
 --------------------
 - [x] Detection with original weights [Tutorial link](https://pylessons.com/YOLOv3-TF2-introduction/)
