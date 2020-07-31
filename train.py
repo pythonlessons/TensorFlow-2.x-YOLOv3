@@ -2,7 +2,7 @@
 #
 #   File name   : train.py
 #   Author      : PyLessons
-#   Created date: 2020-07-15
+#   Created date: 2020-07-27
 #   Website     : https://pylessons.com/
 #   GitHub      : https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3
 #   Description : used to train custom object detector
@@ -16,16 +16,16 @@ import tensorflow as tf
 #from tensorflow.keras.utils import plot_model
 from yolov3.dataset import Dataset
 from yolov3.yolov3 import Create_Yolov3, YOLOv3, decode, compute_loss
-from yolov3.utils import load_yolo_weights#, load_tiny_yolo_weights
+from yolov3.yolov4 import Create_Yolo
+from yolov3.utils import load_yolo_weights
 from yolov3.configs import *
 from evaluate_mAP import get_mAP
-
-Darknet_weights = YOLO_DARKNET_WEIGHTS
-if TRAIN_YOLO_TINY:
-    TRAIN_MODEL_NAME = TRAIN_MODEL_NAME+"_Tiny"
-    Darknet_weights = YOLO_DARKNET_TINY_WEIGHTS
+    
+Darknet_weights = YOLO_V3_TINY_WEIGHTS if TRAIN_YOLO_TINY else YOLO_V3_WEIGHTS
+if TRAIN_YOLO_TINY: TRAIN_MODEL_NAME += "_Tiny"
 
 def main():
+    if YOLO_TYPE != "yolov3": return "yolov4 training is not supported yet, change configurations to yolov3"
     global TRAIN_FROM_CHECKPOINT
     
     gpus = tf.config.experimental.list_physical_devices('GPU')
