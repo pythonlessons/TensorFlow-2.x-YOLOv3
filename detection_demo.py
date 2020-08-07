@@ -29,6 +29,6 @@ video_path   = "./IMAGES/test.mp4"
 yolo = Create_Yolo(input_size=YOLO_INPUT_SIZE)
 load_yolo_weights(yolo, Darknet_weights) # use Darknet weights
 
-#detect_image(yolo, image_path, '', input_size=YOLO_INPUT_SIZE, show=True, rectangle_colors=(255,0,0))
-detect_video(yolo, video_path, '', input_size=YOLO_INPUT_SIZE, show=True, rectangle_colors=(255,0,0))
+detect_image(yolo, image_path, "./IMAGES/kite_pred.jpg", input_size=YOLO_INPUT_SIZE, show=True, rectangle_colors=(255,0,0))
+#detect_video(yolo, video_path, '', input_size=YOLO_INPUT_SIZE, show=True, rectangle_colors=(255,0,0))
 #detect_realtime(yolo, '', input_size=YOLO_INPUT_SIZE, show=True, rectangle_colors=(255, 0, 0))
