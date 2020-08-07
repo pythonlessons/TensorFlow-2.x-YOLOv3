@@ -2,7 +2,7 @@
 #
 #   File name   : train.py
 #   Author      : PyLessons
-#   Created date: 2020-07-27
+#   Created date: 2020-08-06
 #   Website     : https://pylessons.com/
 #   GitHub      : https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3
 #   Description : used to train custom object detector
@@ -15,17 +15,18 @@ import numpy as np
 import tensorflow as tf
 #from tensorflow.keras.utils import plot_model
 from yolov3.dataset import Dataset
-from yolov3.yolov3 import Create_Yolov3, YOLOv3, decode, compute_loss
-from yolov3.yolov4 import Create_Yolo
+from yolov3.yolov4 import Create_Yolo, compute_loss
 from yolov3.utils import load_yolo_weights
 from yolov3.configs import *
 from evaluate_mAP import get_mAP
     
-Darknet_weights = YOLO_V3_TINY_WEIGHTS if TRAIN_YOLO_TINY else YOLO_V3_WEIGHTS
+if YOLO_TYPE == "yolov4":
+    Darknet_weights = YOLO_V4_TINY_WEIGHTS if TRAIN_YOLO_TINY else YOLO_V4_WEIGHTS
+if YOLO_TYPE == "yolov3":
+    Darknet_weights = YOLO_V3_TINY_WEIGHTS if TRAIN_YOLO_TINY else YOLO_V3_WEIGHTS
 if TRAIN_YOLO_TINY: TRAIN_MODEL_NAME += "_Tiny"
 
 def main():
-    if YOLO_TYPE != "yolov3": return "yolov4 training is not supported yet, change configurations to yolov3"
     global TRAIN_FROM_CHECKPOINT
     
     gpus = tf.config.experimental.list_physical_devices('GPU')
@@ -45,11 +46,10 @@ def main():
     total_steps = TRAIN_EPOCHS * steps_per_epoch
 
     if TRAIN_TRANSFER:
-        Darknet = Create_Yolov3(input_size=YOLO_INPUT_SIZE)
+        Darknet = Create_Yolo(input_size=YOLO_INPUT_SIZE)
         load_yolo_weights(Darknet, Darknet_weights) # use darknet weights
-        #load_tiny_yolo_weights(Darknet, Darknet_weights) # use darknet weights
 
-    yolo = Create_Yolov3(input_size=YOLO_INPUT_SIZE, training=True, CLASSES=TRAIN_CLASSES)
+    yolo = Create_Yolo(input_size=YOLO_INPUT_SIZE, training=True, CLASSES=TRAIN_CLASSES)
     if TRAIN_FROM_CHECKPOINT:
         try:
             yolo.load_weights(TRAIN_FROM_CHECKPOINT)
@@ -173,7 +173,7 @@ def main():
             yolo.save_weights(save_directory)
 
     # measure mAP of trained custom model
-    model = Create_Yolov3(input_size=YOLO_INPUT_SIZE, CLASSES=TRAIN_CLASSES)
+    model = Create_Yolo(input_size=YOLO_INPUT_SIZE, CLASSES=TRAIN_CLASSES)
     model.load_weights(save_directory) # use keras weights
     get_mAP(model, testset, score_threshold=TEST_SCORE_THRESHOLD, iou_threshold=TEST_IOU_THRESHOLD)
 
