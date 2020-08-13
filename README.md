@@ -57,9 +57,10 @@ Results:
     <img width="40%" src="IMAGES/mnist_test.jpg" style="max-width:40%;"></a>
 </p>
 
-## Custom Yolo v3 object detection training
+## Custom YOLOv3 & YOLOv4 object detection training
 Custom training required to prepare dataset first, how to prepare dataset and train custom model you can read in following link:<br>
 https://pylessons.com/YOLOv3-TF2-custrom-train/
+More about YOLOv4 training you can read [on tis link](https://pylessons.com/YOLOv4-TF2-training/). I didn’t have time to implement all YOLOv4 Bag-Of-Freebies to improve the training process… Maybe later I’ll find time to do that, but now I leave it as it is. I recommended to use [Alex's Darknet](https://github.com/AlexeyAB/darknet) to train your custom model, if you need maximum performance, otherwise, you can use my implementation.
 
 ## Google Colab Custom Yolo v3 training
 To learn more about Google Colab Free gpu training, visit my [text version tutorial](https://pylessons.com/YOLOv3-TF2-GoogleColab/)
@@ -104,6 +105,7 @@ What is done:
 - [X] Mean Average Precision (mAP) [Tutorial link](https://pylessons.com/YOLOv3-TF2-mAP/)
 - [X] Yolo v3 on Raspberry Pi [Tutorial link](https://pylessons.com/YOLOv3-TF2-RaspberryPi/)
 - [X] YOLOv4 and YOLOv4-tiny detection [Tutorial link](https://pylessons.com/YOLOv4-TF2-introduction/)
+- [X] YOLOv4 and YOLOv4-tiny detection training (Not fully) [Tutorial link](https://pylessons.com/YOLOv4-TF2-training/)
 
 To be continued...
 --------------------
@@ -113,5 +115,4 @@ To be continued...
 - [ ] Generating anchors
 - [ ] YOLACT: Real-time Instance Segmentation
 - [ ] Model pruning (Pruning is a technique in deep learning that aids in the development of smaller and more efficient neural networks. It's a model optimization technique that involves eliminating unnecessary values in the weight tensor.)
-- [ ] YOLOv4 and YOLOv4-tiny detection training
 - [ ] Add multiprocessing after detection (drawing bbox)
