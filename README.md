@@ -59,7 +59,7 @@ Results:
 
 ## Custom YOLOv3 & YOLOv4 object detection training
 Custom training required to prepare dataset first, how to prepare dataset and train custom model you can read in following link:<br>
-https://pylessons.com/YOLOv3-TF2-custrom-train/
+https://pylessons.com/YOLOv3-TF2-custrom-train/<br>
 More about YOLOv4 training you can read [on tis link](https://pylessons.com/YOLOv4-TF2-training/). I didn’t have time to implement all YOLOv4 Bag-Of-Freebies to improve the training process… Maybe later I’ll find time to do that, but now I leave it as it is. I recommended to use [Alex's Darknet](https://github.com/AlexeyAB/darknet) to train your custom model, if you need maximum performance, otherwise, you can use my implementation.
 
 ## Google Colab Custom Yolo v3 training
