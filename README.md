@@ -92,8 +92,8 @@ YOLO FPS on COCO 2017 Dataset:
 TensorRT FPS on COCO 2017 Dataset:
 | Detection       | 320x320 | 416x416 | 512x512 | 608x608 |
 |-----------------|---------|---------|---------|---------|
-| YoloV4 FP32 FPS |         | 27.30   |         |         |
-| YoloV4 FP16 FPS |         |         |         |         |
+| YoloV4 FP32 FPS |         | 27.30   | 22.63   | 18.17   |
+| YoloV4 FP16 FPS |         |         | 21.94   | 17.99   |
 | YoloV4 INT8 FPS |         | 62.02   | 47.50   | 37.32   |
 
 mAP on COCO 2017 Dataset:
@@ -105,8 +105,8 @@ mAP on COCO 2017 Dataset:
 TensorRT mAP on COCO 2017 Dataset:
 | Detection         | 320x320 | 416x416 | 512x512 | 608x608 |
 |-------------------|---------|---------|---------|---------|
-| YoloV4 FP32 mAP50 |         | 56.92   |         |         |
-| YoloV4 FP16 mAP50 |         |         |         |         |
+| YoloV4 FP32 mAP50 |         | 56.92   | 61.71   | 63.92   |
+| YoloV4 FP16 mAP50 |         |         | 61.69   | 63.92   |
 | YoloV4 INT8 mAP50 |         | 48.36   | 52.84   | 54.53   |
 
 
