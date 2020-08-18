@@ -8,10 +8,6 @@
 #   Description : convert TF frozen graph to TensorRT model
 #
 #================================================================
-
-# https://medium.com/tensorflow/speed-up-tensorflow-inference-on-gpus-with-tensorrt-13b49f3db3fa
-# https://medium.com/tensorflow/speed-up-tensorflow-inference-on-gpus-with-tensorrt-13b49f3db3fa
-# https://medium.com/@sujit.kumar731/conversion-of-keras-model-to-tensorrt-model-443c92801622
 import os
 os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 import sys
