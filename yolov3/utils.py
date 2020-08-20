@@ -2,7 +2,7 @@
 #
 #   File name   : utils.py
 #   Author      : PyLessons
-#   Created date: 2020-07-27
+#   Created date: 2020-08-20
 #   Website     : https://pylessons.com/
 #   GitHub      : https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3
 #   Description : additional yolov3 and yolov4 functions
@@ -248,15 +248,24 @@ def postprocess_boxes(pred_bbox, original_image, input_size, score_threshold):
     return np.concatenate([coors, scores[:, np.newaxis], classes[:, np.newaxis]], axis=-1)
 
 
-def detect_image(YoloV3, image_path, output_path, input_size=416, show=False, CLASSES=YOLO_COCO_CLASSES, score_threshold=0.3, iou_threshold=0.45, rectangle_colors=''):
+def detect_image(Yolo, image_path, output_path, input_size=416, show=False, CLASSES=YOLO_COCO_CLASSES, score_threshold=0.3, iou_threshold=0.45, rectangle_colors=''):
     original_image      = cv2.imread(image_path)
     original_image      = cv2.cvtColor(original_image, cv2.COLOR_BGR2RGB)
     original_image      = cv2.cvtColor(original_image, cv2.COLOR_BGR2RGB)
 
     image_data = image_preprocess(np.copy(original_image), [input_size, input_size])
-    image_data = tf.expand_dims(image_data, 0)
+    image_data = image_data[np.newaxis, ...].astype(np.float32)
 
-    pred_bbox = YoloV3.predict(image_data)
+    if YOLO_FRAMEWORK == "tf":
+        pred_bbox = Yolo.predict(image_data)
+    elif YOLO_FRAMEWORK == "trt":
+        batched_input = tf.constant(image_data)
+        result = Yolo(batched_input)
+        pred_bbox = []
+        for key, value in result.items():
+            value = value.numpy()
+            pred_bbox.append(value)
+        
     pred_bbox = [tf.reshape(x, (-1, tf.shape(x)[-1])) for x in pred_bbox]
     pred_bbox = tf.concat(pred_bbox, axis=0)
     
@@ -276,8 +285,8 @@ def detect_image(YoloV3, image_path, output_path, input_size=416, show=False, CL
         
     return image
 
-def detect_video(YoloV3, video_path, output_path, input_size=416, show=False, CLASSES=YOLO_COCO_CLASSES, score_threshold=0.3, iou_threshold=0.45, rectangle_colors=''):
-    times = []
+def detect_video(Yolo, video_path, output_path, input_size=416, show=False, CLASSES=YOLO_COCO_CLASSES, score_threshold=0.3, iou_threshold=0.45, rectangle_colors=''):
+    times, times_2 = [], []
     vid = cv2.VideoCapture(video_path)
 
     # by default VideoCapture returns float instead of int
@@ -296,10 +305,19 @@ def detect_video(YoloV3, video_path, output_path, input_size=416, show=False, CL
         except:
             break
         image_data = image_preprocess(np.copy(original_image), [input_size, input_size])
-        image_data = tf.expand_dims(image_data, 0)
-        
+        image_data = image_data[np.newaxis, ...].astype(np.float32)
+
         t1 = time.time()
-        pred_bbox = YoloV3.predict(image_data)
+        if YOLO_FRAMEWORK == "tf":
+            pred_bbox = Yolo.predict(image_data)
+        elif YOLO_FRAMEWORK == "trt":
+            batched_input = tf.constant(image_data)
+            result = Yolo(batched_input)
+            pred_bbox = []
+            for key, value in result.items():
+                value = value.numpy()
+                pred_bbox.append(value)
+        
         t2 = time.time()
         
         pred_bbox = [tf.reshape(x, (-1, tf.shape(x)[-1])) for x in pred_bbox]
@@ -308,18 +326,23 @@ def detect_video(YoloV3, video_path, output_path, input_size=416, show=False, CL
         bboxes = postprocess_boxes(pred_bbox, original_image, input_size, score_threshold)
         bboxes = nms(bboxes, iou_threshold, method='nms')
         
+        image = draw_bbox(original_image, bboxes, CLASSES=CLASSES, rectangle_colors=rectangle_colors)
+
+        t3 = time.time()
         times.append(t2-t1)
-        times = times[-20:]
+        times_2.append(t3-t1)
         
+        times = times[-20:]
+        times_2 = times_2[-20:]
+
         ms = sum(times)/len(times)*1000
         fps = 1000 / ms
+        fps2 = 1000 / (sum(times_2)/len(times_2)*1000)
         
-        print("Time: {:.2f}ms, {:.1f} FPS".format(ms, fps))
-
-        image = draw_bbox(original_image, bboxes, CLASSES=CLASSES, rectangle_colors=rectangle_colors)
         image = cv2.putText(image, "Time: {:.1f}FPS".format(fps), (0, 30),
                           cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0, 0, 255), 2)
-
+        
+        print("Time: {:.2f}ms, Detection FPS: {:.1f}, total FPS: {:.1f}".format(ms, fps, fps2))
         if output_path != '': out.write(image)
         if show:
             cv2.imshow('output', image)
@@ -330,7 +353,7 @@ def detect_video(YoloV3, video_path, output_path, input_size=416, show=False, CL
     cv2.destroyAllWindows()
 
 # detect from webcam
-def detect_realtime(YoloV3, output_path, input_size=416, show=False, CLASSES=YOLO_COCO_CLASSES, score_threshold=0.3, iou_threshold=0.45, rectangle_colors=''):
+def detect_realtime(Yolo, output_path, input_size=416, show=False, CLASSES=YOLO_COCO_CLASSES, score_threshold=0.3, iou_threshold=0.45, rectangle_colors=''):
     times = []
     vid = cv2.VideoCapture(0)
 
@@ -349,11 +372,21 @@ def detect_realtime(YoloV3, output_path, input_size=416, show=False, CLASSES=YOL
             original_frame = cv2.cvtColor(original_frame, cv2.COLOR_BGR2RGB)
         except:
             break
-        image_frame = image_preprocess(np.copy(original_frame), [input_size, input_size])
-        image_frame = tf.expand_dims(image_frame, 0)
-        
+        image_data = image_preprocess(np.copy(original_frame), [input_size, input_size])
+        #image_data = tf.expand_dims(image_data, 0)
+        image_data = image_data[np.newaxis, ...].astype(np.float32)
+
         t1 = time.time()
-        pred_bbox = YoloV3.predict(image_frame)
+        if YOLO_FRAMEWORK == "tf":
+            pred_bbox = Yolo.predict(image_data)
+        elif YOLO_FRAMEWORK == "trt":
+            batched_input = tf.constant(image_data)
+            result = Yolo(batched_input)
+            pred_bbox = []
+            for key, value in result.items():
+                value = value.numpy()
+                pred_bbox.append(value)
+        
         t2 = time.time()
         
         pred_bbox = [tf.reshape(x, (-1, tf.shape(x)[-1])) for x in pred_bbox]
