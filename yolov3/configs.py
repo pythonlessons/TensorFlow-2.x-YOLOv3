@@ -2,7 +2,7 @@
 #
 #   File name   : configs.py
 #   Author      : PyLessons
-#   Created date: 2020-07-31
+#   Created date: 2020-08-18
 #   Website     : https://pylessons.com/
 #   GitHub      : https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3
 #   Description : yolov3 configuration file
@@ -11,11 +11,15 @@
 
 # YOLO options
 YOLO_TYPE                   = "yolov3" # yolov4 or yolov3
+YOLO_FRAMEWORK              = "tf" # "tf" or "trt"
 YOLO_V3_WEIGHTS             = "model_data/yolov3.weights"
 YOLO_V4_WEIGHTS             = "model_data/yolov4.weights"
 YOLO_V3_TINY_WEIGHTS        = "model_data/yolov3-tiny.weights"
 YOLO_V4_TINY_WEIGHTS        = "model_data/yolov4-tiny.weights"
+YOLO_TRT_QUANTIZE_MODE      = "INT8" # INT8, FP16, FP32
 YOLO_CUSTOM_WEIGHTS         = False # "checkpoints/yolov3_custom" # used in evaluate_mAP.py, if not using leave False
+                            # YOLO_CUSTOM_WEIGHTS also used with TensorRT and custom model detection
+YOLO_COCO_CLASSES           = "model_data/coco/coco.names"
 YOLO_COCO_CLASSES           = "model_data/coco/coco.names"
 YOLO_STRIDES                = [8, 16, 32]
 YOLO_IOU_LOSS_THRESH        = 0.5
@@ -38,7 +42,7 @@ TRAIN_CLASSES               = "mnist/mnist.names"
 TRAIN_ANNOT_PATH            = "mnist/mnist_train.txt"
 TRAIN_LOGDIR                = "log"
 TRAIN_CHECKPOINTS_FOLDER    = "checkpoints"
-TRAIN_MODEL_NAME            = "yolov3_custom"
+TRAIN_MODEL_NAME            = f"{YOLO_TYPE}_custom"
 TRAIN_LOAD_IMAGES_TO_RAM    = False # faster training, but need more RAM
 TRAIN_BATCH_SIZE            = 8
 TRAIN_INPUT_SIZE            = 416
