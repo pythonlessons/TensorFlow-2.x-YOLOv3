@@ -2,19 +2,19 @@
 #
 #   File name   : evaluate_mAP.py
 #   Author      : PyLessons
-#   Created date: 2020-07-31
+#   Created date: 2020-08-17
 #   Website     : https://pylessons.com/
 #   GitHub      : https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3
 #   Description : used to evaluate model mAP and FPS
 #
 #================================================================
 import os
-os.environ['CUDA_VISIBLE_DEVICES'] = '0'
+os.environ['CUDA_VISIBLE_DEVICES'] = '1'
 import cv2
 import numpy as np
 import tensorflow as tf
+from tensorflow.python.saved_model import tag_constants
 from yolov3.dataset import Dataset
-#from yolov3.yolov3 import Create_Yolov3
 from yolov3.yolov4 import Create_Yolo
 from yolov3.utils import load_yolo_weights, detect_image, image_preprocess, postprocess_boxes, nms, read_class_names
 from yolov3.configs import *
@@ -76,7 +76,7 @@ def voc_ap(rec, prec):
     return ap, mrec, mpre
 
 
-def get_mAP(model, dataset, score_threshold=0.25, iou_threshold=0.50, TEST_INPUT_SIZE=TEST_INPUT_SIZE):
+def get_mAP(Yolo, dataset, score_threshold=0.25, iou_threshold=0.50, TEST_INPUT_SIZE=TEST_INPUT_SIZE):
     MINOVERLAP = 0.5 # default value (defined in the PASCAL VOC2012 challenge)
     NUM_CLASS = read_class_names(TRAIN_CLASSES)
 
@@ -133,11 +133,21 @@ def get_mAP(model, dataset, score_threshold=0.25, iou_threshold=0.50, TEST_INPUT
         original_image, bbox_data_gt = dataset.parse_annotation(ann_dataset, True)
         
         image = image_preprocess(np.copy(original_image), [TEST_INPUT_SIZE, TEST_INPUT_SIZE])
-        image_data = tf.expand_dims(image, 0)
+        image_data = image[np.newaxis, ...].astype(np.float32)
 
         t1 = time.time()
-        pred_bbox = model.predict(image_data)
+        if YOLO_FRAMEWORK == "tf":
+            pred_bbox = Yolo.predict(image_data)
+        elif YOLO_FRAMEWORK == "trt":
+            batched_input = tf.constant(image_data)
+            result = Yolo(batched_input)
+            pred_bbox = []
+            for key, value in result.items():
+                value = value.numpy()
+                pred_bbox.append(value)
+        
         t2 = time.time()
+        
         times.append(t2-t1)
         
         pred_bbox = [tf.reshape(x, (-1, tf.shape(x)[-1])) for x in pred_bbox]
@@ -264,19 +274,23 @@ def get_mAP(model, dataset, score_threshold=0.25, iou_threshold=0.50, TEST_INPUT
         
         return mAP*100
 
-if __name__ == '__main__':
-    if YOLO_CUSTOM_WEIGHTS != False:
-        weights = YOLO_CUSTOM_WEIGHTS
-        yolo = Create_Yolo(input_size=YOLO_INPUT_SIZE, CLASSES=TRAIN_CLASSES)
-        yolo.load_weights(weights)        
-    else:
+if __name__ == '__main__':       
+    if YOLO_FRAMEWORK == "tf": # TensorFlow detection
         if YOLO_TYPE == "yolov4":
             Darknet_weights = YOLO_V4_TINY_WEIGHTS if TRAIN_YOLO_TINY else YOLO_V4_WEIGHTS
         if YOLO_TYPE == "yolov3":
             Darknet_weights = YOLO_V3_TINY_WEIGHTS if TRAIN_YOLO_TINY else YOLO_V3_WEIGHTS
 
         yolo = Create_Yolo(input_size=YOLO_INPUT_SIZE)
-        load_yolo_weights(yolo, Darknet_weights) # use Darknet weights
+        if YOLO_CUSTOM_WEIGHTS == False:
+            load_yolo_weights(yolo, Darknet_weights) # use Darknet weights
+        else:
+            yolo.load_weights(YOLO_CUSTOM_WEIGHTS) # use custom weights
+        
+    elif YOLO_FRAMEWORK == "trt": # TensorRT detection
+        saved_model_loaded = tf.saved_model.load(YOLO_CUSTOM_WEIGHTS, tags=[tag_constants.SERVING])
+        signature_keys = list(saved_model_loaded.signatures.keys())
+        yolo = saved_model_loaded.signatures['serving_default']
 
     testset = Dataset('test', TEST_INPUT_SIZE=YOLO_INPUT_SIZE)
     get_mAP(yolo, testset, score_threshold=0.05, iou_threshold=0.50, TEST_INPUT_SIZE=YOLO_INPUT_SIZE)
