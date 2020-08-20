@@ -63,7 +63,7 @@ TEST_SCORE_THRESHOLD        = 0.3
 TEST_IOU_THRESHOLD          = 0.45
 
 
-#YOLOv3-TINY WORKAROUND
+#YOLOv3-TINY and YOLOv4-TINY WORKAROUND
 if TRAIN_YOLO_TINY:
     YOLO_STRIDES            = [16, 32, 64]    
     YOLO_ANCHORS            = [[[10,  14], [23,   27], [37,   58]],
