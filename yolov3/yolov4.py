@@ -5,7 +5,7 @@
 #   Created date: 2020-07-31
 #   Website     : https://pylessons.com/
 #   GitHub      : https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3
-#   Description : main yolov3 functions
+#   Description : main yolov3 & yolov4 functions
 #
 #================================================================
 import numpy as np
