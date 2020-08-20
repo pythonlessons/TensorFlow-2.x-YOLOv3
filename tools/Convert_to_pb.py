@@ -15,7 +15,7 @@ import sys
 foldername = os.path.basename(os.getcwd())
 if foldername == "tools":
     os.chdir("..")
-    sys.path.insert(1, os.getcwd())
+sys.path.insert(1, os.getcwd())
 
 import tensorflow as tf
 from yolov3.yolov4 import Create_Yolo
