@@ -26,7 +26,7 @@ from yolov3.configs import *
 from tensorflow.python.compiler.tensorrt import trt_convert as trt
 
 def calibration_input():
-    for i in range(10):
+    for i in range(100):
         batched_input = np.random.random((1, YOLO_INPUT_SIZE, YOLO_INPUT_SIZE, 3)).astype(np.float32)
         batched_input = tf.constant(batched_input)
         yield (batched_input,)
