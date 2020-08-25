@@ -111,6 +111,31 @@ TensorRT mAP on COCO 2017 Dataset:
 | YoloV4 INT8 mAP50 | 40.61   | 48.36   | 52.84   | 54.53   |
 | YoloV3 INT8 mAP50 | 44.19   | 48.64   | 50.10   | 50.69   |
 
+## Converting YOLO to TensorRT
+I will give two examples, both will be for YOLOv4 model,quantize_mode=INT8 and model input size will be 608. Detailed tutorial is on this [link](https://pylessons.com/YOLOv4-TF2-TensorRT/).
+### Default weights from COCO dataset:
+- Download weights from links above;
+- In `configs.py` script choose your `YOLO_TYPE`;
+- In `configs.py` script set `YOLO_INPUT_SIZE = 608`;
+- In `configs.py` script set `YOLO_FRAMEWORK = "trt"`;
+- From main directory in terminal type `python tools/Convert_to_pb.py`;
+- From main directory in terminal type `python tools/Convert_to_TRT.py`;
+- In `configs.py` script set `YOLO_CUSTOM_WEIGHTS = f'checkpoints/{YOLO_TYPE}-trt-{YOLO_TRT_QUANTIZE_MODE}–{YOLO_INPUT_SIZE}'`;
+- Now you can run `detection_demo.py`, best to test with `detect_video` function.
+
+### Custom trained YOLO weights:
+- Download weights from links above;
+- In `configs.py` script choose your `YOLO_TYPE`;
+- In `configs.py` script set `YOLO_INPUT_SIZE = 608`;
+- Train custom YOLO model with instructions above;
+- In `configs.py` script set `YOLO_CUSTOM_WEIGHTS = f"{YOLO_TYPE}_custom"`;
+- In `configs.py` script make sure that  `TRAIN_CLASSES` is with your custom classes text file;
+- From main directory in terminal type `python tools/Convert_to_pb.py`;
+- From main directory in terminal type `python tools/Convert_to_TRT.py`;
+- In `configs.py` script set `YOLO_FRAMEWORK = "trt"`;
+- In `configs.py` script set `YOLO_CUSTOM_WEIGHTS = f'checkpoints/{YOLO_TYPE}-trt-{YOLO_TRT_QUANTIZE_MODE}–{YOLO_INPUT_SIZE}'`;
+- Now you can run `detection_custom.py`, to test custom trained and converted TensorRT model.
+
 What is done:
 --------------------
 - [x] Detection with original weights [Tutorial link](https://pylessons.com/YOLOv3-TF2-introduction/)
@@ -123,12 +148,12 @@ What is done:
 - [X] Yolo v3 on Raspberry Pi [Tutorial link](https://pylessons.com/YOLOv3-TF2-RaspberryPi/)
 - [X] YOLOv4 and YOLOv4-tiny detection [Tutorial link](https://pylessons.com/YOLOv4-TF2-introduction/)
 - [X] YOLOv4 and YOLOv4-tiny detection training (Not fully) [Tutorial link](https://pylessons.com/YOLOv4-TF2-training/)
+- [X] Convert to TensorRT model [Tutorial link](https://pylessons.com/YOLOv4-TF2-TensorRT/)
 
 To be continued...
 --------------------
 - [ ] Converting to TensorFlow Lite
 - [ ] YOLO on Android (Leaving it for future, will need to convert everythin to java... not ready for this)
-- [ ] Convert to TensorRT model
 - [ ] Generating anchors
 - [ ] YOLACT: Real-time Instance Segmentation
 - [ ] Model pruning (Pruning is a technique in deep learning that aids in the development of smaller and more efficient neural networks. It's a model optimization technique that involves eliminating unnecessary values in the weight tensor.)
