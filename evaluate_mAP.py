@@ -281,10 +281,11 @@ if __name__ == '__main__':
         if YOLO_TYPE == "yolov3":
             Darknet_weights = YOLO_V3_TINY_WEIGHTS if TRAIN_YOLO_TINY else YOLO_V3_WEIGHTS
 
-        yolo = Create_Yolo(input_size=YOLO_INPUT_SIZE)
         if YOLO_CUSTOM_WEIGHTS == False:
+            yolo = Create_Yolo(input_size=YOLO_INPUT_SIZE, CLASSES=YOLO_COCO_CLASSES)
             load_yolo_weights(yolo, Darknet_weights) # use Darknet weights
         else:
+            yolo = Create_Yolo(input_size=YOLO_INPUT_SIZE, CLASSES=TRAIN_CLASSES)
             yolo.load_weights(YOLO_CUSTOM_WEIGHTS) # use custom weights
         
     elif YOLO_FRAMEWORK == "trt": # TensorRT detection
