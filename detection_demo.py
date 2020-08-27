@@ -2,7 +2,7 @@
 #
 #   File name   : detection_demo.py
 #   Author      : PyLessons
-#   Created date: 2020-08-14
+#   Created date: 2020-08-27
 #   Website     : https://pylessons.com/
 #   GitHub      : https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3
 #   Description : object detection image and video example
@@ -26,8 +26,13 @@ if YOLO_FRAMEWORK == "tf": # TensorFlow detection
         Darknet_weights = YOLO_V4_TINY_WEIGHTS if TRAIN_YOLO_TINY else YOLO_V4_WEIGHTS
     if YOLO_TYPE == "yolov3":
         Darknet_weights = YOLO_V3_TINY_WEIGHTS if TRAIN_YOLO_TINY else YOLO_V3_WEIGHTS
-    yolo = Create_Yolo(input_size=YOLO_INPUT_SIZE)
-    load_yolo_weights(yolo, Darknet_weights) # use Darknet weights
+        
+    if YOLO_CUSTOM_WEIGHTS == False:
+        yolo = Create_Yolo(input_size=YOLO_INPUT_SIZE, CLASSES=YOLO_COCO_CLASSES)
+        load_yolo_weights(yolo, Darknet_weights) # use Darknet weights
+    else:
+        yolo = Create_Yolo(input_size=YOLO_INPUT_SIZE, CLASSES=TRAIN_CLASSES)
+        yolo.load_weights(YOLO_CUSTOM_WEIGHTS) # use custom weights
     
 elif YOLO_FRAMEWORK == "trt": # TensorRT detection
     saved_model_loaded = tf.saved_model.load(YOLO_CUSTOM_WEIGHTS, tags=[tag_constants.SERVING])
