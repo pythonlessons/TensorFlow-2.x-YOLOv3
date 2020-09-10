@@ -10,6 +10,8 @@
 #================================================================
 import os
 os.environ['CUDA_VISIBLE_DEVICES'] = '0'
+from tensorflow.python.client import device_lib
+print(device_lib.list_local_devices())
 import shutil
 import numpy as np
 import tensorflow as tf
@@ -30,6 +32,7 @@ def main():
     global TRAIN_FROM_CHECKPOINT
     
     gpus = tf.config.experimental.list_physical_devices('GPU')
+    print(f'GPUs {gpus}')
     if len(gpus) > 0:
         try: tf.config.experimental.set_memory_growth(gpus[0], True)
         except RuntimeError: pass
