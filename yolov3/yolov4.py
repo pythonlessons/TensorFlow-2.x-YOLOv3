@@ -512,8 +512,8 @@ def bbox_ciou(boxes1, boxes2):
     u = (boxes1[..., 0] - boxes2[..., 0]) * (boxes1[..., 0] - boxes2[..., 0]) + (boxes1[..., 1] - boxes2[..., 1]) * (boxes1[..., 1] - boxes2[..., 1])
     d = u / c
 
-    ar_gt = boxes2[..., 2] / boxes2[..., 3]
-    ar_pred = boxes1[..., 2] / boxes1[..., 3]
+    ar_gt = boxes2[..., 2] / (boxes2[..., 3] + 0.000001)
+    ar_pred = boxes1[..., 2] / (boxes1[..., 3] + 0.000001)
 
     ar_loss = 4 / (np.pi * np.pi) * (tf.atan(ar_gt) - tf.atan(ar_pred)) * (tf.atan(ar_gt) - tf.atan(ar_pred))
     alpha = ar_loss / (1 - iou + ar_loss + 0.000001)
