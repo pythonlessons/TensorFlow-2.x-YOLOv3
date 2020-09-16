@@ -2,7 +2,7 @@
 #
 #   File name   : object_tracker.py
 #   Author      : PyLessons
-#   Created date: 2020-08-14
+#   Created date: 2020-09-17
 #   Website     : https://pylessons.com/
 #   GitHub      : https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3
 #   Description : code to track detected object from video or webcam
@@ -13,12 +13,7 @@ os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 import cv2
 import numpy as np
 import tensorflow as tf
-from tensorflow.python.saved_model import tag_constants
-from tensorflow.compat.v1 import ConfigProto
-from tensorflow.compat.v1 import InteractiveSession
-#from yolov3.yolov3 import Create_Yolov3
-from yolov3.yolov4 import Create_Yolo
-from yolov3.utils import load_yolo_weights, image_preprocess, postprocess_boxes, nms, draw_bbox, read_class_names#, detect_image, detect_video, detect_realtime
+from yolov3.utils import Load_Yolo_model, image_preprocess, postprocess_boxes, nms, draw_bbox, read_class_names
 from yolov3.configs import *
 import time
 
@@ -28,23 +23,6 @@ from deep_sort.tracker import Tracker
 from deep_sort import generate_detections as gdet
 
 video_path   = "./IMAGES/test.mp4"
-
-if YOLO_FRAMEWORK == "tf": # TensorFlow detection
-    if YOLO_TYPE == "yolov4":
-        Darknet_weights = YOLO_V4_TINY_WEIGHTS if TRAIN_YOLO_TINY else YOLO_V4_WEIGHTS
-    if YOLO_TYPE == "yolov3":
-        Darknet_weights = YOLO_V3_TINY_WEIGHTS if TRAIN_YOLO_TINY else YOLO_V3_WEIGHTS
-    yolo = Create_Yolo(input_size=YOLO_INPUT_SIZE)
-    if YOLO_CUSTOM_WEIGHTS != False:
-        yolo.load_weights(YOLO_CUSTOM_WEIGHTS) # use custom weights
-    else:
-        load_yolo_weights(yolo, Darknet_weights) # use MS COCO weights
-    
-elif YOLO_FRAMEWORK == "trt": # TensorRT detection
-    saved_model_loaded = tf.saved_model.load(YOLO_CUSTOM_WEIGHTS, tags=[tag_constants.SERVING])
-    signature_keys = list(saved_model_loaded.signatures.keys())
-    yolo = saved_model_loaded.signatures['serving_default']
-
 
 def Object_tracking(Yolo, video_path, output_path, input_size=416, show=False, CLASSES=YOLO_COCO_CLASSES, score_threshold=0.3, iou_threshold=0.45, rectangle_colors='', Track_only = []):
     # Definition of the parameters
@@ -169,4 +147,5 @@ def Object_tracking(Yolo, video_path, output_path, input_size=416, show=False, C
     cv2.destroyAllWindows()
 
 
+yolo = Load_Yolo_model()
 Object_tracking(yolo, video_path, "detection.mp4", input_size=YOLO_INPUT_SIZE, show=True, iou_threshold=0.1, rectangle_colors=(255,0,0), Track_only = ["person"])
