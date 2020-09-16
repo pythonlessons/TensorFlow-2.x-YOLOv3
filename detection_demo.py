@@ -2,7 +2,7 @@
 #
 #   File name   : detection_demo.py
 #   Author      : PyLessons
-#   Created date: 2020-08-27
+#   Created date: 2020-09-27
 #   Website     : https://pylessons.com/
 #   GitHub      : https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3
 #   Description : object detection image and video example
