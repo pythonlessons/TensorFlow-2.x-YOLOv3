@@ -2,7 +2,7 @@
 #
 #   File name   : yolov3.py
 #   Author      : PyLessons
-#   Created date: 2020-07-31
+#   Created date: 2020-09-31
 #   Website     : https://pylessons.com/
 #   GitHub      : https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3
 #   Description : main yolov3 & yolov4 functions
@@ -12,11 +12,18 @@ import numpy as np
 import tensorflow as tf
 from tensorflow.keras.layers import Conv2D, Input, LeakyReLU, ZeroPadding2D, BatchNormalization, MaxPool2D
 from tensorflow.keras.regularizers import l2
-from yolov3.utils import read_class_names
 from yolov3.configs import *
 
 STRIDES         = np.array(YOLO_STRIDES)
 ANCHORS         = (np.array(YOLO_ANCHORS).T/STRIDES).T
+
+def read_class_names(class_file_name):
+    # loads class name from a file
+    names = {}
+    with open(class_file_name, 'r') as data:
+        for ID, name in enumerate(data):
+            names[ID] = name.strip('\n')
+    return names
 
 class BatchNormalization(BatchNormalization):
     # "Frozen state" and "inference mode" are two separate concepts.
@@ -512,8 +519,8 @@ def bbox_ciou(boxes1, boxes2):
     u = (boxes1[..., 0] - boxes2[..., 0]) * (boxes1[..., 0] - boxes2[..., 0]) + (boxes1[..., 1] - boxes2[..., 1]) * (boxes1[..., 1] - boxes2[..., 1])
     d = u / c
 
-    ar_gt = boxes2[..., 2] / (boxes2[..., 3] + 0.000001)
-    ar_pred = boxes1[..., 2] / (boxes1[..., 3] + 0.000001)
+    ar_gt = boxes2[..., 2] / boxes2[..., 3]
+    ar_pred = boxes1[..., 2] / boxes1[..., 3]
 
     ar_loss = 4 / (np.pi * np.pi) * (tf.atan(ar_gt) - tf.atan(ar_pred)) * (tf.atan(ar_gt) - tf.atan(ar_pred))
     alpha = ar_loss / (1 - iou + ar_loss + 0.000001)
