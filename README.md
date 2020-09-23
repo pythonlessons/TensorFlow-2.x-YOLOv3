@@ -149,6 +149,7 @@ What is done:
 - [X] YOLOv4 and YOLOv4-tiny detection [Tutorial link](https://pylessons.com/YOLOv4-TF2-introduction/)
 - [X] YOLOv4 and YOLOv4-tiny detection training (Not fully) [Tutorial link](https://pylessons.com/YOLOv4-TF2-training/)
 - [X] Convert to TensorRT model [Tutorial link](https://pylessons.com/YOLOv4-TF2-TensorRT/)
+- [X] Add multiprocessing after detection (drawing bbox) [Tutorial link](https://pylessons.com/YOLOv4-TF2-multiprocessing/)
 
 To be continued...
 --------------------
@@ -157,4 +158,3 @@ To be continued...
 - [ ] Generating anchors
 - [ ] YOLACT: Real-time Instance Segmentation
 - [ ] Model pruning (Pruning is a technique in deep learning that aids in the development of smaller and more efficient neural networks. It's a model optimization technique that involves eliminating unnecessary values in the weight tensor.)
-- [ ] Add multiprocessing after detection (drawing bbox)
