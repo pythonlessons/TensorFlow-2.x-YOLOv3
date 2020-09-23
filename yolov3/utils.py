@@ -74,6 +74,12 @@ def load_yolo_weights(model, weights_file):
         assert len(wf.read()) == 0, 'failed to read all data'
 
 def Load_Yolo_model():
+    gpus = tf.config.experimental.list_physical_devices('GPU')
+    print(f'GPUs {gpus}')
+    if len(gpus) > 0:
+        try: tf.config.experimental.set_memory_growth(gpus[0], True)
+        except RuntimeError: pass
+        
     if YOLO_FRAMEWORK == "tf": # TensorFlow detection
         if YOLO_TYPE == "yolov4":
             Darknet_weights = YOLO_V4_TINY_WEIGHTS if TRAIN_YOLO_TINY else YOLO_V4_WEIGHTS
