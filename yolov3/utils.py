@@ -2,7 +2,7 @@
 #
 #   File name   : utils.py
 #   Author      : PyLessons
-#   Created date: 2020-09-17
+#   Created date: 2020-09-27
 #   Website     : https://pylessons.com/
 #   GitHub      : https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3
 #   Description : additional yolov3 and yolov4 functions
@@ -75,8 +75,8 @@ def load_yolo_weights(model, weights_file):
 
 def Load_Yolo_model():
     gpus = tf.config.experimental.list_physical_devices('GPU')
-    print(f'GPUs {gpus}')
     if len(gpus) > 0:
+        print(f'GPUs {gpus}')
         try: tf.config.experimental.set_memory_growth(gpus[0], True)
         except RuntimeError: pass
         
