@@ -9,3 +9,4 @@ tqdm==4.43.0
 pandas
 awscli
 urllib3
+mss
