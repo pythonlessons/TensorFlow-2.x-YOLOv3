@@ -9,7 +9,6 @@
 #
 #================================================================
 import os
-os.environ['CUDA_VISIBLE_DEVICES'] = '2'
 import subprocess
 import time
 from datetime import datetime
