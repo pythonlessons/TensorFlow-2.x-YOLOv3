@@ -1,6 +1,14 @@
 # TensorFlow-2.x-YOLOv3 and YOLOv4 tutorials
 
 YOLOv3 and YOLOv4 implementation in TensorFlow 2.x, with support for training, transfer training, object tracking mAP and so on...
+Code was tested with following specs:
+- i7-7700k CPU and Nvidia 1080TI GPU
+- OS Ubuntu 18.04
+- CUDA 10.1
+- cuDNN v7.6.5
+- TensorRT-6.0.1.5
+- Tensorflow-GPU 2.3.1
+- Code was tested on Ubuntu and Windows 10 (TensorRT not supported officially)
 
 ## Installation
 First, clone or download this GitHub repository.
