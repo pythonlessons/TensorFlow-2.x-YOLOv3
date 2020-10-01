@@ -158,6 +158,7 @@ What is done:
 - [X] YOLOv4 and YOLOv4-tiny detection training (Not fully) [Tutorial link](https://pylessons.com/YOLOv4-TF2-training/)
 - [X] Convert to TensorRT model [Tutorial link](https://pylessons.com/YOLOv4-TF2-TensorRT/)
 - [X] Add multiprocessing after detection (drawing bbox) [Tutorial link](https://pylessons.com/YOLOv4-TF2-multiprocessing/)
+- [X] Generate YOLO Object Detection training data from its own results [Tutorial link](https://pylessons.com/YOLOv4-TF2-CreateXML/)
 
 To be continued...
 --------------------
