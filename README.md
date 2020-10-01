@@ -160,7 +160,7 @@ What is done:
 - [X] Add multiprocessing after detection (drawing bbox) [Tutorial link](https://pylessons.com/YOLOv4-TF2-multiprocessing/)
 - [X] Generate YOLO Object Detection training data from its own results [Tutorial link](https://pylessons.com/YOLOv4-TF2-CreateXML/)
 
-To be continued...
+To be continued... (not anytime soon)
 --------------------
 - [ ] Converting to TensorFlow Lite
 - [ ] YOLO on Android (Leaving it for future, will need to convert everythin to java... not ready for this)
