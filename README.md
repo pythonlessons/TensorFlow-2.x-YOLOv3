@@ -159,6 +159,7 @@ What is done:
 - [X] Convert to TensorRT model [Tutorial link](https://pylessons.com/YOLOv4-TF2-TensorRT/)
 - [X] Add multiprocessing after detection (drawing bbox) [Tutorial link](https://pylessons.com/YOLOv4-TF2-multiprocessing/)
 - [X] Generate YOLO Object Detection training data from its own results [Tutorial link](https://pylessons.com/YOLOv4-TF2-CreateXML/)
+- [X] Counter-strike Global Offensive realtime YOLOv4 Object Detection aimbot [Tutorial link](https://pylessons.com/YOLOv4-TF2-CSGO-aimbot/)
 
 To be continued... (not anytime soon)
 --------------------
