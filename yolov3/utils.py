@@ -91,7 +91,7 @@ def Load_Yolo_model():
             load_yolo_weights(yolo, Darknet_weights) # use Darknet weights
         else:
             yolo = Create_Yolo(input_size=YOLO_INPUT_SIZE, CLASSES=TRAIN_CLASSES)
-            yolo.load_weights(YOLO_CUSTOM_WEIGHTS) # use custom weights
+            yolo.load_weights(f"./checkpoints/{TRAIN_MODEL_NAME}") # use custom weights
         
     elif YOLO_FRAMEWORK == "trt": # TensorRT detection
         saved_model_loaded = tf.saved_model.load(YOLO_CUSTOM_WEIGHTS, tags=[tag_constants.SERVING])
