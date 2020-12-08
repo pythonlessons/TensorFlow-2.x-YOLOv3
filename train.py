@@ -10,6 +10,7 @@
 #================================================================
 import os
 os.environ['CUDA_VISIBLE_DEVICES'] = '0'
+os.environ['TF_FORCE_GPU_ALLOW_GROWTH'] = 'true'
 from tensorflow.python.client import device_lib
 print(device_lib.list_local_devices())
 import shutil
