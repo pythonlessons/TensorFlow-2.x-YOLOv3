@@ -87,9 +87,11 @@ def Load_Yolo_model():
             Darknet_weights = YOLO_V3_TINY_WEIGHTS if TRAIN_YOLO_TINY else YOLO_V3_WEIGHTS
             
         if YOLO_CUSTOM_WEIGHTS == False:
+            print("Loading Darknet_weights from:", Darknet_weights)
             yolo = Create_Yolo(input_size=YOLO_INPUT_SIZE, CLASSES=YOLO_COCO_CLASSES)
             load_yolo_weights(yolo, Darknet_weights) # use Darknet weights
         else:
+            print("Loading custom weights from:", YOLO_CUSTOM_WEIGHTS)
             yolo = Create_Yolo(input_size=YOLO_INPUT_SIZE, CLASSES=TRAIN_CLASSES)
             yolo.load_weights(f"./checkpoints/{TRAIN_MODEL_NAME}") # use custom weights
         
@@ -154,7 +156,11 @@ def draw_bbox(image, bboxes, CLASSES=YOLO_COCO_CLASSES, show_label=True, show_co
 
             if tracking: score_str = " "+str(score)
 
-            label = "{}".format(NUM_CLASS[class_ind]) + score_str
+            try:
+                label = "{}".format(NUM_CLASS[class_ind]) + score_str
+            except KeyError:
+                print("You received KeyError, this might be that you are trying to use yolo original weights")
+                print("while using custom classes, if using custom model in configs.py set YOLO_CUSTOM_WEIGHTS = True")
 
             # get text size
             (text_width, text_height), baseline = cv2.getTextSize(label, cv2.FONT_HERSHEY_COMPLEX_SMALL,
