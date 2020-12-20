@@ -10,7 +10,7 @@ Code was tested with following specs:
 - Tensorflow-GPU 2.3.1
 - Code was tested on Ubuntu and Windows 10 (TensorRT not supported officially)
 
-## With 2.4.0 TensorFlow - DOESN'T WORK!
+### With 2.4.0 TensorFlow - DOESN'T WORK!
 
 ## Installation
 First, clone or download this GitHub repository.
