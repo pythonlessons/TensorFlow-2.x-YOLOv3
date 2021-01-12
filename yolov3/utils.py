@@ -93,7 +93,10 @@ def Load_Yolo_model():
         else:
             print("Loading custom weights from:", YOLO_CUSTOM_WEIGHTS)
             yolo = Create_Yolo(input_size=YOLO_INPUT_SIZE, CLASSES=TRAIN_CLASSES)
-            yolo.load_weights(f"./checkpoints/{TRAIN_MODEL_NAME}") # use custom weights
+            checkpoint = f"./checkpoints/{TRAIN_MODEL_NAME}"
+            if TRAIN_YOLO_TINY:
+                checkpoint += "_Tiny"
+            yolo.load_weights(checkpoint)  # use custom weights
         
     elif YOLO_FRAMEWORK == "trt": # TensorRT detection
         saved_model_loaded = tf.saved_model.load(YOLO_CUSTOM_WEIGHTS, tags=[tag_constants.SERVING])
