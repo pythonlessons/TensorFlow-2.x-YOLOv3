@@ -178,8 +178,11 @@ def main():
             yolo.save_weights(save_directory)
 
     # measure mAP of trained custom model
-    mAP_model.load_weights(save_directory) # use keras weights
-    get_mAP(mAP_model, testset, score_threshold=TEST_SCORE_THRESHOLD, iou_threshold=TEST_IOU_THRESHOLD)
-
+    try:
+        mAP_model.load_weights(save_directory) # use keras weights
+        get_mAP(mAP_model, testset, score_threshold=TEST_SCORE_THRESHOLD, iou_threshold=TEST_IOU_THRESHOLD)
+    except UnboundLocalError:
+        print("Specify save_directory option in yolov3/configs.py to load your model")
+        
 if __name__ == '__main__':
     main()
