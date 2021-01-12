@@ -182,7 +182,7 @@ def main():
         mAP_model.load_weights(save_directory) # use keras weights
         get_mAP(mAP_model, testset, score_threshold=TEST_SCORE_THRESHOLD, iou_threshold=TEST_IOU_THRESHOLD)
     except UnboundLocalError:
-        print("Specify save_directory option in yolov3/configs.py to load your model")
+        print("You don't have saved model weights to measure mAP, check TRAIN_SAVE_BEST_ONLY and TRAIN_SAVE_CHECKPOINT lines in configs.py")
         
 if __name__ == '__main__':
     main()
