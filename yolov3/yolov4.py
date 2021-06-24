@@ -167,8 +167,11 @@ def cspdarknet53(input_data):
     input_data = convolutional(input_data, (3, 3, 512, 1024))
     input_data = convolutional(input_data, (1, 1, 1024, 512))
 
-    input_data = tf.concat([tf.nn.max_pool(input_data, ksize=13, padding='SAME', strides=1), tf.nn.max_pool(input_data, ksize=9, padding='SAME', strides=1)
-                            , tf.nn.max_pool(input_data, ksize=5, padding='SAME', strides=1), input_data], axis=-1)
+    max_pooling_1 = tf.keras.layers.MaxPool2D(pool_size=13, padding='SAME', strides=1)(input_data)
+    max_pooling_2 = tf.keras.layers.MaxPool2D(pool_size=9, padding='SAME', strides=1)(input_data)
+    max_pooling_3 = tf.keras.layers.MaxPool2D(pool_size=5, padding='SAME', strides=1)(input_data)
+    input_data = tf.concat([max_pooling_1, max_pooling_2, max_pooling_3, input_data], axis=-1)
+
     input_data = convolutional(input_data, (1, 1, 2048, 512))
     input_data = convolutional(input_data, (3, 3, 512, 1024))
     input_data = convolutional(input_data, (1, 1, 1024, 512))
