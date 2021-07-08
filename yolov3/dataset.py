@@ -27,6 +27,7 @@ class Dataset(object):
         self.batch_size  = TRAIN_BATCH_SIZE if dataset_type == 'train' else TEST_BATCH_SIZE
         self.data_aug    = TRAIN_DATA_AUG   if dataset_type == 'train' else TEST_DATA_AUG
 
+        self.train_yolo_tiny = TRAIN_YOLO_TINY
         self.train_input_sizes = TRAIN_INPUT_SIZE
         self.strides = np.array(YOLO_STRIDES)
         self.classes = read_class_names(TRAIN_CLASSES)
@@ -44,10 +45,23 @@ class Dataset(object):
     def load_annotations(self, dataset_type):
         final_annotations = []
         with open(self.annot_path, 'r') as f:
-            txt = f.readlines()
+            txt = f.read().splitlines()
             annotations = [line.strip() for line in txt if len(line.strip().split()[1:]) != 0]
         np.random.shuffle(annotations)
-        
+
+        # for annotation in annotations:
+        #     image_extension = '.jpg'
+        #     extension_index = annotation.find(image_extension)
+        #     image_path = annotation[:extension_index+len(image_extension)]
+        #     line = annotation[extension_index+len(image_extension):].split()
+        #     if not os.path.exists(image_path):
+        #         raise KeyError("%s does not exist ... " %image_path)
+        #     if TRAIN_LOAD_IMAGES_TO_RAM:
+        #         image = cv2.imread(image_path)
+        #     else:
+        #         image = ''
+        #     final_annotations.append([image_path, line, image])
+        # return final_annotations
         for annotation in annotations:
             # fully parse annotations
             line = annotation.split()
@@ -85,7 +99,7 @@ class Dataset(object):
                 if bad_image_name not in i:
                     f.write(i)
             f.truncate()
-    
+
     def __next__(self):
         with tf.device('/cpu:0'):
             self.train_input_size = random.choice([self.train_input_sizes])
@@ -93,14 +107,16 @@ class Dataset(object):
 
             batch_image = np.zeros((self.batch_size, self.train_input_size, self.train_input_size, 3), dtype=np.float32)
 
-            batch_label_sbbox = np.zeros((self.batch_size, self.train_output_sizes[0], self.train_output_sizes[0],
-                                          self.anchor_per_scale, 5 + self.num_classes), dtype=np.float32)
-            batch_label_mbbox = np.zeros((self.batch_size, self.train_output_sizes[1], self.train_output_sizes[1],
-                                          self.anchor_per_scale, 5 + self.num_classes), dtype=np.float32)
-            batch_label_lbbox = np.zeros((self.batch_size, self.train_output_sizes[2], self.train_output_sizes[2],
-                                          self.anchor_per_scale, 5 + self.num_classes), dtype=np.float32)
+            if self.train_yolo_tiny:
+                batch_label_mbbox = np.zeros((self.batch_size, self.train_output_sizes[0], self.train_output_sizes[0], self.anchor_per_scale, 5 + self.num_classes), dtype=np.float32)
+                batch_label_lbbox = np.zeros((self.batch_size, self.train_output_sizes[1], self.train_output_sizes[1], self.anchor_per_scale, 5 + self.num_classes), dtype=np.float32)
+            else:
+                batch_label_sbbox = np.zeros((self.batch_size, self.train_output_sizes[0], self.train_output_sizes[0], self.anchor_per_scale, 5 + self.num_classes), dtype=np.float32)
+                batch_label_mbbox = np.zeros((self.batch_size, self.train_output_sizes[1], self.train_output_sizes[1], self.anchor_per_scale, 5 + self.num_classes), dtype=np.float32)
+                batch_label_lbbox = np.zeros((self.batch_size, self.train_output_sizes[2], self.train_output_sizes[2], self.anchor_per_scale, 5 + self.num_classes), dtype=np.float32)
 
-            batch_sbboxes = np.zeros((self.batch_size, self.max_bbox_per_scale, 4), dtype=np.float32)
+                batch_sbboxes = np.zeros((self.batch_size, self.max_bbox_per_scale, 4), dtype=np.float32)
+
             batch_mbboxes = np.zeros((self.batch_size, self.max_bbox_per_scale, 4), dtype=np.float32)
             batch_lbboxes = np.zeros((self.batch_size, self.max_bbox_per_scale, 4), dtype=np.float32)
 
@@ -113,29 +129,37 @@ class Dataset(object):
                     annotation = self.annotations[index]
                     image, bboxes = self.parse_annotation(annotation)
                     try:
-                        label_sbbox, label_mbbox, label_lbbox, sbboxes, mbboxes, lbboxes = self.preprocess_true_boxes(bboxes)
+                        if self.train_yolo_tiny:
+                            label_mbbox, label_lbbox, mbboxes, lbboxes = self.preprocess_true_boxes(bboxes)
+                        else:
+                            label_sbbox, label_mbbox, label_lbbox, sbboxes, mbboxes, lbboxes = self.preprocess_true_boxes(bboxes)
                     except IndexError:
                         exceptions = True
                         self.Delete_bad_annotation(annotation)
                         print("IndexError, something wrong with", annotation[0], "removed this line from annotation file")
 
                     batch_image[num, :, :, :] = image
-                    batch_label_sbbox[num, :, :, :, :] = label_sbbox
                     batch_label_mbbox[num, :, :, :, :] = label_mbbox
                     batch_label_lbbox[num, :, :, :, :] = label_lbbox
-                    batch_sbboxes[num, :, :] = sbboxes
                     batch_mbboxes[num, :, :] = mbboxes
                     batch_lbboxes[num, :, :] = lbboxes
+                    if not self.train_yolo_tiny:
+                        batch_label_sbbox[num, :, :, :, :] = label_sbbox
+                        batch_sbboxes[num, :, :] = sbboxes
+
                     num += 1
 
-                if exceptions: 
+                if exceptions:
                     print('\n')
                     raise Exception("There were problems with dataset, I fixed them, now restart the training process.")
                 self.batch_count += 1
-                batch_smaller_target = batch_label_sbbox, batch_sbboxes
+                if not self.train_yolo_tiny:
+                    batch_smaller_target = batch_label_sbbox, batch_sbboxes
                 batch_medium_target  = batch_label_mbbox, batch_mbboxes
                 batch_larger_target  = batch_label_lbbox, batch_lbboxes
 
+                if self.train_yolo_tiny:
+                    return batch_image, (batch_medium_target, batch_larger_target)
                 return batch_image, (batch_smaller_target, batch_medium_target, batch_larger_target)
             else:
                 self.batch_count = 0
@@ -200,7 +224,7 @@ class Dataset(object):
         else:
             image_path = annotation[0]
             image = cv2.imread(image_path)
-            
+
         bboxes = np.array([list(map(int, box.split(','))) for box in annotation[1]])
 
         if self.data_aug:
@@ -209,17 +233,19 @@ class Dataset(object):
             image, bboxes = self.random_translate(np.copy(image), np.copy(bboxes))
 
         #image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-        if mAP == True: 
+        if mAP == True:
             return image, bboxes
-        
+
         image, bboxes = image_preprocess(np.copy(image), [self.input_sizes, self.input_sizes], np.copy(bboxes))
         return image, bboxes
 
     def preprocess_true_boxes(self, bboxes):
+        OUTPUT_LEVELS = len(self.strides)
+
         label = [np.zeros((self.train_output_sizes[i], self.train_output_sizes[i], self.anchor_per_scale,
-                           5 + self.num_classes)) for i in range(3)]
-        bboxes_xywh = [np.zeros((self.max_bbox_per_scale, 4)) for _ in range(3)]
-        bbox_count = np.zeros((3,))
+                           5 + self.num_classes)) for i in range(OUTPUT_LEVELS)]
+        bboxes_xywh = [np.zeros((self.max_bbox_per_scale, 4)) for _ in range(OUTPUT_LEVELS)]
+        bbox_count = np.zeros((OUTPUT_LEVELS,))
 
         for bbox in bboxes:
             bbox_coor = bbox[:4]
@@ -236,7 +262,7 @@ class Dataset(object):
 
             iou = []
             exist_positive = False
-            for i in range(3):
+            for i in range(OUTPUT_LEVELS):#range(3):
                 anchors_xywh = np.zeros((self.anchor_per_scale, 4))
                 anchors_xywh[:, 0:2] = np.floor(bbox_xywh_scaled[i, 0:2]).astype(np.int32) + 0.5
                 anchors_xywh[:, 2:4] = self.anchors[i]
@@ -273,13 +299,15 @@ class Dataset(object):
                 bbox_ind = int(bbox_count[best_detect] % self.max_bbox_per_scale)
                 bboxes_xywh[best_detect][bbox_ind, :4] = bbox_xywh
                 bbox_count[best_detect] += 1
+
+        if self.train_yolo_tiny:
+            label_mbbox, label_lbbox = label
+            mbboxes, lbboxes = bboxes_xywh
+            return label_mbbox, label_lbbox, mbboxes, lbboxes
+
         label_sbbox, label_mbbox, label_lbbox = label
         sbboxes, mbboxes, lbboxes = bboxes_xywh
         return label_sbbox, label_mbbox, label_lbbox, sbboxes, mbboxes, lbboxes
 
     def __len__(self):
         return self.num_batchs
-
-
-
-
