@@ -62,11 +62,8 @@ TEST_DECTECTED_IMAGE_PATH   = ""
 TEST_SCORE_THRESHOLD        = 0.3
 TEST_IOU_THRESHOLD          = 0.45
 
-
-#YOLOv3-TINY and YOLOv4-TINY WORKAROUND
 if TRAIN_YOLO_TINY:
-    YOLO_STRIDES            = [16, 32, 64]    
+    YOLO_STRIDES            = [16, 32]    
     # YOLO_ANCHORS            = [[[23, 27],  [37, 58],   [81,  82]], # this line can be uncommented for default coco weights
     YOLO_ANCHORS            = [[[10, 14],  [23, 27],   [37, 58]],
-                               [[81,  82], [135, 169], [344, 319]],
-                               [[0,    0], [0,     0], [0,     0]]]
+                               [[81,  82], [135, 169], [344, 319]]]
