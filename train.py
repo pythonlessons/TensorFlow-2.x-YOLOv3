@@ -43,7 +43,7 @@ def main():
 
     trainset = Dataset('train')
     testset = Dataset('test')
-
+    ##############
     steps_per_epoch = len(trainset)
     global_steps = tf.Variable(1, trainable=False, dtype=tf.int64)
     warmup_steps = TRAIN_WARMUP_EPOCHS * steps_per_epoch

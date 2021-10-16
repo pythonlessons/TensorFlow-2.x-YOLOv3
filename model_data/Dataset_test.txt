@@ -1,0 +1,440 @@
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/a705eb130a951180.jpg 0,188,141,319,0 303,214,659,352,0 617,228,952,433,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/09f44f36db1db468.jpg 42,165,308,388,0 95,172,387,407,0 372,138,551,308,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/ab9ed51e8d3b157c.jpg 115,202,351,383,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/01cde04ccd6fa01a.jpg 42,493,251,661,0 424,431,525,543,0 451,433,567,547,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/39cd067a08ced27a.jpg 385,0,443,207,0 426,0,892,282,0 461,0,1023,348,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/d6e47a7323c02968.jpg 425,254,672,365,0 455,211,723,317,0 611,256,1013,444,0 626,323,995,494,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/0fe1e0781957dd92.jpg 44,0,988,767,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/d8562d2d9b44a6ea.jpg 127,13,678,419,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/661d6e6a593431c3.jpg 49,70,381,262,0 150,98,272,246,0 733,121,1022,385,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/7dc1e29f86fda43b.jpg 252,417,506,575,0 273,533,504,591,0 655,529,881,601,0 655,421,893,556,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/1bb00c682b0579a5.jpg 58,123,428,447,0 108,147,451,461,0 248,143,572,510,0 421,124,731,189,0 447,228,811,515,0 550,140,838,213,0 566,178,904,503,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/b3d13403788d8b34.jpg 568,632,814,766,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/2bd06145e81f7272.jpg 298,405,515,561,0 118,398,330,596,0 505,366,653,500,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/051af8310d4f5663.jpg 243,384,561,557,0 751,431,1023,581,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/e093acb0f83cc129.jpg 357,38,939,232,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/5e873eb1799b0fa8.jpg 82,363,569,867,0 211,348,457,504,0 283,331,472,460,0 340,305,643,480,0 432,390,801,882,0 525,407,917,812,0 607,370,1022,780,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/01012c931f188aba.jpg 698,210,960,464,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/e6dcd9bb394279d2.jpg 723,325,805,385,0 767,339,853,433,0 813,342,908,447,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/be843a439e9ed9cc.jpg 146,489,340,600,0 199,379,389,566,0 408,481,603,598,0 452,372,668,566,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/4323e2e4c517feef.jpg 65,108,322,503,0 271,9,758,419,0 701,225,1005,624,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/16dd36e152bd2792.jpg 571,454,710,598,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/1d92b01ae7685927.jpg 737,382,854,463,0 829,391,916,485,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/13df1613975186a8.jpg 70,327,256,444,0 86,427,234,560,0 90,0,248,118,0 92,408,229,552,0 93,134,245,228,0 128,223,258,340,0 226,265,392,428,0 239,94,392,230,0 239,415,411,560,0 240,0,358,97,0 340,0,607,61,0 368,48,475,195,0 371,303,532,391,0 382,184,580,313,0 395,381,507,552,0 455,49,593,169,0 508,469,647,567,0 530,318,672,485,0 556,163,666,270,0 573,2,706,32,0 586,21,750,155,0 651,193,782,294,0 658,287,797,395,0 704,0,847,35,0 749,442,886,571,0 765,268,950,462,0 771,199,862,286,0 771,32,892,198,0 848,0,953,21,0 860,19,970,134,0 872,445,962,546,0 880,153,1023,254,0 920,274,1010,419,0 953,467,1023,574,0 961,0,1023,38,0 986,43,1020,156,0 990,383,1023,483,0 1001,266,1023,370,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/ef05bcf81ea2a087.jpg 65,495,260,590,0 231,439,428,541,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/01e38be467570d15.jpg 303,408,858,767,0 621,285,1022,539,0 849,532,1023,767,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/429fcd56dc6f5c1f.jpg 338,352,482,440,0 364,351,492,450,0 481,355,563,435,0 526,332,588,360,0 546,346,633,419,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/3fee2b0ec83d8b87.jpg 183,35,419,251,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/1728acb024bbf804.jpg 743,54,1024,499,0 0,83,99,444,0 49,74,492,438,0 419,22,810,398,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/0129f89c055b1a64.jpg 46,426,490,659,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/1a129f28cbe99888.jpg 0,584,338,842,0 0,553,465,627,0 227,606,711,899,0 242,537,711,608,0 358,606,723,674,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/530a34e6b5611619.jpg 0,317,1023,699,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/de0cdc2f3abcdbd7.jpg 409,418,504,502,0 452,448,554,520,0 548,432,639,532,0 565,432,771,528,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/469eb17f7cc50ea5.jpg 412,484,585,643,0 85,478,244,671,0 190,467,396,667,0 314,426,472,641,0 505,438,674,621,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/02bfa756cf308485.jpg 534,408,690,532,0 580,409,676,532,0 726,431,906,576,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/f35d8c363a675c7a.jpg 223,336,343,420,0 294,319,442,399,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/f188414fea809960.jpg 76,208,753,693,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/4f29576e8fc297ea.jpg 663,431,814,613,0 712,294,1023,682,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/f138a719c66c8799.jpg 675,288,890,447,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/3ab5b80c5b6b228c.jpg 230,613,523,930,0 312,625,624,927,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/4015e8cf73d9bbf7.jpg 861,322,1024,557,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/63aeca3000b6b59e.jpg 621,605,744,674,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/5b77383f739f1524.jpg 0,147,654,410,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/2197589e635fc6d8.jpg 50,421,153,509,0 163,376,292,490,0 301,415,399,465,0 403,406,510,528,0 452,400,641,529,0 478,452,605,579,0 525,331,666,460,0 577,441,809,625,0 587,457,719,618,0 690,355,867,591,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/32fd0c80378a4447.jpg 147,63,932,767,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/dee2be43551b932a.jpg 0,467,221,765,0 0,342,638,626,0 176,627,622,766,0 432,426,653,704,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/000da932ca7e68e4.jpg 0,345,193,448,0 329,286,450,348,0 452,259,565,295,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/3af282b3e844a0bd.jpg 361,22,620,153,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/415e2661d56d0363.jpg 365,378,458,484,0 258,360,375,486,0 311,416,393,481,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/b0552383a2bae698.jpg 81,427,287,477,0 93,474,304,500,0 610,442,878,735,0 636,201,691,294,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/9402cc0e10ee2243.jpg 600,464,787,698,0 609,476,787,746,0 681,607,787,777,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/16382e3a7a2cdf45.jpg 80,318,472,455,0 614,393,1022,609,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/2082093c3605011a.jpg 13,420,629,883,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/eccf85d52e670ced.jpg 0,141,292,420,0 0,233,306,546,0 116,135,338,205,0 208,115,430,220,0 208,176,577,556,0 420,151,726,544,0 474,127,861,512,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/7c72ca1646a87cff.jpg 199,335,267,376,0 260,333,350,378,0 284,358,387,447,0 355,348,520,438,0 662,421,692,438,0 673,431,695,471,0 684,437,746,475,0 705,433,739,446,0 720,428,771,475,0 743,426,787,475,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/fadce1809149b2fa.jpg 566,525,683,650,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/2403209bd58f4688.jpg 51,252,983,699,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/9626af001bf109cb.jpg 711,425,906,550,0 757,392,967,469,0 870,466,1018,579,0 919,438,1023,488,0 937,419,1023,457,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/09a40ed64c620298.jpg 150,212,514,379,0 270,195,489,442,0 389,192,714,452,0 559,203,886,374,0 612,173,863,426,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/0cd2b8a9cd0a387b.jpg 758,67,1023,183,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/0162261a4cd5dd7f.jpg 596,435,703,585,0 649,406,938,659,0 871,475,1023,758,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/606bfb0e0066bf96.jpg 20,345,276,573,0 66,441,281,583,0 195,466,388,568,0 258,426,451,535,0 294,368,448,406,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/05dedd42013691bf.jpg 184,0,435,221,0 403,0,548,109,0 521,0,739,131,0 662,134,884,510,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/00d71a18afab7adb.jpg 329,253,485,384,0 648,327,820,456,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/595a738d1a75ebe1.jpg 169,699,407,955,0 337,772,496,963,0 456,772,624,977,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/31b3fa35a872dfb0.jpg 20,111,1014,904,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/082327837db6069e.jpg 174,136,350,259,0 175,99,379,225,0 557,147,602,200,0 590,90,724,206,0 619,114,758,240,0 649,169,772,255,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/5fbb04d552e9d5d4.jpg 174,324,276,386,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/ccf939fd26039528.jpg 45,40,999,617,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/cb42df7959ef0f92.jpg 120,24,807,695,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/1da4e43909de5c48.jpg 600,378,700,563,0 435,340,604,474,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/30239715de71d7b3.jpg 33,366,349,648,0 255,330,509,452,0 487,419,767,617,0 497,480,892,776,0 653,312,922,536,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/25195a59df0bbde2.jpg 139,139,881,891,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/01d67a615b38de51.jpg 535,538,687,657,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/00e819f3456bd4c4.jpg 131,293,235,379,0 488,278,586,378,0 530,268,611,365,0 554,270,682,367,0 623,292,781,424,0 680,304,836,416,0 696,283,906,427,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/b10098ae9e3b0c53.jpg 266,339,520,534,0 507,298,666,371,0 525,317,750,482,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/826653722515d3d0.jpg 142,420,334,508,0 186,526,428,643,0 226,383,343,445,0 462,385,676,609,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/612b49a4fb7bd613.jpg 64,18,680,594,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/529e552338b29d03.jpg 614,150,717,275,0 617,118,820,294,0 757,163,1023,370,0 792,203,966,359,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/024d46e2ccfafa07.jpg 585,264,684,329,0 678,264,729,317,0 699,278,773,326,0 730,266,770,303,0 749,255,787,302,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/19d3000bf7dcb5bd.jpg 300,216,594,342,0 697,204,1023,386,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/1ee9426f2d83951f.jpg 38,113,422,406,0 117,225,399,564,0 377,137,738,340,0 393,248,735,570,0 704,316,984,609,0 729,147,1022,525,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/4b3c8596487cf8d8.jpg 0,388,77,461,0 48,381,127,459,0 287,361,380,476,0 346,384,422,476,0 395,400,565,519,0 484,384,690,528,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/bba5930f86da13f1.jpg 615,323,1023,536,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/da9ee35ca4faba6e.jpg 0,296,79,367,0 316,285,394,323,0 492,266,595,317,0 540,252,635,316,0 678,258,822,334,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/d7c78f5c0093baf1.jpg 499,346,614,415,0 387,333,468,408,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/00b5a013c32e2df8.jpg 765,391,990,616,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/131fed16482518bc.jpg 5,510,154,662,0 0,418,94,616,0 77,444,195,615,0 369,436,449,599,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/fa2e78f5af5a6660.jpg 166,363,378,541,0 211,389,356,525,0 524,318,669,431,0 578,338,655,430,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/fedbee0ec3eb4884.jpg 129,411,458,696,0 202,439,534,683,0 461,401,684,457,0 501,426,725,543,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/230fd23d32c04f5a.jpg 800,277,1020,576,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/191214c3b5e8aa6b.jpg 241,387,585,715,0 557,495,756,685,0 557,468,1017,895,0 870,769,1023,1023,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/a7c0158e0f6ee1e6.jpg 136,177,1008,533,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/0a45f12145eb1d51.jpg 270,59,645,402,0 439,79,767,475,0 620,135,1007,521,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/1acbf9241f6a860c.jpg 0,231,364,282,0 0,131,407,288,0 383,131,735,231,0 395,215,774,287,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/00128b973d107cd9.jpg 117,394,313,522,0 295,376,407,467,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/ab5d6508dcea03a2.jpg 497,350,817,629,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/5e95472ff88da234.jpg 311,119,525,309,0 543,138,714,251,0 552,254,858,552,0 669,124,834,235,0 708,153,882,372,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/01975040a9a8e35f.jpg 653,437,912,648,0 776,475,957,660,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/44340cd586071156.jpg 205,23,712,768,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/3aa5507e3474ea3f.jpg 518,312,970,626,0 548,64,838,314,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/c2e205e3ef32223d.jpg 35,133,472,513,0 502,156,974,522,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/4f441b1e1dcaabbd.jpg 160,258,702,514,0 373,288,624,464,0 530,334,766,450,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/540ca49751959f6a.jpg 486,415,790,615,0 235,419,546,596,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/a840a7ee1b48c327.jpg 0,439,122,606,0 0,426,252,555,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/a62028de668dbcc8.jpg 399,198,650,317,0 601,189,844,285,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/03e9007eef576e4e.jpg 79,76,977,943,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/4578aad42ca9a289.jpg 169,59,497,276,0 183,50,492,85,0 344,180,650,297,0 492,65,863,277,0 498,50,839,89,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/88264fe37447af19.jpg 589,81,924,461,0 0,319,413,644,0 83,228,598,552,0 328,150,786,464,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/585cf6cb64be8341.jpg 3,75,329,422,0 30,116,341,456,0 321,100,725,466,0 323,67,668,129,0 594,72,960,424,0 675,42,1023,386,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/721bc474e8e2dfd3.jpg 89,182,918,749,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/5cdebcec5a29862c.jpg 682,394,859,525,0 36,344,149,440,0 547,292,694,418,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/44943d5478f08d75.jpg 10,29,630,546,0 181,266,652,722,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/dfd3992efacd4085.jpg 216,244,468,374,0 445,262,609,373,0 509,240,787,377,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/b6da06fc9112b326.jpg 57,443,784,767,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/0f042b196063873b.jpg 99,144,422,510,0 306,184,584,495,0 592,129,892,460,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/11151df3686d3f9a.jpg 614,216,1009,440,0 618,356,981,504,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/19781afc1aaf0163.jpg 153,97,872,805,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/2593236c8d8af7b3.jpg 140,64,520,372,0 158,89,536,435,0 337,177,720,478,0 498,68,871,195,0 531,106,892,455,0 585,77,920,392,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/1913b16314051354.jpg 472,444,647,658,0 646,506,1023,758,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/1be6a857d453c03b.jpg 0,104,519,693,0 156,196,907,950,0 505,80,1022,708,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/a539f9cc39c4d468.jpg 0,151,1022,744,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/69e9976455f208d0.jpg 609,177,964,413,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/068d09e9d36c4967.jpg 0,148,178,317,0 142,105,328,251,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/4ee20f08a42b644d.jpg 0,183,452,417,0 0,316,452,596,0 419,189,689,241,0 436,204,780,428,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/a2acb0778c0d8a46.jpg 128,136,876,878,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/93e4068fca9f6bf3.jpg 88,633,412,763,0 375,628,657,766,0 733,555,1023,766,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/d9738918621f57ec.jpg 106,443,1006,662,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/5482fe27a5a27df3.jpg 384,58,626,184,0 643,55,912,245,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/954b96fb01eb0229.jpg 332,250,499,360,0 377,246,524,350,0 559,265,733,371,0 559,252,744,370,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/3cf65abd9342df90.jpg 53,187,318,320,0 440,174,728,486,0 710,222,766,461,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/d2b222366a675ab7.jpg 698,317,975,543,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/00c1bb3fd0f8c041.jpg 573,354,695,405,0 670,356,828,425,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/13a2ae7b81204a18.jpg 406,159,824,331,0 669,26,1000,290,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/d1a091446dd1e90a.jpg 0,317,339,574,0 0,66,413,219,0 0,157,613,416,0 358,70,754,262,0 578,154,1022,518,0 706,94,1022,197,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/0a269c75257664a7.jpg 0,0,1022,927,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/edcd46eee1d4e570.jpg 572,0,1023,300,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/9388210c0767c257.jpg 401,303,589,379,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/cbd81a27a64ef5dd.jpg 335,213,644,337,0 341,304,640,390,0 606,249,945,392,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/7ebcca7cbbbb8337.jpg 184,39,882,632,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/f4c379dddb46390f.jpg 356,267,463,340,0 364,247,506,268,0 431,274,585,343,0 520,239,672,334,0 522,247,658,254,0 542,258,646,345,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/1b2923450fc043d1.jpg 339,240,720,409,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/d0014f5494214b57.jpg 0,248,366,386,0 237,143,545,333,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/154ff632fdd93883.jpg 92,197,587,422,0 0,245,58,409,0 0,259,135,429,0 588,233,760,373,0 758,265,924,385,0 781,260,932,374,0 929,179,1023,392,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/958059860d4f4f6a.jpg 220,147,920,664,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/02d2311842c5ed24.jpg 70,524,298,618,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/9941c14940169077.jpg 426,415,479,468,0 460,410,511,473,0 498,410,550,465,0 567,415,644,460,0 629,405,678,462,0 710,417,776,460,0 807,409,848,473,0 845,412,878,465,0 877,418,905,478,0 918,444,959,497,0 947,438,1023,538,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/bd42b0d9f3aa1467.jpg 0,254,231,411,0 903,315,1020,443,0 989,308,1021,424,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/99019020e705c646.jpg 61,206,516,632,0 516,169,968,609,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/08c75b81ad7676d1.jpg 118,529,379,689,0 337,538,634,696,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/0616306028b318db.jpg 122,214,261,364,0 286,213,430,370,0 319,202,483,328,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/6025f334fb998dd0.jpg 357,71,666,265,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/aa3104ff92f35133.jpg 755,323,999,415,0 484,325,747,461,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/6665c8b874bf2c83.jpg 474,159,743,402,0 465,271,530,359,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/d89843cca8361266.jpg 50,103,996,780,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/09749366ae042224.jpg 0,221,355,318,0 367,207,735,321,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/6cbe84fcb46b0cc9.jpg 440,324,747,475,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/51cf33d2c320bedc.jpg 275,171,454,337,0 282,263,455,348,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/cc59dc874d3d3737.jpg 252,239,669,493,0 312,312,646,598,0 400,433,737,682,0 400,214,740,338,0 596,320,1015,682,0 715,289,1023,682,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/0be4b3b12d2ad5be.jpg 42,158,1000,858,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/6616426ef251994b.jpg 158,243,790,893,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/e57a7daf56c6c183.jpg 35,277,276,470,0 134,285,396,495,0 275,236,481,310,0 357,236,558,416,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/79696df5f9c9d25c.jpg 411,424,664,541,0 525,475,665,556,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/8b92e4ae6955b278.jpg 264,186,765,648,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/6787dfa61cb3cde9.jpg 130,262,636,529,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/043fb662ccfaea78.jpg 360,220,426,285,0 400,203,473,291,0 465,244,516,276,0 468,209,505,254,0 506,231,589,308,0 524,203,619,316,0 618,262,689,315,0 621,219,671,268,0 902,334,1016,419,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/31140c8c9768094c.jpg 289,152,694,467,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/27b49e87df641517.jpg 262,416,494,627,0 480,425,726,631,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/06f10308c16a38ae.jpg 183,602,369,755,0 374,502,514,637,0 393,548,544,634,0 498,483,618,547,0 511,515,672,641,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/0dc18078bd60f908.jpg 86,0,627,853,0 0,0,265,338,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/ae08c7ff79c6c6ea.jpg 132,283,414,406,0 375,304,676,463,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/b9610326301cd729.jpg 262,398,434,553,0 394,411,544,541,0 442,391,665,523,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/edba96e4477ba42c.jpg 429,436,604,574,0 20,193,170,284,0 42,232,179,328,0 154,185,291,281,0 285,171,378,255,0 287,195,371,274,0 326,181,415,271,0 502,481,635,650,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/28bd3b516ac9dd1d.jpg 65,465,388,689,0 127,540,410,699,0 335,480,482,698,0 417,524,679,693,0 463,467,745,612,0 611,489,738,648,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/fe6629513ec26976.jpg 139,442,326,664,0 279,423,458,656,0 634,370,870,567,0 828,380,974,559,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/96a64d055c8d98a6.jpg 387,239,557,404,0 514,356,858,590,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/00fe086931c4eb20.jpg 329,379,748,809,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/05dda819d96777a4.jpg 317,276,792,612,0 367,324,706,553,0 427,466,895,679,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/04a8063daa53fb73.jpg 30,426,192,497,0 707,370,794,539,0 754,299,1021,547,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/ebfe34afb621854e.jpg 211,330,695,525,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/3018f252d348eaff.jpg 125,140,394,362,0 177,188,531,415,0 386,123,650,355,0 650,114,945,256,0 790,217,1022,439,0 961,123,1022,393,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/d1238b67b08674be.jpg 815,369,1024,659,0 819,415,981,509,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/2ad213fba62bba1c.jpg 600,303,690,381,0 648,296,750,395,0 758,307,880,399,0 888,317,952,403,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/f68f4aa67ca452ad.jpg 156,12,871,732,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/7dc9b52ea54f1d67.jpg 255,488,405,623,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/f941187df691549a.jpg 394,80,619,123,0 606,86,766,146,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/74c67b81563ef161.jpg 164,57,670,578,0 319,99,922,726,0 646,108,694,168,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/cdb7222536e57441.jpg 211,263,751,602,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/0027ea2ab5c65444.jpg 672,290,732,369,0 722,303,823,383,0 886,320,1004,386,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/0202f13ed2b91b04.jpg 0,58,301,134,0 0,74,518,478,0 113,278,900,534,0 493,89,1023,457,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/af70b62fd7b8eeff.jpg 89,53,865,641,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/df63ad2a36ea8742.jpg 0,58,802,993,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/c0ebf5d70455feac.jpg 0,197,154,462,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/9fa920ff07c50d11.jpg 29,384,250,494,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/15974db5e26b296c.jpg 733,145,1007,368,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/8e38c5be2bf5dfb7.jpg 656,491,731,610,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/e35262594693ef55.jpg 490,588,869,809,0 0,540,120,898,0 62,441,519,887,0 619,705,1003,865,0 774,660,1022,846,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/24eb4aeacec9d24c.jpg 181,12,505,105,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/32bedc4fe1461067.jpg 132,333,609,580,0 527,370,1021,679,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/c6a02c9b016d06a1.jpg 446,340,572,397,0 454,292,638,382,0 583,387,819,450,0 594,331,822,414,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Pillow/56da39775c9ba896.jpg 538,238,898,588,0 0,251,376,533,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/604528b483d89f0c.jpg 750,782,917,1024,1 450,574,709,858,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/34eeebb5b65f0bde.jpg 481,36,1009,621,1 105,319,332,550,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/8d17d1661f6c858e.jpg 582,110,962,590,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/0753bf988ae1729c.jpg 415,1,802,655,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/2c955a2241249d5b.jpg 173,233,438,463,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/96284e1acf3c5c76.jpg 134,506,449,897,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/c94efd638b281310.jpg 64,245,501,698,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/001af0f70d8baa79.jpg 277,234,689,783,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/ff9edf5db8dcf0fe.jpg 608,186,851,547,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/4050232efd773fb6.jpg 0,468,223,751,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/364b84003184d5cb.jpg 605,422,744,561,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/9e3281094627c00b.jpg 433,16,709,195,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/5e3124d0befc26ae.jpg 29,20,433,480,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/0ae3504ce39d6a24.jpg 751,99,1019,479,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/de4440ed120cc6d9.jpg 132,247,302,474,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/4b590b01fe65ad89.jpg 307,533,429,691,1 412,586,513,727,1 508,526,644,720,1 550,278,723,477,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/09ded1818850fc02.jpg 374,312,602,557,1 521,187,988,629,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/016190ba06c7005e.jpg 666,258,943,523,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/f16196a4e09dd3b4.jpg 0,207,283,552,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/f5921cbfc7b3f771.jpg 558,5,905,374,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/b1d2a9b92ee88d99.jpg 68,777,195,868,1 104,184,327,325,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/36e1b49ab0a5801e.jpg 26,413,196,700,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/8619174b638b42bd.jpg 207,258,321,383,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/41d989e56fef35ca.jpg 81,49,690,1014,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/4960f0f448aaeb25.jpg 412,170,970,682,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/2733f1f85ec5d441.jpg 75,39,653,958,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/1c62cf500b7d2654.jpg 193,37,409,429,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/0166b8dcdd4b7e65.jpg 620,318,998,940,1 685,609,1023,1023,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/1d3f0d0423d67f27.jpg 48,120,500,613,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/48c15c3810a1609d.jpg 0,82,604,767,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/7d96e2932816d4e1.jpg 31,446,165,569,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/9806bc8577c73e97.jpg 59,252,203,408,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/5c05812094674907.jpg 196,174,655,813,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/2af1adb18222c1a2.jpg 218,134,443,434,1 291,193,791,624,1 444,114,686,388,1 673,44,847,299,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/d28cadccda8bcc1f.jpg 406,762,531,892,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/dfa2e37f9419ea02.jpg 784,259,911,396,1 42,106,334,566,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/070ab1b97fffafe5.jpg 488,12,901,676,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/4654b260ad76f488.jpg 60,649,385,938,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/cb1a677ccf266b6d.jpg 278,349,439,631,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/19b9b7acfefbd162.jpg 18,234,371,641,1 646,228,951,616,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/4c8ffef6faeb4d5d.jpg 248,247,418,491,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/cb18ef8f7f25d0ad.jpg 277,674,450,809,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/29314d55cacac31f.jpg 104,127,699,755,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/4a401569b46523e9.jpg 153,81,682,1023,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/2e570de0caa8353d.jpg 485,139,918,631,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/5f79ae05e2fb86a5.jpg 95,83,778,936,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/cd74877a62fac813.jpg 834,512,985,670,1 110,530,262,682,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/02e1ee34f78e7a84.jpg 527,102,823,503,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/5f8a7ca1f766f0d6.jpg 474,251,692,588,1 298,622,718,960,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/06edc12e36d1497f.jpg 605,225,891,576,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/0b7373a18f02a37e.jpg 0,63,932,607,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/536f8bd1d5c2745b.jpg 554,353,917,755,1 139,331,545,748,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/466d845fd250a8fd.jpg 133,18,451,506,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/348990cf6eded713.jpg 192,108,373,358,1 442,391,658,663,1 445,100,602,347,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/6da8445f2922240f.jpg 642,93,1000,453,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/10203ebcf1b589c1.jpg 29,34,946,1001,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/35dd8e12dfa4f329.jpg 65,157,276,371,1 544,52,890,310,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/01141ca29211c529.jpg 428,610,571,778,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/07d5e1058b74e637.jpg 109,66,242,201,1 119,276,247,376,1 242,261,384,379,1 272,94,368,203,1 382,243,553,380,1 560,235,695,379,1 661,81,750,200,1 697,261,803,374,1 743,50,933,192,1 808,277,900,371,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/92e5f0852cc9dc27.jpg 49,43,295,299,1 49,365,638,956,1 387,55,625,295,1 730,48,975,297,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/114efd1393fb53aa.jpg 13,242,235,529,1 744,224,1010,564,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/7adf972ad4377999.jpg 209,93,476,522,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/5525e588a40b125b.jpg 141,57,357,278,1 580,15,802,209,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/513cde2242a2cb6f.jpg 204,206,785,812,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/136a1388710ef264.jpg 654,35,812,328,1 689,363,863,507,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/120a75293198a5db.jpg 289,238,721,682,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/943b57693ca75128.jpg 77,53,959,912,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/bf8e5daa78278d46.jpg 605,513,766,708,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/59f9557bdf5f9ceb.jpg 375,192,627,561,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/6085ff0ae91fb440.jpg 235,700,445,923,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/ef34346b5dd2ac8d.jpg 1,0,88,103,1 67,35,181,180,1 143,0,276,107,1 147,78,271,260,1 380,51,493,214,1 386,166,472,258,1 514,51,671,311,1 650,357,772,553,1 652,116,870,357,1 769,445,945,697,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/346abf4e63520b03.jpg 258,118,504,383,1 477,143,621,407,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/35915813f0a7315f.jpg 402,56,918,577,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/4cc281fbdd99918a.jpg 549,210,772,439,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/434757e25c331042.jpg 755,312,984,505,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/1379bfa1e4a37ed0.jpg 317,474,472,746,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/1f3bde3e8723739c.jpg 453,31,983,838,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/6b40bf87ebcbbfcb.jpg 167,105,862,907,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/056488a8ef007eef.jpg 650,48,781,229,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/b7235f8d3cdf6e72.jpg 581,288,714,443,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/9e9f6c04a7566116.jpg 644,10,884,410,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/2c523ddedc2561d4.jpg 700,333,930,591,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/7a4acf921f7e3237.jpg 301,166,829,694,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/4935c38d0f297f50.jpg 509,420,753,606,1 673,322,1015,598,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/65ae47b41c8c26d1.jpg 413,289,666,505,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/cead8f251b3fdd45.jpg 541,34,1016,380,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/64dd7eb0f4e25348.jpg 604,69,824,489,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/faf8b092868b0f3b.jpg 444,607,586,819,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/18770115e49c4240.jpg 74,112,896,954,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/0741da4e7d1f7b86.jpg 362,30,637,428,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/ec57112feaa26a20.jpg 164,36,660,980,1 607,372,891,975,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/d814032514c1732d.jpg 22,211,335,731,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/2458052216556b96.jpg 164,142,357,662,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/014429db865fd123.jpg 412,427,586,669,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/6ef3ad8037bd5cd8.jpg 282,273,632,748,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/abac3d9f17f602bd.jpg 503,648,711,860,1 816,609,938,758,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/565da2b7a5466d18.jpg 379,822,518,930,1 1,636,112,749,1 182,618,266,739,1 246,483,377,630,1 336,278,447,394,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/e02f17ed3cd00f5a.jpg 206,52,582,477,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/7de77f7e8d9006f8.jpg 176,430,392,678,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/bf8df6184917c5ca.jpg 833,457,979,666,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/a560a596a829eb08.jpg 211,233,477,620,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/66789d971c19de27.jpg 0,3,761,499,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/077e1fc76ca54f3f.jpg 530,531,942,975,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/0ffd50bec2fcd9d3.jpg 269,347,416,509,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/0122d443a4458438.jpg 496,722,786,994,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/d61825564d86908d.jpg 127,486,190,547,1 157,495,242,570,1 746,447,796,482,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/0eebe428b69cda79.jpg 141,141,885,809,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/a4d44dd552d20e22.jpg 346,0,682,790,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/26037ed332df939f.jpg 173,188,950,856,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/048648ba102cfe5a.jpg 222,348,579,758,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/960d441926a5619a.jpg 269,224,896,800,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/9d1b3c46d9a836bd.jpg 375,208,981,669,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/db43184923f54c9a.jpg 107,198,724,857,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/773141151b344875.jpg 86,166,484,982,1 531,83,768,620,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/38dec5c400e8a00d.jpg 239,412,396,570,1 754,351,946,522,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/fbfa380da52a9866.jpg 330,702,484,948,1 255,675,401,881,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/c269549d190d51cf.jpg 121,53,611,757,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/d7f122acc10741e2.jpg 86,136,469,592,1 539,143,922,587,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/4e5fd363dad05998.jpg 141,104,774,696,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/7f465c52fcad279a.jpg 274,195,583,688,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/228db96cf94a688f.jpg 342,764,615,1018,1 248,0,682,647,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/25f4b070e0690ecf.jpg 327,301,450,458,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/8b0f2626565c1ace.jpg 341,187,861,514,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/72bf1fd21b916695.jpg 120,115,691,958,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/168d20a99b5e1261.jpg 496,278,795,590,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/219cdd69198e2b71.jpg 337,90,751,627,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/96a6b45d8a1f36a6.jpg 285,93,633,702,1 555,147,752,719,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/07def16b30a3e9fe.jpg 199,279,422,464,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/77f87101d8d0709e.jpg 140,9,746,1000,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/4e74a2bfd3fb3210.jpg 132,128,457,637,1 469,351,763,632,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/0bf31eae3425d00b.jpg 114,327,316,505,1 420,325,596,504,1 422,325,594,504,1 664,327,872,504,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/3c6edff64aff8354.jpg 168,304,380,480,1 394,130,698,509,1 400,552,696,691,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/0219225f0f58c2c8.jpg 114,85,955,910,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/c9e2975afdf8bbde.jpg 85,97,617,640,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/040921b91c4279fd.jpg 136,0,802,741,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/02ad824137859ea4.jpg 0,0,279,527,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/aff8fddebffefcc6.jpg 110,431,391,768,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/c4ed690ff377e4a7.jpg 126,497,276,707,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/7a9b16fae570b46b.jpg 322,97,635,418,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/a0abaa5bf4b660d8.jpg 665,494,790,732,1 143,654,236,851,1 230,613,339,791,1 306,553,390,701,1 396,531,490,691,1 428,565,550,766,1 532,501,682,732,1 563,451,673,595,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/75a1f0aa80dda385.jpg 302,81,617,692,1 557,148,751,726,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/596fc77acdde5746.jpg 33,59,390,654,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/69e000a963e3ac50.jpg 21,432,220,574,1 47,224,168,334,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/2dd2a77838ce5028.jpg 546,263,923,521,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/1eb470831b7fde94.jpg 87,70,809,681,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/7a5399dfa935872a.jpg 730,125,932,460,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/fe0b76dd047d8bea.jpg 861,0,1013,130,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/247e2e3105a7b81a.jpg 351,586,479,751,1 408,414,467,492,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/3d38d32a73a9e016.jpg 264,213,686,682,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/44af6f1190551c4a.jpg 170,419,335,584,1 307,104,509,354,1 414,474,564,631,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/0344bbc906fa5725.jpg 378,442,591,706,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/930c817d43dd47d7.jpg 569,353,788,646,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/fc160964979bd1d6.jpg 529,612,831,903,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/16dfc73aadaedc0c.jpg 215,208,727,713,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/42e632f485dc9027.jpg 3,282,499,927,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/09784d74717ac4c6.jpg 811,219,1022,420,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/1252b243267304e6.jpg 206,202,368,444,1 77,218,218,435,1 591,254,732,436,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/45bfa310c31526fd.jpg 487,627,586,824,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/cf85aa104f403b49.jpg 29,185,722,875,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/0b8ae1fdab627c5c.jpg 471,182,809,541,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/42f88e7c7edfcd5d.jpg 160,739,493,948,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/1cdca1b8d7f7ac74.jpg 75,33,998,697,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/bbf448520c187194.jpg 0,315,282,712,1 372,313,710,699,1 727,282,1023,706,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/2477fc10e08af771.jpg 329,245,463,619,1 381,231,513,638,1 440,205,604,655,1 515,176,970,676,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/ca43324969e2819b.jpg 678,502,891,705,1 762,387,955,641,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/69017a6434d54595.jpg 26,240,633,929,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/00ac99461029a26f.jpg 69,384,275,597,1 563,69,680,232,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/102c9b06e9949a7f.jpg 129,53,373,242,1 320,499,680,945,1 725,0,958,360,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/a918f659deef3624.jpg 351,9,680,451,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/e69bfa93789339fc.jpg 196,0,952,633,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/f0944b9beffb6761.jpg 310,775,434,925,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/e2dd0f9ce2512b37.jpg 228,140,505,486,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/14592a800fdc9a9c.jpg 11,588,421,1023,1 180,206,570,618,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/078bfcf1afb210ae.jpg 66,58,798,1023,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/be97d0430a2bd0f9.jpg 36,187,723,872,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/a04a8b976d0a5336.jpg 82,148,745,870,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/f4c00a4b3e837128.jpg 313,77,692,650,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/f43175b1e91aa806.jpg 0,0,730,727,1 506,0,1023,366,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/9cbbff1c13ed439e.jpg 15,80,335,400,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/709b5ac91627a7b8.jpg 183,191,335,384,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/79026b978e5558e2.jpg 214,129,598,891,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/223af5402f8d1907.jpg 1,72,818,947,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/544950ffe3966604.jpg 17,37,580,662,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/0decc543c69f13f2.jpg 90,0,424,1005,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/85c1cb3d5ec1b238.jpg 579,86,989,683,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/c3d0fc68f80b616a.jpg 73,148,461,602,1 527,134,918,602,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/ca64e763ef35b389.jpg 412,182,770,588,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/2f062fa784396a30.jpg 434,750,615,976,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/11491ea4019c0881.jpg 101,510,407,906,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/21fd15dc27e70945.jpg 297,89,484,232,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/0775467d2228f509.jpg 200,534,381,781,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/69deab8742393602.jpg 308,48,603,437,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/4ee8608e3d0ecf6b.jpg 355,93,842,490,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/ca9bcfd4da8c6cbe.jpg 691,465,816,652,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/5355bb6ed63c3413.jpg 22,48,469,508,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/8689ecab1fa0f746.jpg 409,664,615,975,1 41,722,333,973,1 55,579,232,781,1 296,520,476,856,1 550,579,728,898,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/316c523480da12a2.jpg 574,578,725,741,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/e6b1df95ed99bb36.jpg 32,120,730,841,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/c7ba069a2b226bf7.jpg 60,110,464,593,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/train/Jug/bba917b91c4c46dd.jpg 153,129,589,556,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Pillow/17c4b83031f8492c.jpg 0,116,1024,466,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Pillow/94778d10168b17b0.jpg 0,253,610,563,0 0,0,695,471,0 500,0,1024,445,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Pillow/b2e3010a3b2180c7.jpg 327,172,473,287,0 361,218,473,294,0 594,147,848,293,0 653,212,812,296,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Pillow/81b5d480fe0ce0f0.jpg 35,0,548,768,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Pillow/7e7e39c486787a68.jpg 199,380,802,857,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Pillow/1f5221094e2ee034.jpg 0,0,1024,790,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Pillow/9ebdece800e3ed79.jpg 32,0,1024,768,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Pillow/f0450fc980d3a507.jpg 133,140,888,889,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Pillow/efab1896bde1ae53.jpg 60,129,392,398,0 401,182,615,361,0 645,121,931,380,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Pillow/79d0217907374a6c.jpg 140,305,417,413,0 551,222,717,332,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Jug/22d9e033dadee2ab.jpg 37,255,637,888,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Jug/7773a916de4352b1.jpg 190,61,747,744,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Jug/7ddd6396005fcf35.jpg 73,142,715,864,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Jug/09d18c1869112b5d.jpg 52,75,953,705,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Jug/18a1a789a0efb41b.jpg 135,132,877,862,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Jug/699fe5924d776a5d.jpg 83,143,606,972,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Jug/6574ec9eab26ed05.jpg 489,152,943,578,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Jug/b5d568b662ec0f53.jpg 247,1,461,188,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Jug/d3dfb00dcdba08dc.jpg 34,295,546,858,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Jug/622e074fe98116c3.jpg 20,356,399,875,1 256,66,632,766,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Pillow/17c4b83031f8492c.jpg 0,116,1024,466,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Pillow/94778d10168b17b0.jpg 0,253,610,563,0 0,0,695,471,0 500,0,1024,445,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Pillow/b2e3010a3b2180c7.jpg 327,172,473,287,0 361,218,473,294,0 594,147,848,293,0 653,212,812,296,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Pillow/81b5d480fe0ce0f0.jpg 35,0,548,768,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Pillow/7e7e39c486787a68.jpg 199,380,802,857,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Pillow/1f5221094e2ee034.jpg 0,0,1024,790,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Pillow/9ebdece800e3ed79.jpg 32,0,1024,768,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Pillow/f0450fc980d3a507.jpg 133,140,888,889,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Pillow/efab1896bde1ae53.jpg 60,129,392,398,0 401,182,615,361,0 645,121,931,380,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Pillow/79d0217907374a6c.jpg 140,305,417,413,0 551,222,717,332,0
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Jug/22d9e033dadee2ab.jpg 37,255,637,888,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Jug/7773a916de4352b1.jpg 190,61,747,744,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Jug/7ddd6396005fcf35.jpg 73,142,715,864,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Jug/09d18c1869112b5d.jpg 52,75,953,705,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Jug/18a1a789a0efb41b.jpg 135,132,877,862,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Jug/699fe5924d776a5d.jpg 83,143,606,972,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Jug/6574ec9eab26ed05.jpg 489,152,943,578,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Jug/b5d568b662ec0f53.jpg 247,1,461,188,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Jug/d3dfb00dcdba08dc.jpg 34,295,546,858,1
+/home/jupyter/TensorFlow-2.x-YOLOv3/OIDv4_ToolKit/OID/Dataset/test/Jug/622e074fe98116c3.jpg 20,356,399,875,1 256,66,632,766,1

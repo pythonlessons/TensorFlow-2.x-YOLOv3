@@ -308,7 +308,7 @@ def detect_image(Yolo, image_path, output_path, input_size=416, show=False, CLAS
     if output_path != '': cv2.imwrite(output_path, image)
     if show:
         # Show the image
-        cv2.imshow("predicted image", image)
+        cv2.imwrite("predicted_image.jpg",image) #imshow("predicted image", image)
         # Load and hold the image
         cv2.waitKey(0)
         # To close the window after the required kill value was provided

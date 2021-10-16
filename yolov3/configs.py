@@ -37,8 +37,9 @@ if YOLO_TYPE                == "yolov3":
 TRAIN_YOLO_TINY             = False
 TRAIN_SAVE_BEST_ONLY        = True # saves only best model according validation loss (True recommended)
 TRAIN_SAVE_CHECKPOINT       = False # saves all best validated checkpoints in training process (may require a lot disk space) (False recommended)
-TRAIN_CLASSES               = "mnist/mnist.names"
-TRAIN_ANNOT_PATH            = "mnist/mnist_train.txt"
+TRAIN_CLASSES               = "./model_data/Dataset_names.txt"#"mnist/mnist.names"
+#TRAIN_ANNOT_PATH            = "mnist/mnist_train.txt"
+TRAIN_ANNOT_PATH            = "./model_data/Dataset_train.txt"
 TRAIN_LOGDIR                = "log"
 TRAIN_CHECKPOINTS_FOLDER    = "checkpoints"
 TRAIN_MODEL_NAME            = f"{YOLO_TYPE}_custom"
@@ -51,10 +52,11 @@ TRAIN_FROM_CHECKPOINT       = False # "checkpoints/yolov3_custom"
 TRAIN_LR_INIT               = 1e-4
 TRAIN_LR_END                = 1e-6
 TRAIN_WARMUP_EPOCHS         = 2
-TRAIN_EPOCHS                = 100
+TRAIN_EPOCHS                = 1 #00
 
 # TEST options
-TEST_ANNOT_PATH             = "mnist/mnist_test.txt"
+#TEST_ANNOT_PATH             = "mnist/mnist_test.txt"
+TEST_ANNOT_PATH            = "./model_data/Dataset_test.txt"
 TEST_BATCH_SIZE             = 4
 TEST_INPUT_SIZE             = 416
 TEST_DATA_AUG               = False
