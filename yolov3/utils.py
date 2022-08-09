@@ -330,7 +330,10 @@ def Predict_bbox_mp(Frames_data, Predicted_data, Processing_times):
             Processing_times.put(time.time())
             
             if YOLO_FRAMEWORK == "tf":
-                pred_bbox = Yolo.predict(image_data)
+                if tf.__version__ > '2.4.0':
+                    pred_bbox = Yolo(image_data)
+                else:
+                    pred_bbox = Yolo.predict(image_data)
             elif YOLO_FRAMEWORK == "trt":
                 batched_input = tf.constant(image_data)
                 result = Yolo(batched_input)
@@ -459,7 +462,10 @@ def detect_video(Yolo, video_path, output_path, input_size=416, show=False, CLAS
 
         t1 = time.time()
         if YOLO_FRAMEWORK == "tf":
-            pred_bbox = Yolo.predict(image_data)
+            if tf.__version__ > '2.4.0':
+                pred_bbox = Yolo(image_data, training=False)
+            else:
+                pred_bbox = Yolo.predict(image_data)
         elif YOLO_FRAMEWORK == "trt":
             batched_input = tf.constant(image_data)
             result = Yolo(batched_input)
@@ -505,17 +511,18 @@ def detect_video(Yolo, video_path, output_path, input_size=416, show=False, CLAS
 # detect from webcam
 def detect_realtime(Yolo, output_path, input_size=416, show=False, CLASSES=YOLO_COCO_CLASSES, score_threshold=0.3, iou_threshold=0.45, rectangle_colors=''):
     times = []
-    vid = cv2.VideoCapture(0)
+    vid = cv2.VideoCapture(1)
 
-    # by default VideoCapture returns float instead of int
-    width = int(vid.get(cv2.CAP_PROP_FRAME_WIDTH))
-    height = int(vid.get(cv2.CAP_PROP_FRAME_HEIGHT))
-    fps = int(vid.get(cv2.CAP_PROP_FPS))
-    codec = cv2.VideoWriter_fourcc(*'XVID')
-    out = cv2.VideoWriter(output_path, codec, fps, (width, height)) # output_path must be .mp4
+    if output_path:
+        # by default VideoCapture returns float instead of int
+        width = int(vid.get(cv2.CAP_PROP_FRAME_WIDTH))
+        height = int(vid.get(cv2.CAP_PROP_FRAME_HEIGHT))
+        fps = int(vid.get(cv2.CAP_PROP_FPS))
+        codec = cv2.VideoWriter_fourcc(*'XVID')
+        out = cv2.VideoWriter(output_path, codec, fps, (width, height)) # output_path must be .mp4
 
     while True:
-        _, frame = vid.read()
+        ret, frame = vid.read()
 
         try:
             original_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
@@ -527,7 +534,12 @@ def detect_realtime(Yolo, output_path, input_size=416, show=False, CLASSES=YOLO_
 
         t1 = time.time()
         if YOLO_FRAMEWORK == "tf":
-            pred_bbox = Yolo.predict(image_data)
+            if tf.__version__ > '2.4.0':
+                pred_bbox = Yolo(image_data, training=False)
+            else:
+                pred_bbox = Yolo.predict(image_data)
+            # if True:
+            #     pred_bbox = Yolo.predict(image_data)
         elif YOLO_FRAMEWORK == "trt":
             batched_input = tf.constant(image_data)
             result = Yolo(batched_input)

@@ -1,0 +1,3 @@
+*.pyc
+model_data
+configs.py
