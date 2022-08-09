@@ -137,7 +137,10 @@ def get_mAP(Yolo, dataset, score_threshold=0.25, iou_threshold=0.50, TEST_INPUT_
 
         t1 = time.time()
         if YOLO_FRAMEWORK == "tf":
-            pred_bbox = Yolo.predict(image_data)
+            if tf.__version__ > '2.4.0':
+                pred_bbox = Yolo(image_data)
+            else:
+                pred_bbox = Yolo.predict(image_data)
         elif YOLO_FRAMEWORK == "trt":
             batched_input = tf.constant(image_data)
             result = Yolo(batched_input)
